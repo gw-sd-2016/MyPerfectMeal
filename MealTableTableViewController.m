@@ -57,8 +57,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //load all objects sorted
     [self loadObjects];
-    
     
 }
 
@@ -75,19 +75,12 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-
+                
                 for (int i = 1; i <=10 ; i++){
                     
                 mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
                 [Meals addObject:[object objectForKey:mealLookUp]];
-
-                    
-                    //NSLog(@"%@", Meals);
-
-
                 }
-
-
 
         }
             
@@ -95,23 +88,46 @@
     }
         
     }];
+ 
+    [self loadObjects];
+
     
 }
 
 
--(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    return Meals.count;
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [Meals count];
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    static NSString *restaurantTableIdentifier = @"MealCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
+    
+    cell.textLabel.text = [Meals objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Make sure your segue name in storyboard is the same as this line
+    // segue to push name of clicked restaurant to the map controller
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         
@@ -122,6 +138,8 @@
         
         
         }
+    
+    //segue to push name of clicked restaurant to the add meals option
     if ([[segue identifier] isEqualToString:@"showMeals"])
     {
         
