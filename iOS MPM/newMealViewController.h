@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface newMealViewController : UIViewController
+@interface newMealViewController : UIViewController{
+    NSMutableString *emptyMeal;
+}
 @property (strong, nonatomic) IBOutlet UITextField *mealNameTF;
 - (IBAction)addMealBTN:(id)sender;
 
+
 @property (nonatomic, strong) NSString *clickedRestaurant3;
+
+@property NSInteger numMeals;
+
+
 
 
 @end

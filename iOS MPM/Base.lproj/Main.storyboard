@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Meal Table Table View Controller-->
@@ -40,11 +41,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2IZ-P1-vRc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ng6-iu-l4Y">
-                            <connections>
-                                <segue destination="LQj-p3-EGn" kind="push" identifier="showMeals" id="vlb-hd-7f5"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="ng6-iu-l4Y">
+                                <connections>
+                                    <segue destination="LQj-p3-EGn" kind="push" identifier="showMeals" id="vlb-hd-7f5"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="igW-F4-BNA">
+                                <connections>
+                                    <action selector="refreshMealsBTN:" destination="Lxn-Xc-8a5" id="gTC-7C-54Q"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LV9-8h-hE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +76,7 @@
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="fgs-0i-aQb">
-                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgs-0i-aQb" id="fTz-JO-WMU">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>

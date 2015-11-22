@@ -30,7 +30,7 @@
         if (!error) {
             for (PFObject *object in objects) {
                 
-                NSLog(@"%@", object);
+                //NSLog(@"%@", object);
                 NSString *CityStateZipCombo;
                 NSString *City;
                 NSString *State;

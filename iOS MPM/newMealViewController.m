@@ -12,19 +12,23 @@
 
 @interface newMealViewController ()
 
+
 @end
 
 @implementation newMealViewController
+@synthesize mealNameTF, numMeals;
 
-@synthesize mealNameTF;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSLog(@"%@", _clickedRestaurant3);
     
     
-}
+    //NSLog(@"%d", numMeals + 1);
+
+
+  }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,5 +48,31 @@
 - (IBAction)addMealBTN:(id)sender {
     
     
+    NSString *mealName = [mealNameTF.text capitalizedString];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
+    [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant3];
+    
+    emptyMeal = [NSMutableString stringWithFormat:@"Meal%d", numMeals + 1];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            
+            
+            for (PFObject *object in objects) {
+                
+                [object setObject:mealName forKey:emptyMeal];
+                [object save];
+
+            }
+            
+            
+        }
+        
+        
+    }];
+
+    
+
 }
 @end

@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) NSString *clickedRestaurant;
 
+- (IBAction)refreshMealsBTN:(id)sender;
 
 
 

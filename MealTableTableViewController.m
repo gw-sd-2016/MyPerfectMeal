@@ -67,7 +67,7 @@
     //print clicked on restaurant
     
     
-    NSLog(@"%@",_clickedRestaurant);
+    //NSLog(@"%@",_clickedRestaurant);
 
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant];
@@ -80,6 +80,7 @@
                     
                 mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
                 [Meals addObject:[object objectForKey:mealLookUp]];
+
                 }
 
         }
@@ -113,13 +114,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+
     static NSString *restaurantTableIdentifier = @"MealCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
     cell.textLabel.text = [Meals objectAtIndex:indexPath.row];
-    
+
     return cell;
 }
 
@@ -132,7 +133,7 @@
     {
         
         
-        
+
         MapContainerViewController *detailViewController = [segue destinationViewController];
         detailViewController.clickedRestaurant2 = _clickedRestaurant;
         
@@ -144,9 +145,11 @@
     {
         
         
-        
+
         newMealViewController *detailViewController = [segue destinationViewController];
         detailViewController.clickedRestaurant3 = _clickedRestaurant;
+        NSInteger numberOfMeals = [Meals count];
+        detailViewController.numMeals = numberOfMeals;
         detailViewController.title = _clickedRestaurant;
 
         
@@ -161,5 +164,9 @@
 
 
 
+- (IBAction)refreshMealsBTN:(id)sender {
+    [self loadObjects];
+
+}
 @end
 
