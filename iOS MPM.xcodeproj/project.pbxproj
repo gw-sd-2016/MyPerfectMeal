@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		804448BD1C02031100B3CB89 /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804448BC1C02031000B3CB89 /* IngredientsTableViewController.m */; };
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
 		805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F47D81BEC97A300A08BCD /* newrestViewController.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		804448BB1C02031000B3CB89 /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientsTableViewController.h; path = ../IngredientsTableViewController.h; sourceTree = "<group>"; };
+		804448BC1C02031000B3CB89 /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsTableViewController.m; path = ../IngredientsTableViewController.m; sourceTree = "<group>"; };
 		804A7B271BFC3434000F2DD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContainerViewController.h; sourceTree = "<group>"; };
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		80F4CB2C1BEC4887009538A6 /* iOS MPM */ = {
 			isa = PBXGroup;
 			children = (
+				804448BB1C02031000B3CB89 /* IngredientsTableViewController.h */,
+				804448BC1C02031000B3CB89 /* IngredientsTableViewController.m */,
 				80FCB2131BF6C80100520167 /* MealTableTableViewController.h */,
 				80FCB2141BF6C80100520167 /* MealTableTableViewController.m */,
 				80F4CB601BEC4E78009538A6 /* RestaurantViewController.h */,
@@ -375,6 +380,7 @@
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */,
+				804448BD1C02031100B3CB89 /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,
 				804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */,

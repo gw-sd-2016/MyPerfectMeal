@@ -13,6 +13,7 @@
 {
     NSMutableArray *Meals; 
     NSMutableString *mealLookUp;
+    NSString *clickedMeal;
     
     
 }

@@ -10,6 +10,7 @@
 #import "MealTableTableViewController.h"
 #import "MapContainerViewController.h"
 #import "newMealViewController.h"
+#import "IngredientsTableViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
@@ -51,6 +52,7 @@
     
     Meals = [[NSMutableArray alloc] init];
     mealLookUp = [[NSMutableString alloc] init];
+    clickedMeal = [[NSString alloc] init];
     
     return self;
 }
@@ -76,7 +78,7 @@
         if (!error) {
             for (PFObject *object in objects) {
                 
-                for (int i = 1; i <=10 ; i++){
+                for (int i = 1; i <=9 ; i++){
                     
                 mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
                 [Meals addObject:[object objectForKey:mealLookUp]];
@@ -119,12 +121,20 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
+   
     cell.textLabel.text = [Meals objectAtIndex:indexPath.row];
 
     return cell;
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    clickedMeal = [Meals objectAtIndex:indexPath.row];
+   // NSLog(@"%@", clickedMeal);
+    
+    
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -146,27 +156,32 @@
         
         
 
-        newMealViewController *detailViewController = [segue destinationViewController];
-        detailViewController.clickedRestaurant3 = _clickedRestaurant;
+        newMealViewController *detailViewController2 = [segue destinationViewController];
+        detailViewController2.clickedRestaurant3 = _clickedRestaurant;
         NSInteger numberOfMeals = [Meals count];
-        detailViewController.numMeals = numberOfMeals;
-        detailViewController.title = _clickedRestaurant;
+        detailViewController2.numMeals = numberOfMeals;
+        detailViewController2.title = _clickedRestaurant;
 
         
         
     }
+    
+    //clicked meals segue
+    if ([[segue identifier] isEqualToString:@"showIngredients"])
+    {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 
+        IngredientsTableViewController *detailViewController3 = [segue destinationViewController];
+        
+        detailViewController3.clickedMeal2 = [Meals objectAtIndex:indexPath.row];
+        detailViewController3.title = [Meals objectAtIndex:indexPath.row];
+    }
     
     
     
 }
 
 
-
-
-- (IBAction)refreshMealsBTN:(id)sender {
-    [self loadObjects];
-
-}
 @end
 
