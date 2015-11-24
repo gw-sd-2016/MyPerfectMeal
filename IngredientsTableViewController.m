@@ -38,13 +38,11 @@
         
         self.objectsPerPage = 999999999;
         
-        
+        Ingredients = [[NSMutableArray alloc] init];
+        ingLookUp = [[NSMutableString alloc] init];
+
         
     }
-    
-    
-   
-    
     
     return self;
 }
@@ -67,24 +65,25 @@
         if (!error) {
             for (PFObject *object in objects) {
                
-                NSLog(@"%@", objects);
+                //NSLog(@"%@", objects);
                 
-                /*
-                for (int i = 1; i <=9 ; i++){
-                    
-                    mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
-                    [Meals addObject:[object objectForKey:mealLookUp]];
-                    
+                
+                for (int i = 1; i <=10 ; i++){
+                    ingLookUp = [NSMutableString stringWithFormat:@"Ing%d%d", mealIndex, i];
+                    //NSLog(@"%@", ingLookUp);
+                    [Ingredients addObject:[object objectForKey:ingLookUp]];
+                    //NSLog(@"%@", Ingredients);
+                    [self loadObjects];
+
                 }
-                */
+                
             }
             
             
         }
         
     }];
-    
-    [self loadObjects];
+
 
     
 }
@@ -107,10 +106,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 99;
+    return [Ingredients count];
 }
-
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,9 +118,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
     
-    
+   cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
     
     return cell;
 }
+
+
+
 
 @end

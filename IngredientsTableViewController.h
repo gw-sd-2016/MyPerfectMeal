@@ -8,7 +8,10 @@
 
 #import <ParseUI/ParseUI.h>
 
-@interface IngredientsTableViewController : PFQueryTableViewController
+@interface IngredientsTableViewController : PFQueryTableViewController{
+    NSMutableArray *Ingredients;
+    NSMutableString *ingLookUp;
+}
 
 
 @property (nonatomic, strong) NSString *clickedMeal2;
