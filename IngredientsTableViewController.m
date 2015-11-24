@@ -52,7 +52,7 @@
     //NSLog(@"%@", clickedMeal2);
     //NSLog(@"%d", mealIndex);
 
-    NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%d", mealIndex];
+    NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
     //NSLog(@"%@", clickedMealFormation);
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
@@ -66,22 +66,31 @@
                 //NSLog(@"%@", objects);
                 
                 
-                for (int i = 1; i <=10 ; i++){
-                    ingLookUp = [NSMutableString stringWithFormat:@"Ing%d%d", mealIndex, i];
+                for (int i = 0; i <=9 ; i++){
+                    ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
                     //NSLog(@"%@", ingLookUp);
-                    [Ingredients addObject:[object objectForKey:ingLookUp]];
-                    //NSLog(@"%@", Ingredients);
-                    [self loadObjects];
+                    
+                    if (object[ingLookUp]) {
+                        [Ingredients addObject:[object objectForKey:ingLookUp]];
+                        NSLog(@"%@", Ingredients);
+                        [self loadObjects];
+
+                    }
+                    else{
+                        
+                    }
+
 
                 }
+
                 
             }
-            
+
             
         }
+
         
     }];
-    [self loadObjects];
 
 
     
@@ -90,7 +99,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //load all objects sorted
-    //[self loadObjects];
+    [self loadObjects];
     
 }
 
@@ -118,13 +127,13 @@
     
     
    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
-    
     return cell;
 }
 
 
 
 -(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     return YES;
 }
 
@@ -132,9 +141,9 @@
     
    // NSLog(@"%@", indexPath);
 
-    NSString *ingToDelete = [Ingredients objectAtIndex:indexPath.row];
-    NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%d", mealIndex];
-    NSString *clickedIngredientFormation = [NSString stringWithFormat:@"Ing%d%d", mealIndex, indexPath.row + 1];
+    //NSString *ingToDelete = [Ingredients objectAtIndex:indexPath.row];
+    NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
+    NSString *clickedIngredientFormation = [NSString stringWithFormat:@"Ing%ld%ld", (long)mealIndex, indexPath.row];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     [query whereKey:@"Restaurant_Name" equalTo:clickedRestaurant4];
@@ -146,14 +155,28 @@
    // PFObject *object = [self.objects objectAtIndex:[Ingredients objectAtIndex:indexPath.row]];
    // NSLog(@"%@", object);
 
-
-    PFObject *object = [self.objects objectAtIndex:indexPath.row];
-    NSLog(@"%@", object);
-    /*
-    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-      [self loadObjects];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                
+                NSLog(@"%@", clickedIngredientFormation);
+                
+               
+                
+               [object removeObjectForKey:clickedIngredientFormation];
+               [object saveInBackground];
+               [self loadObjects];
+                
+                 }
+            
+            
+        }
+        
     }];
-   */
+
+   
+   
 
     
 }
