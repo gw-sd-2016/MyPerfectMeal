@@ -175,7 +175,12 @@
         IngredientsTableViewController *detailViewController3 = [segue destinationViewController];
         
         detailViewController3.clickedMeal2 = [Meals objectAtIndex:indexPath.row];
+        
+        //get meal index in the list need this to pull up the ingredients
+        detailViewController3.mealIndex = indexPath.row + 1;
         detailViewController3.title = [Meals objectAtIndex:indexPath.row];
+        detailViewController3.clickedRestaurant4 = _clickedRestaurant;
+        
     }
     
     
