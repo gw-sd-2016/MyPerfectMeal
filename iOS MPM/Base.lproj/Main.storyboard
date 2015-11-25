@@ -5,6 +5,60 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
+        <!--New Ing View Controller-->
+        <scene sceneID="wYx-2F-m7H">
+            <objects>
+                <viewController id="ryX-cl-Siu" customClass="newIngViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AS7-ez-scM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jlu-ui-5Vg">
+                                <rect key="frame" x="20" y="106" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pse-Bd-9eb">
+                                <rect key="frame" x="127" y="166" width="167" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addMealBTN:" destination="LQj-p3-EGn" eventType="touchUpInside" id="JbD-3G-WYL"/>
+                                    <action selector="submitBTN:" destination="ryX-cl-Siu" eventType="touchUpInside" id="62V-so-au3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="px0-EZ-hbw">
+                                <rect key="frame" x="100" y="27" width="121" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="cxQ-zH-YKy">
+                                <rect key="frame" x="155" y="102" width="145" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eho-ty-v84"/>
+                    <connections>
+                        <outlet property="ingNameTF" destination="cxQ-zH-YKy" id="lIg-8O-iid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3eJ-Kc-rFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1203" y="-793"/>
+        </scene>
         <!--Ingredients Table View Controller-->
         <scene sceneID="8vR-3T-k7X">
             <objects>
@@ -31,11 +85,17 @@
                             <outlet property="delegate" destination="LJf-4w-m3q" id="npT-Z2-ciO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bs8-HG-fKM"/>
+                    <navigationItem key="navigationItem" id="bs8-HG-fKM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Oh9-Hn-DSv">
+                            <connections>
+                                <segue destination="ryX-cl-Siu" kind="push" identifier="addIngredients" id="P3d-A3-oMg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSF-y6-ECQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1179" y="-310"/>
+            <point key="canvasLocation" x="842" y="-242"/>
         </scene>
         <!--Meal Table Table View Controller-->
         <scene sceneID="vPA-1d-rXa">
@@ -56,7 +116,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MealCell" id="5R6-vu-qs2">
-                                <rect key="frame" x="0.0" y="309" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="373" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5R6-vu-qs2" id="aAO-8c-6SJ">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>

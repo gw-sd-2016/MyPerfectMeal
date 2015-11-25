@@ -58,7 +58,7 @@
                                      MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
                                      
                                      MKCoordinateRegion region = self.restaurantMap.region;
-                                     region.center = placemark.region.center;
+                                     region.center = placemark.location.coordinate;
                                      region.span.longitudeDelta /= 5000;
                                      region.span.latitudeDelta /= 5000;
                                      

@@ -11,6 +11,7 @@
 @interface IngredientsTableViewController : PFQueryTableViewController{
     NSMutableArray *Ingredients;
     NSMutableString *ingLookUp;
+    NSMutableArray *IngIndex;
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B4C861C04DC7800F5B7A4 /* newIngViewController.m */; };
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
 		805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F47D81BEC97A300A08BCD /* newrestViewController.m */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		803B4C851C04DC7800F5B7A4 /* newIngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newIngViewController.h; sourceTree = "<group>"; };
+		803B4C861C04DC7800F5B7A4 /* newIngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newIngViewController.m; sourceTree = "<group>"; };
 		804A7B271BFC3434000F2DD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContainerViewController.h; sourceTree = "<group>"; };
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				8095216B1BFD247D00F68E8E /* newMealViewController.m */,
 				805F47D71BEC97A300A08BCD /* newrestViewController.h */,
 				805F47D81BEC97A300A08BCD /* newrestViewController.m */,
+				803B4C851C04DC7800F5B7A4 /* newIngViewController.h */,
+				803B4C861C04DC7800F5B7A4 /* newIngViewController.m */,
 				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
 				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
 				80F4CB391BEC4888009538A6 /* Assets.xcassets */,
@@ -380,6 +385,7 @@
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */,
+				803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */,
 				8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,

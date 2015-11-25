@@ -82,6 +82,8 @@
                     
                 mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
                 [Meals addObject:[object objectForKey:mealLookUp]];
+                    //NSLog(@"Meal Lookup: %@", mealLookUp);
+                    //NSLog(@"Meals are: %@", Meals);
 
                 }
 

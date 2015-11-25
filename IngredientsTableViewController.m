@@ -50,7 +50,7 @@
     [super viewDidLoad];
     //NSLog(@"%@", clickedRestaurant4);
     //NSLog(@"%@", clickedMeal2);
-    //NSLog(@"%d", mealIndex);
+   // NSLog(@"%d", mealIndex);
 
     NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
     //NSLog(@"%@", clickedMealFormation);
@@ -68,11 +68,14 @@
                 
                 for (int i = 0; i <=9 ; i++){
                     ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
-                    //NSLog(@"%@", ingLookUp);
+                   // NSLog(@"%@", ingLookUp);
                     
                     if (object[ingLookUp]) {
+                        //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
                         [Ingredients addObject:[object objectForKey:ingLookUp]];
-                        NSLog(@"%@", Ingredients);
+                       // NSLog(@"FOUND %@ AT %@",[object objectForKey:ingLookUp] ,  ingLookUp);
+
+                        //NSLog(@"%@", Ingredients);
                         [self loadObjects];
 
                     }
@@ -141,7 +144,7 @@
     
    // NSLog(@"%@", indexPath);
 
-    //NSString *ingToDelete = [Ingredients objectAtIndex:indexPath.row];
+    NSString *ingToDelete = [Ingredients objectAtIndex:indexPath.row];
     NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
     NSString *clickedIngredientFormation = [NSString stringWithFormat:@"Ing%ld%ld", (long)mealIndex, indexPath.row];
     
@@ -160,18 +163,45 @@
         if (!error) {
             for (PFObject *object in objects) {
                 
-                NSLog(@"%@", clickedIngredientFormation);
+                //NSLog(@"%@", objects);
                 
-               
                 
-               [object removeObjectForKey:clickedIngredientFormation];
-               [object saveInBackground];
-               [self loadObjects];
+                for (int i = 0; i <=9 ; i++){
+                    ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
+                    // NSLog(@"%@", ingLookUp);
+                    
+                    if (object[ingLookUp]) {
+                        //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
+                        [Ingredients addObject:[object objectForKey:ingLookUp]];
+                        //NSLog(@"FOUND %@ AT %@",[object objectForKey:ingLookUp] ,  ingLookUp);
+                        
+                        if ([ingToDelete isEqualToString:[object objectForKey:ingLookUp]]){
+                            
+                             NSLog(@"we want to delete %@ and its %@ AT %@", ingToDelete, [object objectForKey:ingLookUp], ingLookUp);
+                            [object removeObjectForKey:ingLookUp];
+                            [object saveInBackground];
+                            [self loadObjects];
+                            
+                        }
+                        
+                        
+                        //NSLog(@"%@", Ingredients);
+                        [self loadObjects];
+                        
+                    }
+                    else{
+                        
+                    }
+                    
+                    
+                }
                 
-                 }
+                
+            }
             
             
         }
+        
         
     }];
 

@@ -53,7 +53,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant3];
     
-    emptyMeal = [NSMutableString stringWithFormat:@"Meal%d", numMeals + 1];
+    emptyMeal = [NSMutableString stringWithFormat:@"Meal%ld", numMeals + 1];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
