@@ -13,6 +13,8 @@
 		805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F47D81BEC97A300A08BCD /* newrestViewController.m */; };
 		8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */; };
 		8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095216B1BFD247D00F68E8E /* newMealViewController.m */; };
+		80A02C251C08284A007AA09C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C241C08284A007AA09C /* LoginViewController.m */; };
+		80A02C281C082899007AA09C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C271C082899007AA09C /* SignUpViewController.m */; };
 		80F4CB2F1BEC4887009538A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F4CB2E1BEC4887009538A6 /* main.m */; };
 		80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F4CB311BEC4888009538A6 /* AppDelegate.m */; };
 		80F4CB381BEC4888009538A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F4CB361BEC4888009538A6 /* Main.storyboard */; };
@@ -70,6 +72,10 @@
 		8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsTableViewController.m; path = ../IngredientsTableViewController.m; sourceTree = "<group>"; };
 		8095216A1BFD247D00F68E8E /* newMealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newMealViewController.h; sourceTree = "<group>"; };
 		8095216B1BFD247D00F68E8E /* newMealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newMealViewController.m; sourceTree = "<group>"; };
+		80A02C231C08284A007AA09C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		80A02C241C08284A007AA09C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		80A02C261C082899007AA09C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		80A02C271C082899007AA09C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		80F4CB2A1BEC4887009538A6 /* iOS MPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F4CB2E1BEC4887009538A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80F4CB301BEC4887009538A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +156,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80A02C201C08211E007AA09C /* Restaurant Tab */ = {
+			isa = PBXGroup;
+			children = (
+				803B4C851C04DC7800F5B7A4 /* newIngViewController.h */,
+				803B4C861C04DC7800F5B7A4 /* newIngViewController.m */,
+				8092CA521C03C9EA00C806DE /* IngredientsTableViewController.h */,
+				8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */,
+				80FCB2131BF6C80100520167 /* MealTableTableViewController.h */,
+				80FCB2141BF6C80100520167 /* MealTableTableViewController.m */,
+				80F4CB601BEC4E78009538A6 /* RestaurantViewController.h */,
+				80F4CB611BEC4E78009538A6 /* RestaurantViewController.m */,
+				8095216A1BFD247D00F68E8E /* newMealViewController.h */,
+				8095216B1BFD247D00F68E8E /* newMealViewController.m */,
+				805F47D71BEC97A300A08BCD /* newrestViewController.h */,
+				805F47D81BEC97A300A08BCD /* newrestViewController.m */,
+				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
+				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
+			);
+			name = "Restaurant Tab";
+			sourceTree = "<group>";
+		};
+		80A02C211C08213A007AA09C /* App UI */ = {
+			isa = PBXGroup;
+			children = (
+				80F4CB361BEC4888009538A6 /* Main.storyboard */,
+			);
+			name = "App UI";
+			sourceTree = "<group>";
+		};
+		80A02C221C08280A007AA09C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				80A02C231C08284A007AA09C /* LoginViewController.h */,
+				80A02C241C08284A007AA09C /* LoginViewController.m */,
+				80A02C261C082899007AA09C /* SignUpViewController.h */,
+				80A02C271C082899007AA09C /* SignUpViewController.m */,
+			);
+			name = Registration;
+			sourceTree = "<group>";
+		};
 		80F4CB211BEC4887009538A6 = {
 			isa = PBXGroup;
 			children = (
@@ -174,26 +220,9 @@
 		80F4CB2C1BEC4887009538A6 /* iOS MPM */ = {
 			isa = PBXGroup;
 			children = (
-				803B4C851C04DC7800F5B7A4 /* newIngViewController.h */,
-				803B4C861C04DC7800F5B7A4 /* newIngViewController.m */,
-				8092CA521C03C9EA00C806DE /* IngredientsTableViewController.h */,
-				8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */,
-				80FCB2131BF6C80100520167 /* MealTableTableViewController.h */,
-				80FCB2141BF6C80100520167 /* MealTableTableViewController.m */,
-				80F4CB601BEC4E78009538A6 /* RestaurantViewController.h */,
-				80F4CB611BEC4E78009538A6 /* RestaurantViewController.m */,
-				80F4CB301BEC4887009538A6 /* AppDelegate.h */,
-				80F4CB311BEC4888009538A6 /* AppDelegate.m */,
-				80F4CB361BEC4888009538A6 /* Main.storyboard */,
-				8095216A1BFD247D00F68E8E /* newMealViewController.h */,
-				8095216B1BFD247D00F68E8E /* newMealViewController.m */,
-				805F47D71BEC97A300A08BCD /* newrestViewController.h */,
-				805F47D81BEC97A300A08BCD /* newrestViewController.m */,
-				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
-				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
-				80F4CB391BEC4888009538A6 /* Assets.xcassets */,
-				80F4CB3B1BEC4888009538A6 /* LaunchScreen.storyboard */,
-				80F4CB3E1BEC4888009538A6 /* Info.plist */,
+				80A02C221C08280A007AA09C /* Registration */,
+				80A02C211C08213A007AA09C /* App UI */,
+				80A02C201C08211E007AA09C /* Restaurant Tab */,
 				80F4CB2D1BEC4887009538A6 /* Supporting Files */,
 			);
 			path = "iOS MPM";
@@ -202,6 +231,11 @@
 		80F4CB2D1BEC4887009538A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				80F4CB301BEC4887009538A6 /* AppDelegate.h */,
+				80F4CB311BEC4888009538A6 /* AppDelegate.m */,
+				80F4CB391BEC4888009538A6 /* Assets.xcassets */,
+				80F4CB3B1BEC4888009538A6 /* LaunchScreen.storyboard */,
+				80F4CB3E1BEC4888009538A6 /* Info.plist */,
 				80F4CB2E1BEC4887009538A6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -385,10 +419,12 @@
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */,
+				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
 				803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */,
 				8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,
+				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,8 @@
     
     [Parse enableLocalDatastore];
      // Initialize Parse.
+  
+    [PFUser enableRevocableSessionInBackground];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     // Override point for customization after application launch.
