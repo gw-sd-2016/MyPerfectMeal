@@ -13,6 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *lastNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *userNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTF;
+@property (strong, nonatomic) IBOutlet UITextField *emailTF;
 
 
 - (IBAction)signUpBTN:(id)sender;

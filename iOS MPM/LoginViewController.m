@@ -72,6 +72,8 @@
     
 }
 
-
+- (IBAction)signUpBTN:(id)sender{
+    
+}
 
 @end

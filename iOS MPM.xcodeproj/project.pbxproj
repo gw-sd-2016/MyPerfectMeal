@@ -15,6 +15,8 @@
 		8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095216B1BFD247D00F68E8E /* newMealViewController.m */; };
 		80A02C251C08284A007AA09C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C241C08284A007AA09C /* LoginViewController.m */; };
 		80A02C281C082899007AA09C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C271C082899007AA09C /* SignUpViewController.m */; };
+		80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E641511C0843B100CF203A /* AccountInfoViewController.m */; };
+		80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E641541C08572B00CF203A /* ChangePasswordViewController.m */; };
 		80F4CB2F1BEC4887009538A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F4CB2E1BEC4887009538A6 /* main.m */; };
 		80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F4CB311BEC4888009538A6 /* AppDelegate.m */; };
 		80F4CB381BEC4888009538A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F4CB361BEC4888009538A6 /* Main.storyboard */; };
@@ -76,6 +78,10 @@
 		80A02C241C08284A007AA09C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		80A02C261C082899007AA09C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		80A02C271C082899007AA09C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		80E641501C0843B100CF203A /* AccountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoViewController.h; sourceTree = "<group>"; };
+		80E641511C0843B100CF203A /* AccountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoViewController.m; sourceTree = "<group>"; };
+		80E641531C08572B00CF203A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		80E641541C08572B00CF203A /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		80F4CB2A1BEC4887009538A6 /* iOS MPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS MPM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F4CB2E1BEC4887009538A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80F4CB301BEC4887009538A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -196,6 +202,25 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
+		80E6414F1C08418600CF203A /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				80E641561C08E83200CF203A /* Account Info Container */,
+			);
+			name = "User Profile";
+			sourceTree = "<group>";
+		};
+		80E641561C08E83200CF203A /* Account Info Container */ = {
+			isa = PBXGroup;
+			children = (
+				80E641501C0843B100CF203A /* AccountInfoViewController.h */,
+				80E641511C0843B100CF203A /* AccountInfoViewController.m */,
+				80E641531C08572B00CF203A /* ChangePasswordViewController.h */,
+				80E641541C08572B00CF203A /* ChangePasswordViewController.m */,
+			);
+			name = "Account Info Container";
+			sourceTree = "<group>";
+		};
 		80F4CB211BEC4887009538A6 = {
 			isa = PBXGroup;
 			children = (
@@ -220,8 +245,9 @@
 		80F4CB2C1BEC4887009538A6 /* iOS MPM */ = {
 			isa = PBXGroup;
 			children = (
-				80A02C221C08280A007AA09C /* Registration */,
 				80A02C211C08213A007AA09C /* App UI */,
+				80A02C221C08280A007AA09C /* Registration */,
+				80E6414F1C08418600CF203A /* User Profile */,
 				80A02C201C08211E007AA09C /* Restaurant Tab */,
 				80F4CB2D1BEC4887009538A6 /* Supporting Files */,
 			);
@@ -417,6 +443,7 @@
 			files = (
 				80F4CB621BEC4E78009538A6 /* RestaurantViewController.m in Sources */,
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
+				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */,
 				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
@@ -425,6 +452,7 @@
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
+				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,
 				804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

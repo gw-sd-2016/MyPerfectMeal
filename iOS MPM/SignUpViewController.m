@@ -16,7 +16,7 @@
 
 @implementation SignUpViewController
 
-@synthesize firstNameTF, lastNameTF, userNameTF, passwordTF;
+@synthesize firstNameTF, lastNameTF, userNameTF, passwordTF, emailTF;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,9 +51,10 @@
     user[@"Last_Name"] = lastNameTF.text;
     user.username = userNameTF.text;
     user.password = passwordTF.text;
+    user.email = emailTF.text;
 
     
-    if ([firstNameTF.text isEqualToString:@""] || firstNameTF.text == nil ||                                        [lastNameTF.text isEqualToString:@""] || lastNameTF.text == nil ||                                  [userNameTF.text isEqualToString:@""] || userNameTF.text == nil ||                                  [passwordTF.text isEqualToString:@""] || passwordTF.text == nil){
+    if ([firstNameTF.text isEqualToString:@""] || firstNameTF.text == nil ||                                        [lastNameTF.text isEqualToString:@""] || lastNameTF.text == nil ||                                  [userNameTF.text isEqualToString:@""] || userNameTF.text == nil ||                                  [passwordTF.text isEqualToString:@""] || passwordTF.text == nil ||                                  [emailTF.text isEqualToString:@""] || emailTF.text == nil){
         
         //error
         UIAlertController *loginFailedWarning = [UIAlertController alertControllerWithTitle:@"Registration Failed"
@@ -81,7 +82,7 @@
                 [self performSegueWithIdentifier:@"successSignup" sender:self];
                 
                 
-            } else {   NSString *errorString = [error userInfo][@"error"];
+            } else {   
                 UIAlertController *loginFailedWarning = [UIAlertController alertControllerWithTitle:@"Registration Failed"
                                                                                             message: error.localizedDescription
                                                                                      preferredStyle:UIAlertControllerStyleAlert                   ];
