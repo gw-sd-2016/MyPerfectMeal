@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface newIngViewController : UIViewController
+@interface newIngViewController : UIViewController{
+    NSMutableString *ingLookUp;
+    NSMutableArray *Ingredients;
+
+
+}
+
 @property (strong, nonatomic) IBOutlet UITextField *ingNameTF;
 - (IBAction)submitBTN:(id)sender;
+
+@property NSString *ingMealIndex;
+@property NSInteger ingMealIndexNumber;
+@property NSString *clickedRestaurant5;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "IngredientsTableViewController.h"
+#import "newIngViewController.h"
+#import "IngredientsTableViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
@@ -38,7 +40,7 @@
         
         Ingredients = [[NSMutableArray alloc] init];
         ingLookUp = [[NSMutableString alloc] init];
-
+        
         
     }
     
@@ -50,8 +52,8 @@
     [super viewDidLoad];
     //NSLog(@"%@", clickedRestaurant4);
     //NSLog(@"%@", clickedMeal2);
-   // NSLog(@"%d", mealIndex);
-
+    // NSLog(@"%d", mealIndex);
+    
     NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
     //NSLog(@"%@", clickedMealFormation);
     
@@ -62,40 +64,40 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-               
+                
                 //NSLog(@"%@", objects);
                 
                 
                 for (int i = 0; i <=9 ; i++){
                     ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
-                   // NSLog(@"%@", ingLookUp);
+                    // NSLog(@"%@", ingLookUp);
                     
                     if (object[ingLookUp]) {
                         //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
                         [Ingredients addObject:[object objectForKey:ingLookUp]];
-                       // NSLog(@"FOUND %@ AT %@",[object objectForKey:ingLookUp] ,  ingLookUp);
-
+                        // NSLog(@"FOUND %@ AT %@",[object objectForKey:ingLookUp] ,  ingLookUp);
+                        
                         //NSLog(@"%@", Ingredients);
                         [self loadObjects];
-
+                        
                     }
                     else{
                         
                     }
-
-
+                    
+                    
                 }
-
+                
                 
             }
-
+            
             
         }
-
+        
         
     }];
-
-
+    
+    
     
 }
 
@@ -129,7 +131,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
     
-   cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
+    cell.textLabel.text = [Ingredients objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -142,11 +144,10 @@
 
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   // NSLog(@"%@", indexPath);
-
+    // NSLog(@"%@", indexPath);
+    
     NSString *ingToDelete = [Ingredients objectAtIndex:indexPath.row];
     NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
-    NSString *clickedIngredientFormation = [NSString stringWithFormat:@"Ing%ld%ld", (long)mealIndex, indexPath.row];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     [query whereKey:@"Restaurant_Name" equalTo:clickedRestaurant4];
@@ -155,9 +156,9 @@
     
     //NSLog(@"location of ingredient to delete in the database is: %@", clickedIngredientFormation);
     
-   // PFObject *object = [self.objects objectAtIndex:[Ingredients objectAtIndex:indexPath.row]];
-   // NSLog(@"%@", object);
-
+    // PFObject *object = [self.objects objectAtIndex:[Ingredients objectAtIndex:indexPath.row]];
+    // NSLog(@"%@", object);
+    
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
@@ -177,7 +178,7 @@
                         
                         if ([ingToDelete isEqualToString:[object objectForKey:ingLookUp]]){
                             
-                             NSLog(@"we want to delete %@ and its %@ AT %@", ingToDelete, [object objectForKey:ingLookUp], ingLookUp);
+                            NSLog(@"we want to delete %@ and its %@ AT %@", ingToDelete, [object objectForKey:ingLookUp], ingLookUp);
                             [object removeObjectForKey:ingLookUp];
                             [object saveInBackground];
                             [self loadObjects];
@@ -204,13 +205,27 @@
         
         
     }];
-
-   
-   
-
+    
+    
+    
+    
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // segue to push name of clicked restaurant to the map controller
+    if ([[segue identifier] isEqualToString:@"addIngredients"])
+    {
+        NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
+        NSInteger clickedMealNumber = mealIndex;
 
-
+        newIngViewController *detailViewController = [segue destinationViewController];
+        detailViewController.ingMealIndex = clickedMealFormation;
+        detailViewController.ingMealIndexNumber = clickedMealNumber;
+        detailViewController.clickedRestaurant5 = clickedRestaurant4;
+        detailViewController.title = clickedMealFormation;
+    
+    }
+}
 @end

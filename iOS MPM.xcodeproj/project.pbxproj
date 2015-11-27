@@ -174,6 +174,8 @@
 		80F4CB2C1BEC4887009538A6 /* iOS MPM */ = {
 			isa = PBXGroup;
 			children = (
+				803B4C851C04DC7800F5B7A4 /* newIngViewController.h */,
+				803B4C861C04DC7800F5B7A4 /* newIngViewController.m */,
 				8092CA521C03C9EA00C806DE /* IngredientsTableViewController.h */,
 				8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */,
 				80FCB2131BF6C80100520167 /* MealTableTableViewController.h */,
@@ -187,8 +189,6 @@
 				8095216B1BFD247D00F68E8E /* newMealViewController.m */,
 				805F47D71BEC97A300A08BCD /* newrestViewController.h */,
 				805F47D81BEC97A300A08BCD /* newrestViewController.m */,
-				803B4C851C04DC7800F5B7A4 /* newIngViewController.h */,
-				803B4C861C04DC7800F5B7A4 /* newIngViewController.m */,
 				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
 				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
 				80F4CB391BEC4888009538A6 /* Assets.xcassets */,

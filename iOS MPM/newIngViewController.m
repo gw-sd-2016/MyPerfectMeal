@@ -16,28 +16,65 @@
 
 @implementation newIngViewController
 
-@synthesize ingNameTF;
+@synthesize ingNameTF, ingMealIndexNumber, ingMealIndex, clickedRestaurant5;
 
+
+-(void) viewDidLoad{
+    //NSLog(@"meal number is %d and all of the string is %@", ingMealIndexNumber, ingMealIndex );
+    //NSLog(@"clicked restaurant is: %@", clickedRestaurant5);
+}
 
 - (IBAction)submitBTN:(id)sender {
     //set the user input from the textfield to a new string
    
+
     NSString *ingName = [ingNameTF.text capitalizedString];
     
-    PFObject *object = [PFObject objectWithClassName:@"Restaurants"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
+    [query whereKey:@"Restaurant_Name" equalTo:clickedRestaurant5];
+
     
-    //submition
-    //[object setObject:restaurantName forKey:@"Restaurant_Name"];
-    //[object setObject:streetAddress forKey:@"Street_Address"];
-    
-    
-    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                
+               // NSLog(@"%@", objects);
+                
+                
+                for (int i = 0; i <=9 ; i++){
+                    ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", ingMealIndexNumber, i];
+                    // NSLog(@"%@", ingLookUp);
+                    
+                    if (object[ingLookUp]) {
+                        //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
+                        [Ingredients addObject:[object objectForKey:ingLookUp]];
+                        NSLog(@"FOUND %@ AT %@",[object objectForKey:ingLookUp] ,  ingLookUp);
+                        
+                        //NSLog(@"%@", Ingredients);
+                        
+                    }
+                    else{
+                        
+                        [object setObject:ingName forKey:ingLookUp];
+                        [object save];
+                        break;
+                        
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        }
         
-        // Refresh the table when the object is done saving.
         
     }];
+
     
-    
+
 
 }
 @end
