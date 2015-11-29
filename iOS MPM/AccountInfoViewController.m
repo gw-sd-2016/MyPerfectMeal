@@ -20,9 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
+      
     nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
-    locationLBL.text = @"DISPLAY USER LOCATION";
+    locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
+    NSLog(@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]);
     userNameLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"username"]];
     
     

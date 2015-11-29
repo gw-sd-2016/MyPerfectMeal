@@ -24,6 +24,8 @@
     [PFUser enableRevocableSessionInBackground];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+        
     // Override point for customization after application launch.
     return YES;
 }

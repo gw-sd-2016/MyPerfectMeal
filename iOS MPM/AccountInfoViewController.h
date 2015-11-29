@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 
 @interface AccountInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *nameLBL;
 @property (strong, nonatomic) IBOutlet UILabel *locationLBL;
 @property (strong, nonatomic) IBOutlet UILabel *userNameLBL;
+
+
 - (IBAction)changePasswordBTN:(id)sender;
 
 @end

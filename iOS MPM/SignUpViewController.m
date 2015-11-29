@@ -10,37 +10,34 @@
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
-@interface SignUpViewController ()
+@interface SignUpViewController () <CLLocationManagerDelegate>
 
 @end
 
-@implementation SignUpViewController
+@implementation SignUpViewController{
+    
+    CLLocationManager *locationManager;
+
+}
 
 @synthesize firstNameTF, lastNameTF, userNameTF, passwordTF, emailTF;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
     
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 - (IBAction)signUpBTN:(id)sender {
     
@@ -52,10 +49,12 @@
     user.username = userNameTF.text;
     user.password = passwordTF.text;
     user.email = emailTF.text;
-
+    
+    
     
     if ([firstNameTF.text isEqualToString:@""] || firstNameTF.text == nil ||                                        [lastNameTF.text isEqualToString:@""] || lastNameTF.text == nil ||                                  [userNameTF.text isEqualToString:@""] || userNameTF.text == nil ||                                  [passwordTF.text isEqualToString:@""] || passwordTF.text == nil ||                                  [emailTF.text isEqualToString:@""] || emailTF.text == nil){
         
+       
         //error
         UIAlertController *loginFailedWarning = [UIAlertController alertControllerWithTitle:@"Registration Failed"
                             message: @"Check Missing Inputs"
@@ -78,6 +77,13 @@
     else{
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
+                
+                
+                [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
+                    
+                    [[PFUser currentUser] setObject:geoPoint forKey:@"currentLocation"];
+                    [[PFUser currentUser] saveInBackground];
+                }];
                 
                 [self performSegueWithIdentifier:@"successSignup" sender:self];
                 
