@@ -47,5 +47,8 @@
 }
 
 - (IBAction)selectHealthDisordersBTN:(id)sender {
+    
+    [self performSegueWithIdentifier:@"showDisorders" sender:self];
+
 }
 @end

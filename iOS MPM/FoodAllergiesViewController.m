@@ -7,39 +7,70 @@
 //
 
 #import "FoodAllergiesViewController.h"
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 
 @interface FoodAllergiesViewController ()
 
 @end
 
 @implementation FoodAllergiesViewController
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    
     self = [super initWithCoder:aDecoder];
     
     if (self) {
         
-        self.parseClassName = @"Restaurants";
+        self.parseClassName = @"foodAllergies";
         
         
         self.pullToRefreshEnabled = YES;
         
         
-        self.paginationEnabled = YES;
+        self.paginationEnabled = NO;
         
         self.objectsPerPage = 999999999;
-
+        
+        
+        foodAllergies = [[NSMutableArray alloc] init];
         
     }
     
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    //load all objects sorted
+    [self loadObjects];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"foodAllergies"];
+    [query setLimit: 1000];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                
+                
+                
+                [foodAllergies addObject:[object objectForKey:@"foodAllergen"]];
+                //NSLog(@"Allergen name in parse is: %@", foodAllergies);
+                [self loadObjects];
+            }
+            
+        }
+        
+        
+        
+        
+    }];
+    
+    [self loadObjects];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +83,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [foodAllergies count];
 }
 
 
@@ -63,19 +94,32 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
     
-    cell.textLabel.text = @"testing Food Allergies";
+    cell.textLabel.text = [foodAllergies objectAtIndex:indexPath.row];
     
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    
 }
-*/
+
+- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

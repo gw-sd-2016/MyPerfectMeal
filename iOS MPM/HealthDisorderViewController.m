@@ -1,27 +1,28 @@
 //
-//  MedicationsViewController.m
+//  HealthDisorderViewController.m
 //  iOS MPM
 //
-//  Created by Abed Kassem on 12/1/15.
+//  Created by Abed Kassem on 12/2/15.
 //  Copyright © 2015 Abed Kassem. All rights reserved.
 //
 
-#import "MedicationsViewController.h"
+#import "HealthDisorderViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
-@interface MedicationsViewController ()
+
+@interface HealthDisorderViewController ()
 
 @end
 
-@implementation MedicationsViewController
+@implementation HealthDisorderViewController
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
         
-        self.parseClassName = @"Medications";
+        self.parseClassName = @"healthDisorders";
         
         
         self.pullToRefreshEnabled = YES;
@@ -30,9 +31,9 @@
         self.paginationEnabled = NO;
         
         self.objectsPerPage = 999999999;
-
         
-        Medications = [[NSMutableArray alloc] init];
+        
+        HealthDisorders = [[NSMutableArray alloc] init];
         
     }
     
@@ -50,27 +51,28 @@
     [super viewDidLoad];
     
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Medications"];
+    PFQuery *query = [PFQuery queryWithClassName:@"healthDisorders"];
     [query setLimit: 1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
                 
-               
                 
-                    [Medications addObject:[object objectForKey:@"medName"]];
-                     //NSLog(@"Meds in parse are: %@", Medications);
+                
+                [HealthDisorders addObject:[object objectForKey:@"HDName"]];
+                //NSLog(@"Disorder name in parse is: %@", HealthDisorders);
                 [self loadObjects];
-                }
-                
             }
             
-            
+        }
+        
+        
         
         
     }];
     
     [self loadObjects];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,7 +85,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Medications count];
+    return [HealthDisorders count];
 }
 
 
@@ -92,9 +94,9 @@
     static NSString *restaurantTableIdentifier = @"cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
+
     
-    
-    cell.textLabel.text = [Medications objectAtIndex:indexPath.row];
+    cell.textLabel.text = [HealthDisorders objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -104,14 +106,15 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
+
     
 }
 
 - (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+
 }
+
 /*
  #pragma mark - Navigation
  

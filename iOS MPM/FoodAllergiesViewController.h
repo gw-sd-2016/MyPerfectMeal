@@ -8,6 +8,9 @@
 
 #import <ParseUI/ParseUI.h>
 
-@interface FoodAllergiesViewController : PFQueryTableViewController
+@interface FoodAllergiesViewController : PFQueryTableViewController {
+    
+    NSMutableArray *foodAllergies;
+}
 
 @end

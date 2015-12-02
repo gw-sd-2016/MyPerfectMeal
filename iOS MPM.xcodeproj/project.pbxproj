@@ -13,6 +13,7 @@
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
 		805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F47D81BEC97A300A08BCD /* newrestViewController.m */; };
+		8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074486C1C0F433000A8766A /* HealthDisorderViewController.m */; };
 		8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */; };
 		8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095216B1BFD247D00F68E8E /* newMealViewController.m */; };
 		80A02C251C08284A007AA09C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C241C08284A007AA09C /* LoginViewController.m */; };
@@ -77,6 +78,8 @@
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
 		805F47D71BEC97A300A08BCD /* newrestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newrestViewController.h; sourceTree = "<group>"; };
 		805F47D81BEC97A300A08BCD /* newrestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newrestViewController.m; sourceTree = "<group>"; };
+		8074486B1C0F433000A8766A /* HealthDisorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthDisorderViewController.h; sourceTree = "<group>"; };
+		8074486C1C0F433000A8766A /* HealthDisorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthDisorderViewController.m; sourceTree = "<group>"; };
 		8092CA521C03C9EA00C806DE /* IngredientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientsTableViewController.h; path = ../IngredientsTableViewController.h; sourceTree = "<group>"; };
 		8092CA531C03C9EA00C806DE /* IngredientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsTableViewController.m; path = ../IngredientsTableViewController.m; sourceTree = "<group>"; };
 		8095216A1BFD247D00F68E8E /* newMealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newMealViewController.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */,
 				803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */,
 				803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */,
+				8074486B1C0F433000A8766A /* HealthDisorderViewController.h */,
+				8074486C1C0F433000A8766A /* HealthDisorderViewController.m */,
 			);
 			name = "Personal Info Container";
 			sourceTree = "<group>";
@@ -476,6 +481,7 @@
 				803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */,
 				8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
+				8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,
