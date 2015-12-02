@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803B4C861C04DC7800F5B7A4 /* newIngViewController.m */; };
+		803C8CB81C0E6AB30086123D /* FoodAllergiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */; };
+		803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */; };
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
 		805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805F47D81BEC97A300A08BCD /* newrestViewController.m */; };
@@ -15,6 +17,7 @@
 		8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8095216B1BFD247D00F68E8E /* newMealViewController.m */; };
 		80A02C251C08284A007AA09C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C241C08284A007AA09C /* LoginViewController.m */; };
 		80A02C281C082899007AA09C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C271C082899007AA09C /* SignUpViewController.m */; };
+		80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */; };
 		80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E641511C0843B100CF203A /* AccountInfoViewController.m */; };
 		80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E641541C08572B00CF203A /* ChangePasswordViewController.m */; };
 		80F4CB2F1BEC4887009538A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F4CB2E1BEC4887009538A6 /* main.m */; };
@@ -65,6 +68,10 @@
 /* Begin PBXFileReference section */
 		803B4C851C04DC7800F5B7A4 /* newIngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newIngViewController.h; sourceTree = "<group>"; };
 		803B4C861C04DC7800F5B7A4 /* newIngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newIngViewController.m; sourceTree = "<group>"; };
+		803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAllergiesViewController.h; sourceTree = "<group>"; };
+		803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAllergiesViewController.m; sourceTree = "<group>"; };
+		803C8CB91C0E6BC30086123D /* MedicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationsViewController.h; sourceTree = "<group>"; };
+		803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationsViewController.m; sourceTree = "<group>"; };
 		804A7B271BFC3434000F2DD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContainerViewController.h; sourceTree = "<group>"; };
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
@@ -78,6 +85,8 @@
 		80A02C241C08284A007AA09C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		80A02C261C082899007AA09C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		80A02C271C082899007AA09C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		80A6A55F1C0B4F88001CFEDE /* PersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		80E641501C0843B100CF203A /* AccountInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfoViewController.h; sourceTree = "<group>"; };
 		80E641511C0843B100CF203A /* AccountInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfoViewController.m; sourceTree = "<group>"; };
 		80E641531C08572B00CF203A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
@@ -202,9 +211,23 @@
 			name = Registration;
 			sourceTree = "<group>";
 		};
+		80A6A55E1C0B4813001CFEDE /* Personal Info Container */ = {
+			isa = PBXGroup;
+			children = (
+				803C8CB91C0E6BC30086123D /* MedicationsViewController.h */,
+				803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */,
+				80A6A55F1C0B4F88001CFEDE /* PersonalInfoViewController.h */,
+				80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */,
+				803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */,
+				803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */,
+			);
+			name = "Personal Info Container";
+			sourceTree = "<group>";
+		};
 		80E6414F1C08418600CF203A /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
+				80A6A55E1C0B4813001CFEDE /* Personal Info Container */,
 				80E641561C08E83200CF203A /* Account Info Container */,
 			);
 			name = "User Profile";
@@ -445,8 +468,11 @@
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
+				80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */,
+				803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */,
 				80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */,
 				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
+				803C8CB81C0E6AB30086123D /* FoodAllergiesViewController.m in Sources */,
 				803B4C871C04DC7800F5B7A4 /* newIngViewController.m in Sources */,
 				8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,

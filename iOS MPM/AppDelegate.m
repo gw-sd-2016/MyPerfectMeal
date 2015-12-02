@@ -23,6 +23,7 @@
      // Initialize Parse.
     [PFUser enableRevocableSessionInBackground];
     
+    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
         
