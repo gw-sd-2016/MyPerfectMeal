@@ -14,9 +14,57 @@
 
 @implementation PersonalInfoViewController
 
+@synthesize selectGoalsPV, selectedGoalLBL;
+
+
+// one column
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+//as many as the size of array
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return [goalsArray count];
+}
+
+//set title for each row in the pickviewer
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return [goalsArray objectAtIndex:row];
+}
+
+
+//selection displayed on label from row of selection
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    [selectedGoalLBL setText: [goalsArray objectAtIndex:row]];
+    
+}
+
+//preset the PV to hidden before starting
+//on/off switch for pick viewer
+-(void) HideORShowPV{
+    if([selectGoalsPV isHidden]){ //initially this is true, turned off in the storyboard
+        
+        [selectGoalsPV setHidden:NO];
+        
+    }
+    else{
+        [selectGoalsPV setHidden:YES];
+    }
+}
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    goalsArray = [[NSMutableArray alloc] initWithObjects:@"A", @"B", @"C", @"D", @"E", @"F", @"G", nil];
+
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,5 +98,10 @@
     
     [self performSegueWithIdentifier:@"showDisorders" sender:self];
 
+}
+
+- (IBAction)selectGoal:(id)sender {
+    
+    [self HideORShowPV];
 }
 @end

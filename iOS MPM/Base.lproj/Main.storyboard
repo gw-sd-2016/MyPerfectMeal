@@ -936,6 +936,15 @@
                                     <action selector="selectMedicationsBTN:" destination="zky-Ix-C0J" eventType="touchUpInside" id="8cD-te-ApS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OKI-oE-HPA">
+                                <rect key="frame" x="225" y="37" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Select Goal"/>
+                                <connections>
+                                    <action selector="selectGoal:" destination="zky-Ix-C0J" eventType="touchUpInside" id="p5a-tQ-r46"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fKv-Me-5Xa">
                                 <rect key="frame" x="137" y="95" width="163" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -954,11 +963,30 @@
                                     <action selector="selectHealthDisordersBTN:" destination="zky-Ix-C0J" eventType="touchUpInside" id="NES-TA-9BN"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rLi-H8-vxI">
+                                <rect key="frame" x="126" y="41" width="97" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" id="1f0-0m-0gA">
+                                <rect key="frame" x="0.0" y="60" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zky-Ix-C0J" id="Oox-7R-fb6"/>
+                                    <outlet property="delegate" destination="zky-Ix-C0J" id="uTn-Lz-vC4"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="selectGoalsPV" destination="1f0-0m-0gA" id="ihR-Om-has"/>
+                        <outlet property="selectedGoalLBL" destination="rLi-H8-vxI" id="Pao-Pr-e9d"/>
                         <segue destination="1ZU-rr-pp8" kind="push" identifier="showMedications" id="ZjW-KN-ZMR"/>
                         <segue destination="Vwb-w6-Rk8" kind="push" identifier="showFoodAllergies" id="PY3-FM-dTG"/>
                         <segue destination="54k-z4-bKw" kind="push" identifier="showDisorders" id="ygM-FQ-7Ui"/>
@@ -1196,7 +1224,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Win-xm-tU3"/>
-        <segue reference="FLF-HI-ZHA"/>
+        <segue reference="Szm-pG-OeL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

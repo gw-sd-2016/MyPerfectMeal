@@ -22,6 +22,8 @@
     [Parse enableLocalDatastore];
      // Initialize Parse.
     [PFUser enableRevocableSessionInBackground];
+    
+    
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
         
