@@ -971,8 +971,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView hidden="YES" contentMode="scaleToFill" id="1f0-0m-0gA">
-                                <rect key="frame" x="0.0" y="60" width="320" height="216"/>
+                            <pickerView hidden="YES" contentMode="bottom" id="1f0-0m-0gA">
+                                <rect key="frame" x="0.0" y="66" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <connections>

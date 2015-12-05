@@ -34,6 +34,7 @@
         
         foodAllergies = [[NSMutableArray alloc] init];
         
+        
     }
     
     return self;
@@ -99,19 +100,22 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     
+    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+    }
 }
 
-- (void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
+
+
 /*
  #pragma mark - Navigation
  
