@@ -50,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+
     PFQuery *query = [PFQuery queryWithClassName:@"foodAllergies"];
     [query setLimit: 1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -103,13 +103,91 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    
+    PFUser *currentUser = [PFUser currentUser];
+   /*
+    [currentUser removeObjectForKey:@"CheckedItem0"];
+    [currentUser removeObjectForKey:@"CheckedItem1"];
+    [currentUser removeObjectForKey:@"CheckedItem2"];
+    [currentUser removeObjectForKey:@"CheckedItem3"];
+    [currentUser removeObjectForKey:@"CheckedItem4"];
+    [currentUser removeObjectForKey:@"CheckedItem5"];
+    [currentUser removeObjectForKey:@"CheckedItem6"];
+    [currentUser removeObjectForKey:@"CheckedItem7"];
+
+   */
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //NSLog(@"We just checked: %@", [foodAllergies objectAtIndex:indexPath.row]);
+    
+        
+        //find empty slot in table
+    
+        PFQuery *query = [PFUser query];;
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                for (PFObject *object in objects) {
+                    
+                    NSString *emptySlotLookUp = [[NSString alloc] init];
+                    
+                    
+                    for (int i = 0; i <=10 ; i++){
+                        
+                        emptySlotLookUp = [NSMutableString stringWithFormat:@"CheckedItem%d", i];
+                        
+                        if (object[emptySlotLookUp]) {
+                            //do nothing
+                        }
+                        else{
+                            //  if (object[emptySlotLookUp]) { NSLog(@"FOUND SOMETHING AT %@", emptySlotLookUp);
+                            // if !object @ empty slotlookup that means we found an empty slot insert the selection @key of empty slot
+                            [currentUser setObject:[foodAllergies objectAtIndex:indexPath.row] forKey:emptySlotLookUp];
+                            [currentUser save];
+                            break;
+                            
+                        }
+
+                    }
+                    
+                }
+                
+               
+            }
+            
+        }];
+        
+        
+
+        
+        
+        
+        
+        
+        
+        //add checked to table for current user
+        
+                
+                
+           
+       
+            
         
     }else{
         cell.accessoryType = UITableViewCellAccessoryNone;
+        //NSLog(@"We just unchecked: %@", [foodAllergies objectAtIndex:indexPath.row] );
+        
+        //remove uncheked from database for current user
+        
+            
+                
+                
+                [currentUser removeObjectForKey:@"CheckedItem0"];
+                [currentUser save];
+        
+        
+
+            
+        
         
     }
 }
