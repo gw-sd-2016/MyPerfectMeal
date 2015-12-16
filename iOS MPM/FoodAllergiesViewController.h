@@ -10,6 +10,7 @@
 
 @interface FoodAllergiesViewController : PFQueryTableViewController {
     
+    //store food allergies pulled from database
     NSMutableArray *foodAllergies;
 }
 

@@ -10,6 +10,7 @@
 
 @interface HealthDisorderViewController : PFQueryTableViewController{
     
+    //store all health disorders in this array
     NSMutableArray *HealthDisorders;
     
 }

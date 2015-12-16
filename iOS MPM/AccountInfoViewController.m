@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    //displays (pulls from database and displays) user info
       
     nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
     locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
@@ -37,6 +38,8 @@
 
 
 - (IBAction)changePasswordBTN:(id)sender {
+    
+    //allows user to change their password by sending them to the change password view controller
     
 }
 @end

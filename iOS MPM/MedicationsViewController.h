@@ -10,6 +10,7 @@
 
 @interface MedicationsViewController : PFQueryTableViewController {
     
+    //store medications
     NSMutableArray *Medications;
     
 }

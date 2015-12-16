@@ -50,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    //querry to load all objects into the food allergies array we created
     PFQuery *query = [PFQuery queryWithClassName:@"foodAllergies"];
     [query setLimit: 1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -79,11 +79,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+//one section since no sectionalizing is going on
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //number of rows same as number of elements in food allergies
     return [foodAllergies count];
 }
 
@@ -94,7 +96,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
-    
+    //assign the text to each cell for each element in the array
     cell.textLabel.text = [foodAllergies objectAtIndex:indexPath.row];
     
     return cell;
@@ -115,6 +117,7 @@
     [currentUser removeObjectForKey:@"CheckedItem7"];
 
    */
+    //if user selects row
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         //NSLog(@"We just checked: %@", [foodAllergies objectAtIndex:indexPath.row]);
@@ -194,14 +197,5 @@
 
 
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

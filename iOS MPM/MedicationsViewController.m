@@ -21,6 +21,7 @@
     
     if (self) {
         
+        
         self.parseClassName = @"Medications";
         
         
@@ -49,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //query everything in class medications
     PFQuery *query = [PFQuery queryWithClassName:@"Medications"];
     [query setLimit: 1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -57,7 +58,7 @@
             for (PFObject *object in objects) {
                 
                
-                
+                //store all objects (medication names) into the medications array
                     [Medications addObject:[object objectForKey:@"medName"]];
                      //NSLog(@"Meds in parse are: %@", Medications);
                 [self loadObjects];
@@ -78,10 +79,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//not sectionalized so 1 section
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+//rows as many as medications pulled from database
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [Medications count];
 }
@@ -93,7 +96,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
-    
+    //cell label is same as each element in the array
     cell.textLabel.text = [Medications objectAtIndex:indexPath.row];
     
     return cell;
@@ -103,24 +106,18 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    
+    //user selects a medication @ indexpath
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         
     }else{
+        
+        //user deselects a medication @ indexpath
         cell.accessoryType = UITableViewCellAccessoryNone;
         
     }
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end

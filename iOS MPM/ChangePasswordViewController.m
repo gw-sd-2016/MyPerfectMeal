@@ -32,6 +32,7 @@
 
 - (IBAction)changePasswordBTN:(id)sender {
     
+    //check if the user has filled in the textfield
 
     if( [emailResetTF.text isEqualToString:@""] || emailResetTF.text == nil ){
         
@@ -55,7 +56,7 @@
     }
 
     else{
-        
+        //looks like everything checks out, send the user an email to reset their password
         [PFUser requestPasswordResetForEmailInBackground:emailResetTF.text];
         
         UIAlertController *resetSuccess = [UIAlertController alertControllerWithTitle:@"Reset Instructions Sent"
@@ -74,8 +75,8 @@
         [resetSuccess addAction: ok];
         
         [self presentViewController:resetSuccess animated:YES completion:nil];
-        //add segue
         
+        //show that the reset was successful 
         [self performSegueWithIdentifier:@"resetSuccess" sender:self];
 
        

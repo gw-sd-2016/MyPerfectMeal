@@ -22,12 +22,12 @@
     return 1;
 }
 
-//as many as the size of array
+//as many as the size of array we populated
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return [goalsArray count];
 }
 
-//set title for each row in the pickviewer
+//set title for each row in the pickviewer using the array populated
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     return [goalsArray objectAtIndex:row];
@@ -72,31 +72,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)selectMedicationsBTN:(id)sender {
     
     [self performSegueWithIdentifier:@"showMedications" sender:self];
-    //showMedications
+    //showMedications view controller
 }
 
 - (IBAction)selectFoodAllergiesBTN:(id)sender {
     
     [self performSegueWithIdentifier:@"showFoodAllergies" sender:self];
+    //show food allergies view controller
 
 }
 
 - (IBAction)selectHealthDisordersBTN:(id)sender {
     
     [self performSegueWithIdentifier:@"showDisorders" sender:self];
+    //show disorders view controller
 
 }
 

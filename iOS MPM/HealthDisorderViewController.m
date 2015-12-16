@@ -50,6 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //load all disorders and store them in an array
     
     PFQuery *query = [PFQuery queryWithClassName:@"healthDisorders"];
     [query setLimit: 1000];
@@ -80,10 +81,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//one section since no sectionalizing going on
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+//number of rows same as number of elements in the array
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [HealthDisorders count];
 }
@@ -95,7 +98,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
 
-    
+    //set text of cell to each element
     cell.textLabel.text = [HealthDisorders objectAtIndex:indexPath.row];
     
     return cell;
@@ -105,24 +108,17 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    
+    //user selects something
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
     }else{
+        //user deselects something
         cell.accessoryType = UITableViewCellAccessoryNone;
         
     }
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 @end
