@@ -10,8 +10,10 @@
 @interface LoginViewController : UIViewController
 - (IBAction)signUpBTN:(id)sender;
 
+//grab the user input
 @property (strong, nonatomic) IBOutlet UITextField *userNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTF;
+
 
 - (IBAction)loginBTN:(id)sender;
 

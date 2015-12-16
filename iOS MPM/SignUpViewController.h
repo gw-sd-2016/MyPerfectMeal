@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SignUpViewController : UIViewController
+
+//grab user imput
 @property (strong, nonatomic) IBOutlet UITextField *firstNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *lastNameTF;
 @property (strong, nonatomic) IBOutlet UITextField *userNameTF;
