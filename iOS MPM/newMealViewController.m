@@ -47,12 +47,13 @@
 
 - (IBAction)addMealBTN:(id)sender {
     
-    
+    //store the meal in mealName string
     NSString *mealName = [mealNameTF.text capitalizedString];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant3];
     
+    //find an empty slot under the clicked restaurant
     emptyMeal = [NSMutableString stringWithFormat:@"Meal%ld", numMeals + 1];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -60,7 +61,7 @@
             
             
             for (PFObject *object in objects) {
-                
+                //save the new added meal in the empty slot
                 [object setObject:mealName forKey:emptyMeal];
                 [object save];
 

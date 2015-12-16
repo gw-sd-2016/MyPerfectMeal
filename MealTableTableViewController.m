@@ -50,8 +50,14 @@
         
     }
     
+    
+    //we will store all meals in meals array
     Meals = [[NSMutableArray alloc] init];
+    
+    //we will look up if a meal exist in the database
     mealLookUp = [[NSMutableString alloc] init];
+    
+    //store the name of the meal clicked so we can look up its ingredients later on
     clickedMeal = [[NSString alloc] init];
     
     return self;
@@ -72,15 +78,21 @@
     //NSLog(@"%@",_clickedRestaurant);
 
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
+    
+    //_clickedRestaurant is the clicked restaurant, so lets find meals specific to the chosen restaurant
     [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant];
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
                 
+                
                 for (int i = 1; i <=9 ; i++){
-                    
+                
+                //find all meals in the table
                 mealLookUp = [NSMutableString stringWithFormat:@"Meal%d", i];
+                    
+                //store all meals found in meals array
                 [Meals addObject:[object objectForKey:mealLookUp]];
                     //NSLog(@"Meal Lookup: %@", mealLookUp);
                     //NSLog(@"Meals are: %@", Meals);
@@ -105,12 +117,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
+//one section since we are not sectionalizing this table view controller
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
+//number of rows are the amount of meals found in the database
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [Meals count];
 }
@@ -123,7 +136,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
     
-   
+   //display the meals found in the database in each cell
     cell.textLabel.text = [Meals objectAtIndex:indexPath.row];
 
     return cell;
@@ -132,6 +145,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    //we need to the meal the user clicked on so we can lookup its ingredients in the ingredients view controller
     clickedMeal = [Meals objectAtIndex:indexPath.row];
    // NSLog(@"%@", clickedMeal);
     
@@ -145,7 +159,7 @@
     {
         
         
-
+        //so we could lookup the address of the restaurant clicked, lets pass the name of the restaurant to the map container
         MapContainerViewController *detailViewController = [segue destinationViewController];
         detailViewController.clickedRestaurant2 = _clickedRestaurant;
         
@@ -161,7 +175,10 @@
         newMealViewController *detailViewController2 = [segue destinationViewController];
         detailViewController2.clickedRestaurant3 = _clickedRestaurant;
         NSInteger numberOfMeals = [Meals count];
+        //lets pass the number of meals, need this for the way we setup our tables in the database
         detailViewController2.numMeals = numberOfMeals;
+        
+        //lets show the name of the restauarnt clicked as the title of the next view controller
         detailViewController2.title = _clickedRestaurant;
 
         
@@ -176,9 +193,11 @@
 
         IngredientsTableViewController *detailViewController3 = [segue destinationViewController];
         
+        //push info to next view controller
         detailViewController3.clickedMeal2 = [Meals objectAtIndex:indexPath.row];
         
         //get meal index in the list need this to pull up the ingredients
+        //needed to look up the ingredients of the meals
         detailViewController3.mealIndex = indexPath.row + 1;
         detailViewController3.title = [Meals objectAtIndex:indexPath.row];
         detailViewController3.clickedRestaurant4 = _clickedRestaurant;

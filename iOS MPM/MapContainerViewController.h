@@ -15,6 +15,8 @@
 
 @interface MapContainerViewController : UIViewController <MKMapViewDelegate>
 
+//add map and labels to the containers
+
 @property (strong, nonatomic) IBOutlet MKMapView *restaurantMap;
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLbl;
