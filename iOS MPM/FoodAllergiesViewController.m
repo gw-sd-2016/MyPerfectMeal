@@ -105,7 +105,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    PFUser *currentUser = [PFUser currentUser];
+    //PFUser *currentUser = [PFUser currentUser];
    /*
     [currentUser removeObjectForKey:@"CheckedItem0"];
     [currentUser removeObjectForKey:@"CheckedItem1"];
