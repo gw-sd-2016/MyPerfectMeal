@@ -97,7 +97,7 @@
                 }];
                 
                 //after a successful signup send them to the successful signup view controller
-                [self performSegueWithIdentifier:@"successSignup" sender:self];
+                //[self performSegueWithIdentifier:@"successSignup" sender:self];
                 
                 
             } else {   

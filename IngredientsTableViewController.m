@@ -70,7 +70,7 @@
                 
                 for (int i = 0; i <=9 ; i++){
                     ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
-                    // NSLog(@"%@", ingLookUp);
+                     NSLog(@"%@", ingLookUp);
                     
                     if (object[ingLookUp]) {
                         //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
@@ -219,13 +219,13 @@
     {
         NSString *clickedMealFormation = [NSString stringWithFormat:@"Meal%ld", (long)mealIndex];
         NSInteger clickedMealNumber = mealIndex;
-
+        
         newIngViewController *detailViewController = [segue destinationViewController];
         detailViewController.ingMealIndex = clickedMealFormation;
         detailViewController.ingMealIndexNumber = clickedMealNumber;
         detailViewController.clickedRestaurant5 = clickedRestaurant4;
         detailViewController.title = clickedMealFormation;
-    
+        
     }
 }
 @end

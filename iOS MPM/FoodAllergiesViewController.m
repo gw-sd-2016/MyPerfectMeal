@@ -122,7 +122,7 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         //NSLog(@"We just checked: %@", [foodAllergies objectAtIndex:indexPath.row]);
     
-        
+        /*
         //find empty slot in table
     
         PFQuery *query = [PFUser query];;
@@ -159,7 +159,7 @@
             
         }];
         
-        
+        */
 
         
         
@@ -181,13 +181,13 @@
         
         //remove uncheked from database for current user
         
-            
+            /*
                 
                 
                 [currentUser removeObjectForKey:@"CheckedItem0"];
                 [currentUser save];
         
-        
+        */
 
             
         
