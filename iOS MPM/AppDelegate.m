@@ -25,9 +25,22 @@
     [PFUser enableRevocableSessionInBackground];
 
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-   
+    
+    
+    
     //Default nav bar color
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:177/255.0 green:250/255.0 blue:255/255.0 alpha:1.0]];
+    
+    /*
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:207/255.0 blue:255/255.0 alpha:1.0]}];
+     */
+    /*
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+*/
+    //font, size, and color of nav bar set at launch of app
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:20], NSForegroundColorAttributeName : [UIColor colorWithRed:0/255.0 green:207/255.0 blue:255/255.0 alpha:1.0]}];
+    
+    
     [[UINavigationBar appearance] setTranslucent:NO];
     
     // Override point for customization after application launch.
