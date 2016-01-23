@@ -43,9 +43,13 @@
     
     [[UINavigationBar appearance] setTranslucent:NO];
     
+    
     // Override point for customization after application launch.
-        
-    // Override point for customization after application launch.
+    
+
+    
+    
+    
     return YES;
 }
 
