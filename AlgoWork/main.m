@@ -15,12 +15,12 @@ int main(int argc, const char * argv[]) {
         
         
         //====================================PULL HTML PAGE============================================
-        NSArray *drugNames = @[/*@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo-Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
+        NSArray *drugNames = @[@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo-Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
                                
                                
-                                */@"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous Sulfate",@"Fetzima",@"Fioricet",@"Fish Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
+                                /*@"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous Sulfate",@"Fetzima",@"Fioricet",@"Fish Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
                                 
-                                /*
+                               
                                 @"Incruse Ellipta",@"Inderal",@"Injectafer",@"Insulin",@"Integrilin",@"Intelence",@"Intermezzo",@"Intuniv",@"Invega",@"Invokamet",@"Invokana",@"Isentress",@"Isosorbide",@"Jakafi",@"Jalyn",@"Janumet",@"Januvia",@"Jardiance",@"Jentadueto",@"Jetrea",@"Jevtana",@"Jublia",@"Juvederm",@"Juvisync",@"Juxtapid",@"K-dur",@"Kadcyla",@"Kadian",@"Kaletra",@"Kalydeco",@"Kapvay",@"Kazano",@"Kcentra",@"Keflex",@"Kenalog",@"Keppra",@"Kerydin",@"Keytruda",@"Kineret",@"Klonopin",@"Klor-con",@"Kombiglyze XR",@"Krill Oil",@"Kyprolis",@"Kytril",@"Lamictal",@"Lansoprazole",@"Lantus",@"Lasix",@"Latuda",@"Levaquin",@"Levemir",@"Levothyroxine",@"Lexapro",@"Linzess",@"Lipitor",@"Lisinopril",@"Lithium",@"Loratadine",@"Lorazepam",
                                 
                                 
@@ -30,11 +30,11 @@ int main(int argc, const char * argv[]) {
                                 
                                 @"Robaxin",@"Rocephin",@"Saphris",@"Savella",@"Senna",@"Sensipar",@"Septra",@"Seroquel",@"Sertraline",@"Sildenafil",@"Simvastatin",@"Singulair",@"Skelaxin",@"Soma",@"Sonata",@"Spiriva",@"Spironolactone",@"Strattera",@"Suboxone",@"Sudafed",@"Symbicort",@"Synthroid",@"Tamoxifen",@"Tamsulosin",@"Tegretol",@"Temazepam",@"Terazosin",@"Testosterone",@"Tetracycline",@"Tizanidine",@"Topamax",@"Toradol",@"Toviaz",@"Tradjenta",@"Tramadol",@"Trazodone",@"Triamcinolone",@"Triamterene",@"Tricor",@"Trileptal",@"Truvada",@"Tylenol",@"Uceris",@"Ulesfia",@"Uloric",@"Ultane",@"Ultracet",@"Ultram",@"Ultresa",@"Uptravi",@"Uroxatral",@"Utibron-Neohaler",
                                 
-                                @"Valacyclovir",@"Valium",@"Valtrex",@"Vancomycin",@"Vasotec",@"Venlafaxine",@"Ventolin",@"Verapamil",@"Vesicare",@"Viagra",@"Vicodin",@"Victoza",@"Viibryd",@"Vimovo",@"Vimpat",@"Vistaril",@"Voltaren",@"Voltaren Gel",@"Vytorin",@"Vyvanse",@"Warfarin",@"Wellbutrin",@"Wilate",@"Xalatan",@"Xalkori",@"Xanax",@"Xanax XR",@"Xarelto",@"Xeljanz",@"Xeloda",@"Xenazine",@"Xenical",@"Xgeva",@"Xiaflex",@"Xifaxan",@"Xigduo XR",@"Xofigo",@"Xolair",@"Xopenex",@"Xtandi",@"Xyntha",@"Xyrem",@"Xyzal",@"Yasmin",@"Yaz",@"Yervoy",@"Yondelis",@"Zanaflex",@"Zantac",@"Zestoretic",@"Zestril",@"Zetia",@"Ziac",@"Zithromax",@"Zocor",@"Zofran",@"Zoloft",@"Zolpidem",@"Zometa",@"Zostavax",@"Zosyn",@"Zovirax",@"Zubsolv",@"Zyprexa",@"Zyrtec",@"Zytiga",@"Zyvox" */
+                                @"Valacyclovir",@"Valium",@"Valtrex",@"Vancomycin",@"Vasotec",@"Venlafaxine",@"Ventolin",@"Verapamil",@"Vesicare",@"Viagra",@"Vicodin",@"Victoza",@"Viibryd",@"Vimovo",@"Vimpat",@"Vistaril",@"Voltaren",@"Voltaren Gel",@"Vytorin",@"Vyvanse",@"Warfarin",@"Wellbutrin",@"Wilate",@"Xalatan",@"Xalkori",@"Xanax",@"Xanax XR",@"Xarelto",@"Xeljanz",@"Xeloda",@"Xenazine",@"Xenical",@"Xgeva",@"Xiaflex",@"Xifaxan",@"Xigduo XR",@"Xofigo",@"Xolair",@"Xopenex",@"Xtandi",@"Xyntha",@"Xyrem",@"Xyzal",@"Yasmin",@"Yaz",@"Yervoy",@"Yondelis",@"Zanaflex",@"Zantac",@"Zestoretic",@"Zestril",@"Zetia",@"Ziac",@"Zithromax",@"Zocor",@"Zofran",@"Zoloft",@"Zolpidem",@"Zometa",@"Zostavax",@"Zosyn",@"Zovirax",@"Zubsolv",@"Zyprexa",@"Zyrtec",@"Zytiga",@"Zyvox"
                                
                                
                                
-                               ];
+                               */];
         //NSLog(@"%@", drugNames);
         
         
@@ -84,7 +84,7 @@ int main(int argc, const char * argv[]) {
             
             //====================================LOCATE AND SEPERATE WHAT IS I DRUG============================================
             
-            
+            /*
             NSString *webContents2 = webContents;
             NSScanner *theSecondScanner;
             NSString *whatIsDrug = nil;
@@ -103,7 +103,7 @@ int main(int argc, const char * argv[]) {
             
             NSLog(@"%@", whatIsDrug);
             
-            
+            */
             
             
             //====================================LOCATE AND SEPERATE WHAT IS I DRUG============================================
@@ -112,7 +112,7 @@ int main(int argc, const char * argv[]) {
             
             
             //====================================LOCATE AND SEPERATE WHAT TO AVOID USING DRUG============================================
-            /*
+            
              NSString *webContents3 = webContents;
              NSScanner *theThirdScanner;
              NSString *thingsToAvoid = nil;
@@ -126,7 +126,7 @@ int main(int argc, const char * argv[]) {
              }
              
              NSLog(@"%@", thingsToAvoid);
-             */
+            
             //====================================LOCATE AND SEPERATE WHAT TO AVOID USING DRUG============================================
             
             
@@ -501,7 +501,7 @@ int main(int argc, const char * argv[]) {
             //NSLog(@"%@", medicalTerms);
             
             
-            
+            /*
             for(int i = 0; i < medicalTerms.count; i++)
                 
             {
@@ -512,7 +512,8 @@ int main(int argc, const char * argv[]) {
                 }
                 
             }
-            /*
+              */
+            
              for(int i = 0; i < medicalTerms.count; i++)
              
              {
@@ -521,7 +522,7 @@ int main(int argc, const char * argv[]) {
              }
              
              }
-             */
+            
             
             
         }
