@@ -27,7 +27,6 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
-    
     //Default nav bar color
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:177/255.0 green:250/255.0 blue:255/255.0 alpha:1.0]];
     

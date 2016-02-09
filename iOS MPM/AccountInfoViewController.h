@@ -13,7 +13,7 @@
 @interface AccountInfoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *nameLBL;
 @property (strong, nonatomic) IBOutlet UILabel *locationLBL;
-@property (strong, nonatomic) IBOutlet UILabel *userNameLBL;
+//@property (strong, nonatomic) IBOutlet UILabel *userNameLBL;
 
 
 - (IBAction)changePasswordBTN:(id)sender;

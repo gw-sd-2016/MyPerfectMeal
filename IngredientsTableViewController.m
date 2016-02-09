@@ -70,7 +70,7 @@
                 
                 for (int i = 0; i <=9 ; i++){
                     ingLookUp = [NSMutableString stringWithFormat:@"Ing%ld%d", (long)mealIndex, i];
-                     NSLog(@"%@", ingLookUp);
+                     //NSLog(@"%@", ingLookUp);
                     
                     if (object[ingLookUp]) {
                         //NSLog(@"FOUND SOMETHING AT %@", ingLookUp);
@@ -136,12 +136,13 @@
 }
 
 
-
+/*
 -(BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return YES;
 }
-
+ */
+/*
 -(void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // NSLog(@"%@", indexPath);
@@ -178,10 +179,10 @@
                         
                         if ([ingToDelete isEqualToString:[object objectForKey:ingLookUp]]){
                             
-                            NSLog(@"we want to delete %@ and its %@ AT %@", ingToDelete, [object objectForKey:ingLookUp], ingLookUp);
-                            [object removeObjectForKey:ingLookUp];
-                            [object saveInBackground];
-                            [self loadObjects];
+                            //NSLog(@"we want to delete %@ and its %@ AT %@", ingToDelete, [object objectForKey:ingLookUp], ingLookUp);
+                            //[object removeObjectForKey:ingLookUp];
+                            //[object saveInBackground];
+                            //[self loadObjects];
                             
                         }
                         
@@ -211,7 +212,7 @@
     
     
 }
-
+*/
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // segue to push name of clicked restaurant to the map controller

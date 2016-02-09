@@ -1,18 +1,21 @@
 #import <Foundation/Foundation.h>
 
-//#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 
 int main(int argc, const char * argv[]) {
     
     @autoreleasepool {
-        
+        /*
         NSArray *allPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [allPaths objectAtIndex:0];
         NSString *pathForLog = [documentsDirectory stringByAppendingPathComponent:@"yourFile.txt"];
         
         freopen([pathForLog cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
         
+        */
+        
+        NSMutableArray *TermsAssociated = [[NSMutableArray alloc] init];
         
         //====================================PULL HTML PAGE============================================
         NSArray *drugNames = @[@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo-Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
@@ -41,7 +44,7 @@ int main(int argc, const char * argv[]) {
         
         for(int j = 0; j < drugNames.count; j++){
             NSMutableString *drugWebsites = [NSMutableString stringWithFormat:@"http://www.drugs.com/%@", drugNames[j]];
-            NSLog(@"%@", drugNames[j]);
+            NSLog(@"Processing the following drug: %@", drugNames[j]);
             NSURL *drugWebsite = [[NSURL alloc] initWithString:drugWebsites];
             NSString *webContents = [[NSString alloc] initWithContentsOfURL:drugWebsite];
             
@@ -84,7 +87,7 @@ int main(int argc, const char * argv[]) {
             
             //====================================LOCATE AND SEPERATE WHAT IS I DRUG============================================
             
-            /*
+            
             NSString *webContents2 = webContents;
             NSScanner *theSecondScanner;
             NSString *whatIsDrug = nil;
@@ -101,9 +104,9 @@ int main(int argc, const char * argv[]) {
                 
             }
             
-            NSLog(@"%@", whatIsDrug);
+            //NSLog(@"%@", whatIsDrug);
             
-            */
+            
             
             
             //====================================LOCATE AND SEPERATE WHAT IS I DRUG============================================
@@ -112,7 +115,7 @@ int main(int argc, const char * argv[]) {
             
             
             //====================================LOCATE AND SEPERATE WHAT TO AVOID USING DRUG============================================
-            
+            /*
              NSString *webContents3 = webContents;
              NSScanner *theThirdScanner;
              NSString *thingsToAvoid = nil;
@@ -126,7 +129,7 @@ int main(int argc, const char * argv[]) {
              }
              
              NSLog(@"%@", thingsToAvoid);
-            
+            */
             //====================================LOCATE AND SEPERATE WHAT TO AVOID USING DRUG============================================
             
             
@@ -135,7 +138,7 @@ int main(int argc, const char * argv[]) {
                                       
                                       
                                       //THIRD LIST OF MEDICAL TERMS
-                                      @"alcohol",@"pain",@"drinking",@"pressure",@"infection",@"heart",@"brain",@"muscle",@"arthritis",@"cholesterol",@"fever",@"depression",@"infections",@"diarrhea",@"diabetes",@"cancer",@"skin",@"anxiety",@"inflammatory",@"inflammation",@"hypertension",@"stroke",@"dizziness",@"headache",@"dizzy",@"bleeding",@"antidepressant",@"sugar",@"swelling",@"hiv",@"seizures",@"antibiotic",@"drowsiness",@"dehydrated",@"bacteria",@"lung",@"arteries",@"pregnancy",@"nervous",@"herpes",@"pregnant",@"depressive",@"nasal",@"allergic",@"panic",@"asthma",@"itching",@"virus",@"chronic",@"nausea",@"measles",@"ache",@"shingles",@"prostate",@"indomethacin",@"menstrual",@"aids",@"hives"
+                                      @"alcohol",@"pain",@"drinking",@"pressure",@"infection",@"heart",@"brain",@"muscle",@"arthritis",@"cholesterol",@"fever",@"depression",@"infections",@"diarrhea",@"diabetes",@"cancer",@"skin",@"anxiety",@"inflammatory",@"inflammation",@"hypertension",@"stroke",@"dizziness",@"headache",@"dizzy",@"bleeding",@"antidepressant",@"sugar",@"swelling",@"hiv",@"seizures",@"antibiotic",@"drowsiness",@"dehydrated",@"bacteria",@"lung",@"arteries",@"pregnancy",@"nervous",@"herpes",@"pregnant",@"depressive",@"nasal",@"allergic",@"panic",@"asthma",@"itching",@"virus",@"chronic",@"nausea",@"measles",@"ache",@"shingles",@"prostate",@"indomethacin",@"menstrual",@"aids",@"hives",@"obese",@"obesity"
                                       
                                       
                                       
@@ -501,18 +504,28 @@ int main(int argc, const char * argv[]) {
             //NSLog(@"%@", medicalTerms);
             
             
-            /*
+            
             for(int i = 0; i < medicalTerms.count; i++)
                 
             {
-                if([whatIsDrug containsString:medicalTerms[i]]){
+                if([whatIsDrug containsString:medicalTerms[i]] && [whatIsDrug containsString:@"pain"] ){
+                    //NSLog(@"found the following words in the what is section                %@", medicalTerms[i]);
+
                     
-                    NSLog(@"found the following words in the what is section                %@", medicalTerms[i]);
+                   //NSLog(@"Found the following terms along with Pain: %@", medicalTerms[i]);
+                   
+                    [TermsAssociated addObject:medicalTerms[i]];
+                    [TermsAssociated removeObject:@"pain"];
+
                     
                 }
+
                 
             }
-              */
+            NSLog(@"%@", TermsAssociated);
+            NSLog(@"");
+
+              /*
             
              for(int i = 0; i < medicalTerms.count; i++)
              
@@ -524,7 +537,7 @@ int main(int argc, const char * argv[]) {
              }
             
             
-            
+            */
         }
     }
     return 0;

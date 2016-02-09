@@ -16,7 +16,7 @@
 
 @implementation AccountInfoViewController
 
-@synthesize nameLBL, locationLBL, userNameLBL;
+@synthesize nameLBL, locationLBL; //userNameLBL;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,10 +24,10 @@
     //displays (pulls from database and displays) user info
       
     nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
-    locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
-    NSLog(@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]);
-    userNameLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"username"]];
-    
+    //locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
+    //NSLog(@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]);
+    //userNameLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"username"]];
+
     
 }
 
