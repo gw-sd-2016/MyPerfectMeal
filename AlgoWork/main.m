@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+//#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 
 int main(int argc, const char * argv[]) {
@@ -13,31 +13,30 @@ int main(int argc, const char * argv[]) {
         NSArray *High_Blood_Pressure= @[@"pain", @"heart", @"stroke", @"hypertension", @"pressure", @"arteries",@"indomethacin"];
         
         NSArray *High_Cholesterol= @[@"cholesterol", @"pressure", @"heart", @"stroke"];
-        NSArray *Obese= @[@"heart",@"obesity",@"obese"];
-        NSArray *Diabetes= @[@"pressure",@"diabetes",@"heart",@"sugar"];
+        NSArray *Obese= @[@"obesity",@"obese"];
+        NSArray *Diabetes= @[@"diabetes",@"sugar"];
         NSArray *Anxiety_Depression= @[@"brain",@"anxiety",@"dizziness",@"depression",@"depressive",@"nervous",@"panic",@"antidepressant",@"seizures",@"drowsiness"];
         NSArray *Pain= @[@"pain",@"inflammation",@"muscle",@"fever",@"headache",@"arthritis",@"ache",@"inflammatory",@"menstrual",@"chronic",@"seizures",@"lung",@"allergic",@"dizzy",@"swelling",@"drowsiness", @"dehydrated", @"pregnancy", @"pregnant", @"nasal", @"asthma", @"nausea", @"indomethacin"];
         
         NSArray *Infection= @[@"infection",@"infections",@"herpes",@"virus",@"shingles",@"skin",@"antibiotic",@"bacteria",@"allergic",@"cancer",@"lung",@"diarrhea",@"swelling",@"hiv",@"hives",@"aids", @"bleeding", @"pregnancy", @"pregnant", @"itching", @"measles"];
         
         
-        /*
+        
         NSArray *allPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [allPaths objectAtIndex:0];
         NSString *pathForLog = [documentsDirectory stringByAppendingPathComponent:@"yourFile.txt"];
         
         freopen([pathForLog cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
         
-        */
         
-        //NSMutableArray *TermsAssociated = [[NSMutableArray alloc] init];
+        
         
         //====================================PULL HTML PAGE============================================
-        NSArray *drugNames = @[/*@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
+        NSArray *drugNames = @[@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
                                
-                               
-                                */@"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous_Sulfate",@"Fetzima",@"Fioricet",@"Fish_Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic_Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin_N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla_ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
                                /*
+                                @"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous_Sulfate",@"Fetzima",@"Fioricet",@"Fish_Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic_Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin_N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla_ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
+                               
                                
                                 @"Incruse_Ellipta",@"Inderal",@"Injectafer",@"Insulin",@"Integrilin",@"Intelence",@"Intermezzo",@"Intuniv",@"Invega",@"Invokamet",@"Invokana",@"Isentress",@"Isosorbide",@"Jakafi",@"Jalyn",@"Janumet",@"Januvia",@"Jardiance",@"Jentadueto",@"Jetrea",@"Jevtana",@"Jublia",@"Juvederm",@"Juvisync",@"Juxtapid",@"K_dur",@"Kadcyla",@"Kadian",@"Kaletra",@"Kalydeco",@"Kapvay",@"Kazano",@"Kcentra",@"Keflex",@"Kenalog",@"Keppra",@"Kerydin",@"Keytruda",@"Kineret",@"Klonopin",@"Klor_con",@"Kombiglyze XR",@"Krill Oil",@"Kyprolis",@"Kytril",@"Lamictal",@"Lansoprazole",@"Lantus",@"Lasix",@"Latuda",@"Levaquin",@"Levemir",@"Levothyroxine",@"Lexapro",@"Linzess",@"Lipitor",@"Lisinopril",@"Lithium",@"Loratadine",@"Lorazepam",
                                 
@@ -120,8 +119,8 @@ int main(int argc, const char * argv[]) {
                 
             }
             
-            //NSLog(@"%@", whatIsDrug);
-           // NSLog(@"");
+            NSLog(@"%@", whatIsDrug);
+            NSLog(@"");
             
             
             
@@ -538,36 +537,36 @@ int main(int argc, const char * argv[]) {
 
 
                 if([whatIsDrug containsString:medicalTerms[i]]){
-                   NSLog(@"Found the following words in the what is section                %@", medicalTerms[i]);
+                   //NSLog(@"Found the following words in the what is section                %@", medicalTerms[i]);
                     
                    
                     
                     if([High_Blood_Pressure containsObject:medicalTerms[i]]){
-                     NSLog(@"This is a High Blood Pressure drug");
+                     //NSLog(@"This is a High Blood Pressure drug");
                         HBP++;
                     }
                     if([High_Cholesterol containsObject:medicalTerms[i]]){
-                       NSLog(@"This is a High Cholesterol drug");
+                       //NSLog(@"This is a High Cholesterol drug");
                         HC++;
                     }
                     if([Obese containsObject:medicalTerms[i]]){
-                        NSLog(@"This is an Obesity drug");
-                        O++;
+                        //NSLog(@"This is an Obesity drug");
+                        O += 99999;
                     }
                     if([Diabetes containsObject:medicalTerms[i]]){
-                        NSLog(@"This is a Diabetes drug");
-                        D++;
+                        //NSLog(@"This is a Diabetes drug");
+                        D += 99999;
                     }
                     if([Anxiety_Depression containsObject:medicalTerms[i]]){
-                        NSLog(@"This is an Anxiety or Depression drug");
+                        //NSLog(@"This is an Anxiety or Depression drug");
                         AD++;
                     }
                     if([Pain containsObject:medicalTerms[i]]){
-                        NSLog(@"This is a Pain drug");
+                        //NSLog(@"This is a Pain drug");
                         P++;
                     }
                     if([Infection containsObject:medicalTerms[i]]){
-                       NSLog(@"This is an Infection drug");
+                       //NSLog(@"This is an Infection drug");
                         I++;
                     }
                     
@@ -583,7 +582,7 @@ int main(int argc, const char * argv[]) {
 
                 
             }
-            
+            /*
             NSLog(@"");
             NSLog(@"Total HBP: %f", HBP);
             NSLog(@"Total HC: %f", HC);
@@ -596,16 +595,63 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Total terms found: %f", Total);
             NSLog(@"");
             NSLog(@"");
+            */
+            if ((HBP/Total) * 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is a Heart Disease Drug", (HBP/Total) * 100);
+            }
+            
+            if ((HC/Total) * 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is a High Cholesterol Drug", (HC/Total) * 100);
+            }
             
             
-             NSLog(@"There is a %f%% chance this is a High Blood Pressure Drug", (HBP/Total) * 100);
-             NSLog(@"There is a %f%% chance this is a High Cholesterol Drug", (HC/Total) * 100);
-             NSLog(@"There is a %f%% chance this is an Obesity Drug", (O/Total)* 100);
-             NSLog(@"There is a %f%% chance this is a Diabetes Drug", (D/Total)* 100);
-             NSLog(@"There is a %f%% chance this is an Anxiety or Depression Drug", (AD/Total)* 100);
-             NSLog(@"There is a %f%% chance this is a Pain Drug", (P/Total)* 100);
-             NSLog(@"There is a %f%% chance this is an Infection Drug", (I/Total)* 100);
-             
+            if ((O/Total)* 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is an Obesity Drug", (O/Total)* 100);
+            }
+            
+
+            if ((D/Total)* 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is a Diabetes Drug", (D/Total)* 100);
+            }
+            
+            
+            if ((AD/Total)* 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is an Anxiety or Depression Drug", (AD/Total)* 100);
+            }
+            
+            
+            if ((P/Total)* 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is a Pain Drug", (P/Total)* 100);
+            }
+            
+            if ((I/Total)* 100 < 1){
+                
+            }
+            else{
+                NSLog(@"There is a %f%% chance this is an Infection Drug", (I/Total)* 100);
+            }
+            
+            
+            
+            
              
              NSLog(@"");
              
@@ -628,7 +674,6 @@ int main(int argc, const char * argv[]) {
             
             */
         }
-       // NSLog(@"%@", TermsAssociated);
 
     }
     return 0;
