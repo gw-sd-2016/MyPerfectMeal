@@ -48,6 +48,10 @@
 		80F4CB851BEC50CC009538A6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */; };
 		80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB2141BF6C80100520167 /* MealTableTableViewController.m */; };
 		AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */; };
+		AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29641C7BA3A0001C1707 /* Cardiology.png */; };
+		AC6F29691C7BA3A0001C1707 /* Health.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29651C7BA3A0001C1707 /* Health.png */; };
+		AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29661C7BA3A0001C1707 /* Microscope.png */; };
+		AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29671C7BA3A0001C1707 /* Pills.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +136,10 @@
 		80FCB2141BF6C80100520167 /* MealTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealTableTableViewController.m; path = ../MealTableTableViewController.m; sourceTree = "<group>"; };
 		AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
 		AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
+		AC6F29641C7BA3A0001C1707 /* Cardiology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cardiology.png; sourceTree = "<group>"; };
+		AC6F29651C7BA3A0001C1707 /* Health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Health.png; sourceTree = "<group>"; };
+		AC6F29661C7BA3A0001C1707 /* Microscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microscope.png; sourceTree = "<group>"; };
+		AC6F29671C7BA3A0001C1707 /* Pills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pills.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +265,7 @@
 		80F4CB211BEC4887009538A6 = {
 			isa = PBXGroup;
 			children = (
+				AC6F29621C7BA2A8001C1707 /* Resources */,
 				80F4CB631BEC4EB4009538A6 /* Frameworks */,
 				80F4CB2C1BEC4887009538A6 /* iOS MPM */,
 				80F4CB461BEC4888009538A6 /* iOS MPMTests */,
@@ -341,6 +350,25 @@
 				80F4CB6A1BEC4EC3009538A6 /* ParseUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC6F29621C7BA2A8001C1707 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC6F29631C7BA2B0001C1707 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AC6F29631C7BA2B0001C1707 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AC6F29641C7BA3A0001C1707 /* Cardiology.png */,
+				AC6F29651C7BA3A0001C1707 /* Health.png */,
+				AC6F29661C7BA3A0001C1707 /* Microscope.png */,
+				AC6F29671C7BA3A0001C1707 /* Pills.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,8 +476,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F4CB3D1BEC4888009538A6 /* LaunchScreen.storyboard in Resources */,
+				AC6F29691C7BA3A0001C1707 /* Health.png in Resources */,
+				AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */,
 				80F4CB3A1BEC4888009538A6 /* Assets.xcassets in Resources */,
 				80F4CB381BEC4888009538A6 /* Main.storyboard in Resources */,
+				AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */,
+				AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

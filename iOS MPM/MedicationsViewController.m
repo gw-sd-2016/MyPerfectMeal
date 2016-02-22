@@ -43,8 +43,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //load all objects sorted
+    
     [self loadObjects];
     
+}
+
+-(void)objectsDidLoad:(NSError *)error {
+    [super objectsDidLoad:error];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 }
 
 - (void)viewDidLoad {
@@ -91,7 +97,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+
     static NSString *restaurantTableIdentifier = @"cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
@@ -118,6 +125,8 @@
         
     }
 }
+
+
 
 
 @end

@@ -47,6 +47,11 @@
     
 }
 
+-(void)objectsDidLoad:(NSError *)error {
+    [super objectsDidLoad:error];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

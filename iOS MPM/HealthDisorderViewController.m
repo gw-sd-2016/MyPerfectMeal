@@ -76,6 +76,11 @@
     
 }
 
+-(void)objectsDidLoad:(NSError *)error {
+    [super objectsDidLoad:error];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
