@@ -47,6 +47,7 @@
 		80F4CB831BEC50C3009538A6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4CB821BEC50C3009538A6 /* libz.tbd */; };
 		80F4CB851BEC50CC009538A6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */; };
 		80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB2141BF6C80100520167 /* MealTableTableViewController.m */; };
+		AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		80FCB2131BF6C80100520167 /* MealTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealTableTableViewController.h; path = ../MealTableTableViewController.h; sourceTree = "<group>"; };
 		80FCB2141BF6C80100520167 /* MealTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealTableTableViewController.m; path = ../MealTableTableViewController.m; sourceTree = "<group>"; };
+		AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
+		AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,14 +220,16 @@
 		80A6A55E1C0B4813001CFEDE /* Personal Info Container */ = {
 			isa = PBXGroup;
 			children = (
-				803C8CB91C0E6BC30086123D /* MedicationsViewController.h */,
-				803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */,
 				80A6A55F1C0B4F88001CFEDE /* PersonalInfoViewController.h */,
 				80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */,
+				803C8CB91C0E6BC30086123D /* MedicationsViewController.h */,
+				803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */,
 				803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */,
 				803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */,
 				8074486B1C0F433000A8766A /* HealthDisorderViewController.h */,
 				8074486C1C0F433000A8766A /* HealthDisorderViewController.m */,
+				AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */,
+				AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */,
 			);
 			name = "Personal Info Container";
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				8092CA541C03C9EA00C806DE /* IngredientsTableViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */,
+				AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */,
 				8095216C1BFD247D00F68E8E /* newMealViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,

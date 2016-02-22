@@ -21,7 +21,9 @@
 - (IBAction)selectHealthDisordersBTN:(id)sender;
 - (IBAction)selectGoal:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *selectedGoalLBL;
-@property (strong, nonatomic) IBOutlet UIPickerView *selectGoalsPV;
+
+
+
 
 
 @end
