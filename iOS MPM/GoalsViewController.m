@@ -1,10 +1,3 @@
-//
-//  MedicationsViewController.m
-//  iOS MPM
-//
-//  Created by Abed Kassem on 12/1/15.
-//  Copyright © 2015 Abed Kassem. All rights reserved.
-//
 
 #import "GoalsViewController.h"
 #import <ParseUI/ParseUI.h>
@@ -57,9 +50,8 @@
             for (PFObject *object in objects) {
                 
                 
-                //store all objects (medication names) into the medications array
+                //store all objects (goals names) into the goals array
                 [healthGoals addObject:[object objectForKey:@"GName"]];
-                //NSLog(@"Meds in parse are: %@", Medications);
                 [self loadObjects];
             }
             
@@ -83,7 +75,7 @@
     return 1;
 }
 
-//rows as many as medications pulled from database
+//rows as many as goals pulled from database
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [healthGoals count];
 }
@@ -91,9 +83,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *restaurantTableIdentifier = @"cell";
+    static NSString *goalsTableIdentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:restaurantTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goalsTableIdentifier];
     
     //cell label is same as each element in the array
     cell.textLabel.text = [healthGoals objectAtIndex:indexPath.row];
@@ -105,14 +97,14 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    //user selects a medication @ indexpath
+    //user selects a goal @ indexpath
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         
         
     }else{
         
-        //user deselects a medication @ indexpath
+        //user deselects a goal @ indexpath
         cell.accessoryType = UITableViewCellAccessoryNone;
         
     }
