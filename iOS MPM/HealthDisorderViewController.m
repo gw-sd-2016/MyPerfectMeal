@@ -34,7 +34,10 @@
         
         
         HealthDisorders = [[NSMutableArray alloc] init];
-        
+        selectedDisorders = [[NSMutableArray alloc] init];
+        findSelectedDisorders = [[NSMutableString alloc] init];
+
+
     }
     
     return self;
@@ -67,7 +70,8 @@
             
         }
         
-        
+        //pull the previously selected disorders from parse and save them into findSelectedDisorders array
+        findSelectedDisorders = [[PFUser currentUser] valueForKey:@"selectedDisorder"];
         
         
     }];
@@ -106,6 +110,10 @@
     //set text of cell to each element
     cell.textLabel.text = [HealthDisorders objectAtIndex:indexPath.row];
     
+    if ([findSelectedDisorders containsObject:[HealthDisorders objectAtIndex:indexPath.row]  ]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
     return cell;
 }
 
@@ -115,13 +123,33 @@
     
     //user selects something
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        //check the cell selected
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //if its already in the array to send to the server do nothing
+        if ([selectedDisorders containsObject:cell.textLabel.text]){
+            //ignore before its already in the database
+        }
+        else{
+            //otherwise its not so add it to the array
+            [selectedDisorders addObject:cell.textLabel.text];
+            //send off the data to parse and save
+            [[PFUser currentUser] setObject:selectedDisorders forKey:@"selectedDisorder"];
+            [[PFUser currentUser] saveInBackground];
+        }
         
     }else{
-        //user deselects something
+        //user deselects something so they want to remove it
         cell.accessoryType = UITableViewCellAccessoryNone;
+        //remove it from the array
+        [selectedDisorders removeObject:cell.textLabel.text];
+        //send off the data to parse and save it
+        [[PFUser currentUser] setObject:selectedDisorders forKey:@"selectedDisorder"];
+        [[PFUser currentUser] saveInBackground];
+
+        
         
     }
+   
 }
 
 

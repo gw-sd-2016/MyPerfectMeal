@@ -14,7 +14,6 @@
 
 @implementation PersonalInfoViewController
 
-@synthesize selectedGoalLBL;
 
 
 - (void)viewDidLoad {

@@ -907,7 +907,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IPF-6y-3ME">
-                                <rect key="frame" x="213" y="62" width="100" height="30"/>
+                                <rect key="frame" x="155" y="62" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -939,7 +939,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fKv-Me-5Xa">
-                                <rect key="frame" x="196" y="95" width="117" height="30"/>
+                                <rect key="frame" x="155" y="95" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Select Allergies">
@@ -956,7 +956,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SRv-cY-RY4">
-                                <rect key="frame" x="187" y="128" width="126" height="30"/>
+                                <rect key="frame" x="155" y="128" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -973,15 +973,8 @@
                                     <action selector="selectHealthDisordersBTN:" destination="zky-Ix-C0J" eventType="touchUpInside" id="NES-TA-9BN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight Loss" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rLi-H8-vxI">
-                                <rect key="frame" x="126" y="33" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OKI-oE-HPA">
-                                <rect key="frame" x="225" y="29" width="88" height="30"/>
+                                <rect key="frame" x="155" y="29" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1003,7 +996,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Clq-13-ohM"/>
                     <connections>
-                        <outlet property="selectedGoalLBL" destination="rLi-H8-vxI" id="Pao-Pr-e9d"/>
                         <segue destination="1ZU-rr-pp8" kind="push" identifier="showMedications" id="ZjW-KN-ZMR"/>
                         <segue destination="Vwb-w6-Rk8" kind="push" identifier="showFoodAllergies" id="PY3-FM-dTG"/>
                         <segue destination="54k-z4-bKw" kind="push" identifier="showDisorders" id="ygM-FQ-7Ui"/>

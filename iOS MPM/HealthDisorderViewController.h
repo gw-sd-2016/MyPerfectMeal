@@ -12,6 +12,8 @@
     
     //store all health disorders in this array
     NSMutableArray *HealthDisorders;
+    NSMutableArray *selectedDisorders;
+    NSMutableArray *findSelectedDisorders;
     
 }
 

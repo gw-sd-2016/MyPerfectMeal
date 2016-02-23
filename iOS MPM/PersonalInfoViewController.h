@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalInfoViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>{
+@interface PersonalInfoViewController : UIViewController
+
+{
     
     //save all goals in goal array
     NSMutableArray *goalsArray;
@@ -22,7 +24,6 @@
 - (IBAction)selectGoal:(id)sender;
 
 
-@property (strong, nonatomic) IBOutlet UILabel *selectedGoalLBL;
 
 
 
