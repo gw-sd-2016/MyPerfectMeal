@@ -34,6 +34,8 @@
 
         
         Medications = [[NSMutableArray alloc] init];
+        selectedMeds = [[NSMutableArray alloc] init];
+        findSelectedMeds = [[NSMutableString alloc] init];
         
     }
     
@@ -66,13 +68,13 @@
                
                 //store all objects (medication names) into the medications array
                     [Medications addObject:[object objectForKey:@"medName"]];
-                     //NSLog(@"Meds in parse are: %@", Medications);
-                [self loadObjects];
+                    [self loadObjects];
                 }
                 
             }
             
-            
+        findSelectedMeds = [[PFUser currentUser] valueForKey:@"selectedMeds"];
+
         
         
     }];
@@ -106,6 +108,11 @@
     //cell label is same as each element in the array
     cell.textLabel.text = [Medications objectAtIndex:indexPath.row];
     
+    if ([findSelectedMeds containsObject:[Medications objectAtIndex:indexPath.row]  ]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
+    
     return cell;
 }
 
@@ -113,19 +120,34 @@
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-    //user selects a medication @ indexpath
+    //user selects something
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        //check the cell selected
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        
+        //if its already in the array to send to the server do nothing
+        if ([selectedMeds containsObject:cell.textLabel.text]){
+            //ignore before its already in the database
+        }
+        else{
+            //otherwise its not so add it to the array
+            [selectedMeds addObject:cell.textLabel.text];
+            //send off the data to parse and save
+            [[PFUser currentUser] setObject:selectedMeds forKey:@"selectedMeds"];
+            [[PFUser currentUser] saveInBackground];
+        }
         
     }else{
-        
-        //user deselects a medication @ indexpath
+        //user deselects something so they want to remove it
         cell.accessoryType = UITableViewCellAccessoryNone;
+        //remove it from the array
+        [selectedMeds removeObject:cell.textLabel.text];
+        //send off the data to parse and save it
+        [[PFUser currentUser] setObject:selectedMeds forKey:@"selectedMeds"];
+        [[PFUser currentUser] saveInBackground];
         
-    }
+        
 }
-
+}
 
 
 

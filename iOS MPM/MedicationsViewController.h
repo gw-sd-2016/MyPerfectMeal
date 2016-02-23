@@ -12,7 +12,8 @@
     
     //store medications
     NSMutableArray *Medications;
-    
+    NSMutableArray *selectedMeds;
+    NSMutableArray *findSelectedMeds;
 }
 
 @end

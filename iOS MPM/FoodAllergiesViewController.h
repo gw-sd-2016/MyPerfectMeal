@@ -12,6 +12,8 @@
     
     //store food allergies pulled from database
     NSMutableArray *foodAllergies;
+    NSMutableArray *selectedAllergies;
+    NSMutableArray *findSelectedAllergies;
 }
 
 @end

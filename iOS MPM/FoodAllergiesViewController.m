@@ -33,7 +33,8 @@
         
         
         foodAllergies = [[NSMutableArray alloc] init];
-        
+        selectedAllergies = [[NSMutableArray alloc] init];
+        findSelectedAllergies = [[NSMutableString alloc] init];
         
     }
     
@@ -65,13 +66,13 @@
                 
                 
                 [foodAllergies addObject:[object objectForKey:@"foodAllergen"]];
-                //NSLog(@"Allergen name in parse is: %@", foodAllergies);
                 [self loadObjects];
             }
             
         }
         
-        
+        findSelectedAllergies = [[PFUser currentUser] valueForKey:@"selectedFoodAllergy"];
+
         
         
     }];
@@ -104,97 +105,44 @@
     //assign the text to each cell for each element in the array
     cell.textLabel.text = [foodAllergies objectAtIndex:indexPath.row];
     
+    if ([findSelectedAllergies containsObject:[foodAllergies objectAtIndex:indexPath.row]  ]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
+    
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    //PFUser *currentUser = [PFUser currentUser];
-   /*
-    [currentUser removeObjectForKey:@"CheckedItem0"];
-    [currentUser removeObjectForKey:@"CheckedItem1"];
-    [currentUser removeObjectForKey:@"CheckedItem2"];
-    [currentUser removeObjectForKey:@"CheckedItem3"];
-    [currentUser removeObjectForKey:@"CheckedItem4"];
-    [currentUser removeObjectForKey:@"CheckedItem5"];
-    [currentUser removeObjectForKey:@"CheckedItem6"];
-    [currentUser removeObjectForKey:@"CheckedItem7"];
-
-   */
-    //if user selects row
+    
+    //user selects something
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        //check the cell selected
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        //NSLog(@"We just checked: %@", [foodAllergies objectAtIndex:indexPath.row]);
-    
-        /*
-        //find empty slot in table
-    
-        PFQuery *query = [PFUser query];;
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                for (PFObject *object in objects) {
-                    
-                    NSString *emptySlotLookUp = [[NSString alloc] init];
-                    
-                    
-                    for (int i = 0; i <=10 ; i++){
-                        
-                        emptySlotLookUp = [NSMutableString stringWithFormat:@"CheckedItem%d", i];
-                        
-                        if (object[emptySlotLookUp]) {
-                            //do nothing
-                        }
-                        else{
-                            //  if (object[emptySlotLookUp]) { NSLog(@"FOUND SOMETHING AT %@", emptySlotLookUp);
-                            // if !object @ empty slotlookup that means we found an empty slot insert the selection @key of empty slot
-                            [currentUser setObject:[foodAllergies objectAtIndex:indexPath.row] forKey:emptySlotLookUp];
-                            [currentUser save];
-                            break;
-                            
-                        }
-
-                    }
-                    
-                }
-                
-               
-            }
-            
-        }];
-        
-        */
-
-        
-        
-        
-        
-        
-        
-        //add checked to table for current user
-        
-                
-                
-           
-       
-            
+        //if its already in the array to send to the server do nothing
+        if ([selectedAllergies containsObject:cell.textLabel.text]){
+            //ignore before its already in the database
+        }
+        else{
+            //otherwise its not so add it to the array
+            [selectedAllergies addObject:cell.textLabel.text];
+            //send off the data to parse and save
+            [[PFUser currentUser] setObject:selectedAllergies forKey:@"selectedFoodAllergy"];
+            [[PFUser currentUser] saveInBackground];
+        }
         
     }else{
+        //user deselects something so they want to remove it
         cell.accessoryType = UITableViewCellAccessoryNone;
-        //NSLog(@"We just unchecked: %@", [foodAllergies objectAtIndex:indexPath.row] );
+        //remove it from the array
+        [selectedAllergies removeObject:cell.textLabel.text];
+        //send off the data to parse and save it
+        [[PFUser currentUser] setObject:selectedAllergies forKey:@"selectedFoodAllergy"];
+        [[PFUser currentUser] saveInBackground];
         
-        //remove uncheked from database for current user
-        
-            /*
-                
-                
-                [currentUser removeObjectForKey:@"CheckedItem0"];
-                [currentUser save];
-        
-        */
-
-            
         
         
     }
