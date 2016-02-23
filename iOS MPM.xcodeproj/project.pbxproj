@@ -52,6 +52,7 @@
 		AC6F29691C7BA3A0001C1707 /* Health.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29651C7BA3A0001C1707 /* Health.png */; };
 		AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29661C7BA3A0001C1707 /* Microscope.png */; };
 		AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29671C7BA3A0001C1707 /* Pills.png */; };
+		AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		AC6F29651C7BA3A0001C1707 /* Health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Health.png; sourceTree = "<group>"; };
 		AC6F29661C7BA3A0001C1707 /* Microscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microscope.png; sourceTree = "<group>"; };
 		AC6F29671C7BA3A0001C1707 /* Pills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pills.png; sourceTree = "<group>"; };
+		AC74C98A1C7CD7CA001BD589 /* SelectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionsViewController.h; sourceTree = "<group>"; };
+		AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +241,8 @@
 				8074486C1C0F433000A8766A /* HealthDisorderViewController.m */,
 				AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */,
 				AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */,
+				AC74C98A1C7CD7CA001BD589 /* SelectionsViewController.h */,
+				AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */,
 			);
 			name = "Personal Info Container";
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80F4CB621BEC4E78009538A6 /* RestaurantViewController.m in Sources */,
+				AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */,
 				805F47D91BEC97A300A08BCD /* newrestViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,

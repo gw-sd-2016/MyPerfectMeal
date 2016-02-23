@@ -28,9 +28,9 @@
         self.pullToRefreshEnabled = YES;
         
         
-        self.paginationEnabled = NO;
+        self.paginationEnabled = YES;
         
-        self.objectsPerPage = 999999999;
+        self.objectsPerPage = 15;
 
         
         Medications = [[NSMutableArray alloc] init];
@@ -86,6 +86,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 //not sectionalized so 1 section
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

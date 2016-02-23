@@ -25,7 +25,7 @@
    
     //displays (pulls from database and displays) user info
       
-    //nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
+    nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
     //locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
     
     

@@ -8,12 +8,16 @@
 
 #import <ParseUI/ParseUI.h>
 
-@interface MedicationsViewController : PFQueryTableViewController {
+@interface MedicationsViewController : PFQueryTableViewController{
     
     //store medications
     NSMutableArray *Medications;
     NSMutableArray *selectedMeds;
     NSMutableArray *findSelectedMeds;
+
+    
 }
+
+
 
 @end
