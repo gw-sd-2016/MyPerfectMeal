@@ -27,6 +27,7 @@
         
         
         healthGoals = [[NSMutableArray alloc] init];
+        findSelectedGoal = [[NSMutableString alloc] init];
         
     }
     
@@ -58,17 +59,29 @@
                 //store all objects (goals names) into the goals array
                 [healthGoals addObject:[object objectForKey:@"GName"]];
                 [self loadObjects];
+               
+
+
             }
             
         }
         
         
+        //find the selected goal (from parse) and set it to string
+        findSelectedGoal = [[PFUser currentUser] valueForKey:@"selectedGoal"];
         
         
     }];
     
+    
+    
+
+    
+    
     [self loadObjects];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -94,6 +107,12 @@
     
     //cell label is same as each element in the array
     cell.textLabel.text = [healthGoals objectAtIndex:indexPath.row];
+
+    //find the cell that matches what was found in the server and check mark it
+    if ([[healthGoals objectAtIndex:indexPath.row] isEqualToString:findSelectedGoal ]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    
     
     return cell;
 }
@@ -101,18 +120,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
+
     //user selects a goal @ indexpath
     
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        
-    }else{
-        
-        //user deselects a goal @ indexpath
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        
-    }
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    [[PFUser currentUser] setObject:cell.textLabel.text forKey:@"selectedGoal"];
+    [[PFUser currentUser] saveInBackground];
+
+   }
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
 }
 
 

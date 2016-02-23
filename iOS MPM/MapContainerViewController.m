@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     
     //we know which restaurant we clicked on because we passed the info from the previous view controller

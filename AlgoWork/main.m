@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-//#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 
 int main(int argc, const char * argv[]) {
@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
         NSArray *Pain= @[@"pain",@"inflammation",@"muscle",@"fever",@"headache",@"arthritis",@"ache",@"inflammatory",@"menstrual",@"chronic",@"seizures",@"lung",@"allergic",@"dizzy",@"swelling",@"drowsiness", @"dehydrated", @"pregnancy", @"pregnant", @"nasal", @"asthma", @"nausea", @"indomethacin"];
         
         NSArray *Infection= @[@"infection",@"infections",@"herpes",@"virus",@"shingles",@"skin",@"antibiotic",@"bacteria",@"allergic",@"cancer",@"lung",@"diarrhea",@"swelling",@"hiv",@"hives",@"aids", @"bleeding", @"pregnancy", @"pregnant", @"itching", @"measles"];
-        
+        /*
         
         
         NSArray *allPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         
         freopen([pathForLog cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
         
-        
+        */
         
         
         //====================================PULL HTML PAGE============================================

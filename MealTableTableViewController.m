@@ -74,7 +74,7 @@
 - (void)viewDidLoad {
     //print clicked on restaurant
     
-    
+
     //NSLog(@"%@",_clickedRestaurant);
 
     PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];

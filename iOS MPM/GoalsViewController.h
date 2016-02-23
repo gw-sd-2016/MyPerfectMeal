@@ -7,6 +7,7 @@
 
     //store all health goals in this array
     NSMutableArray *healthGoals;
+    NSMutableString *findSelectedGoal;
     
 }
 

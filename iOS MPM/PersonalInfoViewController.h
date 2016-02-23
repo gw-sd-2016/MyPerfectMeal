@@ -20,6 +20,8 @@
 - (IBAction)selectFoodAllergiesBTN:(id)sender;
 - (IBAction)selectHealthDisordersBTN:(id)sender;
 - (IBAction)selectGoal:(id)sender;
+
+
 @property (strong, nonatomic) IBOutlet UILabel *selectedGoalLBL;
 
 
