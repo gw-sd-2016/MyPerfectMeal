@@ -32,9 +32,9 @@ int main(int argc, const char * argv[]) {
         
         
         //====================================PULL HTML PAGE============================================
-        NSArray *drugNames = @[/*@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
+        NSArray *drugNames = @[@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
                                
-                               */
+                               
                                 @"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous_Sulfate",@"Fetzima",@"Fioricet",@"Fish_Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic_Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin_N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla_ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
                                
                                /*
@@ -59,7 +59,7 @@ int main(int argc, const char * argv[]) {
         for(int j = 0; j < drugNames.count; j++){
             NSMutableString *drugWebsites = [NSMutableString stringWithFormat:@"http://www.drugs.com/%@", drugNames[j]];
             NSLog(@"Processing the following drug: %@", drugNames[j]);
-            NSLog(@"");
+            //NSLog(@"");
             NSURL *drugWebsite = [[NSURL alloc] initWithString:drugWebsites];
             NSString *webContents = [[NSString alloc] initWithContentsOfURL:drugWebsite];
             
@@ -119,8 +119,8 @@ int main(int argc, const char * argv[]) {
                 
             }
             
-            NSLog(@"%@", whatIsDrug);
-            NSLog(@"");
+            //NSLog(@"%@", whatIsDrug);
+           // NSLog(@"");
             
             
             
@@ -596,18 +596,23 @@ int main(int argc, const char * argv[]) {
             NSLog(@"");
             NSLog(@"");
             */
+            double max = 0;
             if ((HBP/Total) * 100 < 1){
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is a Heart Disease Drug", (HBP/Total) * 100);
+                //NSLog(@"There is a %f%% chance this is a Heart Disease Drug", (HBP/Total) * 100);
+                max = (HBP/Total) * 100;
             }
             
             if ((HC/Total) * 100 < 1){
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is a High Cholesterol Drug", (HC/Total) * 100);
+               // NSLog(@"There is a %f%% chance this is a High Cholesterol Drug", (HC/Total) * 100);
+                if (max < (HC/Total) * 100){
+                    max = (HC/Total) * 100;
+                }
             }
             
             
@@ -615,7 +620,10 @@ int main(int argc, const char * argv[]) {
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is an Obesity Drug", (O/Total)* 100);
+               // NSLog(@"There is a %f%% chance this is an Obesity Drug", (O/Total)* 100);
+                if (max < (O/Total)* 100){
+                    max = (O/Total)* 100;
+                }
             }
             
 
@@ -623,7 +631,10 @@ int main(int argc, const char * argv[]) {
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is a Diabetes Drug", (D/Total)* 100);
+              //  NSLog(@"There is a %f%% chance this is a Diabetes Drug", (D/Total)* 100);
+                if (max < (D/Total)* 100){
+                    max = (D/Total)* 100;
+                }
             }
             
             
@@ -631,7 +642,10 @@ int main(int argc, const char * argv[]) {
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is an Anxiety or Depression Drug", (AD/Total)* 100);
+               // NSLog(@"There is a %f%% chance this is an Anxiety or Depression Drug", (AD/Total)* 100);
+                if (max < (AD/Total)* 100){
+                    max = (AD/Total)* 100;
+                }
             }
             
             
@@ -639,27 +653,47 @@ int main(int argc, const char * argv[]) {
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is a Pain Drug", (P/Total)* 100);
+               // NSLog(@"There is a %f%% chance this is a Pain Drug", (P/Total)* 100);
+                if (max < (P/Total)* 100){
+                    max = (P/Total)* 100;
+                }
             }
             
             if ((I/Total)* 100 < 1){
                 
             }
             else{
-                NSLog(@"There is a %f%% chance this is an Infection Drug", (I/Total)* 100);
+               // NSLog(@"There is a %f%% chance this is an Infection Drug", (I/Total)* 100);
+                if (max < (I/Total)* 100){
+                    max = (I/Total)* 100;
+                }
             }
             
             
+           // NSLog(@"max is: %f%%", max);
             
-            
+            if (max == (HBP/Total) * 100){
+                NSLog(@"Heart Disease Drug");
+            }
+            else if(max == (HC/Total) * 100){
+                NSLog(@"High Cholesterol Drug");
+            }
+            else if(max == (O/Total)* 100){
+                NSLog(@"Obesity Drug");
+            }
+            else if (max == (D/Total)* 100){
+                NSLog(@"Diabetes Drug");
+            }
+            else if (max == (AD/Total)* 100){
+                NSLog(@"Anxiety or Depression Drug");
+            }
+            else if (max == (P/Total)* 100){
+                NSLog(@"Pain Drug");
+            }
+            else if (max == (I/Total)* 100){
+                NSLog(@"Infection Drug");
+            }
              
-            NSLog(@" ");
-            NSLog(@" ");
-            NSLog(@" ");
-            NSLog(@" ");
-            NSLog(@" ");
-            NSLog(@" ");
-            NSLog(@" ");
             
 
             
