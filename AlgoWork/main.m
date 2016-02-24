@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+//#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 
 int main(int argc, const char * argv[]) {
@@ -19,39 +19,37 @@ int main(int argc, const char * argv[]) {
         NSArray *Pain= @[@"pain",@"inflammation",@"muscle",@"fever",@"headache",@"arthritis",@"ache",@"inflammatory",@"menstrual",@"chronic",@"seizures",@"lung",@"allergic",@"dizzy",@"swelling",@"drowsiness", @"dehydrated", @"pregnancy", @"pregnant", @"nasal", @"asthma", @"nausea", @"indomethacin"];
         
         NSArray *Infection= @[@"infection",@"infections",@"herpes",@"virus",@"shingles",@"skin",@"antibiotic",@"bacteria",@"allergic",@"cancer",@"lung",@"diarrhea",@"swelling",@"hiv",@"hives",@"aids", @"bleeding", @"pregnancy", @"pregnant", @"itching", @"measles"];
-        /*
+        
         
         
         NSArray *allPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [allPaths objectAtIndex:0];
-        NSString *pathForLog = [documentsDirectory stringByAppendingPathComponent:@"yourFile.txt"];
+        NSString *pathForLog = [documentsDirectory stringByAppendingPathComponent:@"part6.txt"];
         
         freopen([pathForLog cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
         
-        */
+        
         
         
         //====================================PULL HTML PAGE============================================
-        NSArray *drugNames = @[@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
+        NSArray *drugNames = @[/*@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",
                                
                                
                                 @"Effexor",@"Effient",@"Elavil",@"Eliquis",@"Enalapril",@"Enbrel",@"Endocet",@"Entresto",@"Ephedrine",@"EpiPen",@"Epogen",@"Erythromycin",@"Estrace",@"Estradiol",@"Etodolac",@"Evista",@"Excedrin",@"Exelon",@"Exforge",@"Ezetimibe",@"Famotidine",@"Farxiga",@"Femara",@"Fenofibrate",@"Fentanyl",@"Ferrous_Sulfate",@"Fetzima",@"Fioricet",@"Fish_Oil",@"Flagyl",@"Flexeril",@"Flomax",@"Flonase",@"Flovent",@"Fluoxetine",@"Focalin",@"Folic_Acid",@"Forteo",@"Fosamax",@"Furosemide",@"Gabapentin",@"Gammagard",@"Gamunex",@"Gardasil",@"Gelnique",@"Gemfibrozil",@"Gemzar",@"Genvoya",@"Geodon",@"Gilenya",@"Gilotrif",@"Gleevec",@"Glipizide",@"Glucophage",@"Glucotrol",@"Glucovance",@"Glyburide",@"Glyxambi",@"Gralise",@"Guaifenesin",@"Halaven",@"Harvoni",@"Havrix",@"Hcg",@"Heparin",@"Herceptin",@"Hetlioz",@"Hizentra",@"Horizant",@"Humalog",@"Humira",@"Humulin",@"Humulin_N",@"Hydrochlorothiazide",@"Hydrocodone",@"Hydroxychloroquine",@"Hydroxyzine",@"Hysingla_ER",@"Hytrin",@"Hyzaar",@"Ibrance",@"Ibuprofen",@"Imbruvica",@"Imdur",@"Imitrex",@"Imodium",@"Implanon",
                                
-                               /*
-                                @"Incruse_Ellipta",@"Inderal",@"Injectafer",@"Insulin",@"Integrilin",@"Intelence",@"Intermezzo",@"Intuniv",@"Invega",@"Invokamet",@"Invokana",@"Isentress",@"Isosorbide",@"Jakafi",@"Jalyn",@"Janumet",@"Januvia",@"Jardiance",@"Jentadueto",@"Jetrea",@"Jevtana",@"Jublia",@"Juvederm",@"Juvisync",@"Juxtapid",@"K_dur",@"Kadcyla",@"Kadian",@"Kaletra",@"Kalydeco",@"Kapvay",@"Kazano",@"Kcentra",@"Keflex",@"Kenalog",@"Keppra",@"Kerydin",@"Keytruda",@"Kineret",@"Klonopin",@"Klor_con",@"Kombiglyze XR",@"Krill Oil",@"Kyprolis",@"Kytril",@"Lamictal",@"Lansoprazole",@"Lantus",@"Lasix",@"Latuda",@"Levaquin",@"Levemir",@"Levothyroxine",@"Lexapro",@"Linzess",@"Lipitor",@"Lisinopril",@"Lithium",@"Loratadine",@"Lorazepam",
+                              @"Incruse_Ellipta",@"Inderal",@"Injectafer",@"Insulin",@"Integrilin",@"Intelence",@"Intermezzo",@"Intuniv",@"Invega",@"Invokamet",@"Invokana",@"Isentress",@"Isosorbide",@"Jakafi",@"Jalyn",@"Janumet",@"Januvia",@"Jardiance",@"Jentadueto",@"Jetrea",@"Jevtana",@"Jublia",@"Juvederm",@"Juvisync",@"Juxtapid",@"K_dur",@"Kadcyla",@"Kadian",@"Kaletra",@"Kalydeco",@"Kapvay",@"Kazano",@"Kcentra",@"Keflex",@"Kenalog",@"Keppra",@"Kerydin",@"Keytruda",@"Kineret",@"Klonopin",@"Klor_con",@"Kombiglyze XR",@"Krill Oil",@"Kyprolis",@"Kytril",@"Lamictal",@"Lansoprazole",@"Lantus",@"Lasix",@"Latuda",@"Levaquin",@"Levemir",@"Levothyroxine",@"Lexapro",@"Linzess",@"Lipitor",@"Lisinopril",@"Lithium",@"Loratadine",@"Lorazepam",
                                 
                                 
+                               
                                 @"Lortab",@"Losartan",@"Lovenox",@"Lunesta",@"Lyrica",@"Macrobid",@"Meclizine",@"Melatonin",@"Meloxicam",@"Metformin",@"Methadone",@"Methocarbamol",@"Methotrexate",@"Methylphenidate",@"Methylprednisolone",@"Metoclopramide",@"Metoprolol",@"Metronidazole",@"MiraLax",@"Mirtazapine",@"Mobic",@"Morphine",@"Motrin",@"Mucinex",@"Myrbetriq",@"Naloxone",@"Namenda",@"Naprosyn",@"Naproxen",@"Nasonex",@"Neurontin",@"Nexium",@"Niacin",@"Niaspan",@"Nicotine",@"Nifedipine",@"Nitrofurantoin",@"Norco",@"Nortriptyline",@"Norvasc",@"NovoLog",@"Nucynta",@"Nuedexta",@"NuvaRing",@"Nuvigil",@"Ofev",@"Omeprazole",@"Omnicef",@"Ondansetron",@"Onfi",@"Onglyza",@"Opana",@"Opdivo",@"Opsumit",@"Orapred",@"Orencia",@"Orkambi",@"Orlistat",@"Ortho_Tri_Cyclen",@"Oseltamivir",@"Osphena",@"Otezla",@"Oxybutynin",@"Oxycodone",@"Oxycontin",@"Paracetamol",@"Paroxetine",@"Paxil",@"Percocet",@"Phenergan",@"Phentermine",@"Phenytoin",@"Plaquenil",@"Plavix",@"Potassium_Chloride",@"Pradaxa",@"Pravastatin",@"Prednisone",@"Premarin",@"Prilosec",@"Pristiq",@"Promethazine",@"Propranolol",@"Protonix",@"Prozac",@"QNASL",@"Qsymia",@"Quaaludes",@"Quillivant_XR",@"Qutenza",@"Ramipril",
                                 
-                                @"Ranexa",@"Ranitidine",@"Reclast",@"Reglan",@"Relafen",@"Relpax",@"Remeron",@"Remicade",@"Renvela",@"Requip",@"Restasis",@"Restoril",@"Rexulti",@"Risperdal",@"risperidone",@"Ritalin",@"Rituxan",
+                                @"Ranexa",@"Ranitidine",@"Reclast",@"Reglan",@"Relafen",@"Relpax",@"Remeron",@"Remicade",@"Renvela",@"Requip",@"Restasis",@"Restoril",@"Rexulti",@"Risperdal",@"risperidone",@"Ritalin",@"Rituxan",@"Robaxin",@"Rocephin",@"Saphris",@"Savella",@"Senna",@"Sensipar",@"Septra",@"Seroquel",@"Sertraline",@"Sildenafil",@"Simvastatin",@"Singulair",@"Skelaxin",@"Soma",@"Sonata",@"Spiriva",@"Spironolactone",@"Strattera",@"Suboxone",@"Sudafed",@"Symbicort",@"Synthroid",@"Tamoxifen",@"Tamsulosin",@"Tegretol",@"Temazepam",@"Terazosin",@"Testosterone",@"Tetracycline",@"Tizanidine",@"Topamax",@"Toradol",@"Toviaz",@"Tradjenta",@"Tramadol",@"Trazodone",@"Triamcinolone",@"Triamterene",@"Tricor",@"Trileptal",@"Truvada",@"Tylenol",@"Uceris",@"Ulesfia",@"Uloric",@"Ultane",@"Ultracet",@"Ultram",@"Ultresa",@"Uptravi",@"Uroxatral",@"Utibron_Neohaler",
                                 
-                                @"Robaxin",@"Rocephin",@"Saphris",@"Savella",@"Senna",@"Sensipar",@"Septra",@"Seroquel",@"Sertraline",@"Sildenafil",@"Simvastatin",@"Singulair",@"Skelaxin",@"Soma",@"Sonata",@"Spiriva",@"Spironolactone",@"Strattera",@"Suboxone",@"Sudafed",@"Symbicort",@"Synthroid",@"Tamoxifen",@"Tamsulosin",@"Tegretol",@"Temazepam",@"Terazosin",@"Testosterone",@"Tetracycline",@"Tizanidine",@"Topamax",@"Toradol",@"Toviaz",@"Tradjenta",@"Tramadol",@"Trazodone",@"Triamcinolone",@"Triamterene",@"Tricor",@"Trileptal",@"Truvada",@"Tylenol",@"Uceris",@"Ulesfia",@"Uloric",@"Ultane",@"Ultracet",@"Ultram",@"Ultresa",@"Uptravi",@"Uroxatral",@"Utibron_Neohaler",
-                                
-                                @"Valacyclovir",@"Valium",@"Valtrex",@"Vancomycin",@"Vasotec",@"Venlafaxine",@"Ventolin",@"Verapamil",@"Vesicare",@"Viagra",@"Vicodin",@"Victoza",@"Viibryd",@"Vimovo",@"Vimpat",@"Vistaril",@"Voltaren",@"Voltaren_Gel",@"Vytorin",@"Vyvanse",@"Warfarin",@"Wellbutrin",@"Wilate",@"Xalatan",@"Xalkori",@"Xanax",@"Xanax_XR",@"Xarelto",@"Xeljanz",@"Xeloda",@"Xenazine",@"Xenical",@"Xgeva",@"Xiaflex",@"Xifaxan",@"Xigduo_XR",@"Xofigo",@"Xolair",@"Xopenex",@"Xtandi",@"Xyntha",@"Xyrem",@"Xyzal",@"Yasmin",@"Yaz",@"Yervoy",@"Yondelis",@"Zanaflex",@"Zantac",@"Zestoretic",@"Zestril",@"Zetia",@"Ziac",@"Zithromax",@"Zocor",@"Zofran",@"Zoloft",@"Zolpidem",@"Zometa",@"Zostavax",@"Zosyn",@"Zovirax",@"Zubsolv",@"Zyprexa",@"Zyrtec",@"Zytiga",@"Zyvox"
+                                */@"Valacyclovir",@"Valium",@"Valtrex",@"Vancomycin",@"Vasotec",@"Venlafaxine",@"Ventolin",@"Verapamil",@"Vesicare",@"Viagra",@"Vicodin",@"Victoza",@"Viibryd",@"Vimovo",@"Vimpat",@"Vistaril",@"Voltaren",@"Voltaren_Gel",@"Vytorin",@"Vyvanse",@"Warfarin",@"Wellbutrin",@"Wilate",@"Xalatan",@"Xalkori",@"Xanax",@"Xanax_XR",@"Xarelto",@"Xeljanz",@"Xeloda",@"Xenazine",@"Xenical",@"Xgeva",@"Xiaflex",@"Xifaxan",@"Xigduo_XR",@"Xofigo",@"Xolair",@"Xopenex",@"Xtandi",@"Xyntha",@"Xyrem",@"Xyzal",@"Yasmin",@"Yaz",@"Yervoy",@"Yondelis",@"Zanaflex",@"Zantac",@"Zestoretic",@"Zestril",@"Zetia",@"Ziac",@"Zithromax",@"Zocor",@"Zofran",@"Zoloft",@"Zolpidem",@"Zometa",@"Zostavax",@"Zosyn",@"Zovirax",@"Zubsolv",@"Zyprexa",@"Zyrtec",@"Zytiga",@"Zyvox"
                                
                                
                                
-                               */];
+                               ];
         //NSLog(@"%@", drugNames);
         
         
@@ -674,26 +672,39 @@ int main(int argc, const char * argv[]) {
             
             if (max == (HBP/Total) * 100){
                 NSLog(@"Heart Disease Drug");
+                NSLog(@"");
             }
             else if(max == (HC/Total) * 100){
                 NSLog(@"High Cholesterol Drug");
+                NSLog(@"");
+
             }
             else if(max == (O/Total)* 100){
                 NSLog(@"Obesity Drug");
+                NSLog(@"");
+
             }
             else if (max == (D/Total)* 100){
                 NSLog(@"Diabetes Drug");
+                NSLog(@"");
+
             }
             else if (max == (AD/Total)* 100){
                 NSLog(@"Anxiety or Depression Drug");
+                NSLog(@"");
+
             }
             else if (max == (P/Total)* 100){
                 NSLog(@"Pain Drug");
+                NSLog(@"");
+
             }
             else if (max == (I/Total)* 100){
                 NSLog(@"Infection Drug");
+                NSLog(@"");
+
             }
-             
+            
             
 
             

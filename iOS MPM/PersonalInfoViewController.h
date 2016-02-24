@@ -15,6 +15,9 @@
     //save all goals in goal array
     NSMutableArray *goalsArray;
     
+    //find user selections as soon as they login
+    NSMutableArray *findSelections;
+    
 }
 
 //varions and uipicker for the personal info container
@@ -22,6 +25,11 @@
 - (IBAction)selectFoodAllergiesBTN:(id)sender;
 - (IBAction)selectHealthDisordersBTN:(id)sender;
 - (IBAction)selectGoal:(id)sender;
+
+//plist meds
+@property (strong, nonatomic) NSArray *MedsArray;
+
+
 
 
 

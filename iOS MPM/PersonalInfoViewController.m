@@ -7,6 +7,8 @@
 //
 
 #import "PersonalInfoViewController.h"
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 
 @interface PersonalInfoViewController ()
 
@@ -18,6 +20,52 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Meds" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    findSelections = [[NSMutableArray alloc] init];
+
+
+    //NSLog(@"%@",[dict objectForKey:@"DrugName"]);
+    //NSLog(@"%@", dict);
+    
+    
+    
+    [findSelections addObject:[[PFUser currentUser] objectForKey:@"selectedGoal"]];
+    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedMeds"]];
+    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedFoodAllergy"]];
+    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedDisorder"]];
+
+   // NSLog(@"the user selections are %@", findSelections);
+    
+    //find path of plist of our Meds
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Meds" ofType:@"plist"];
+    NSDictionary *medsDictionary = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+
+    self.MedsArray = medsDictionary[@"Meds"];
+    
+    //NSLog(@"%@", self.MedsArray);
+    
+    //NSLog(@"%@", self.MedsArray[2][@"Type"]);
+    
+    NSMutableString *findSelections = [[NSMutableString alloc] init];
+    
+    //findSelections = self.MedsArray[2][@"Name"];
+    
+    
+    for (int i=0; i <= (self.MedsArray.count-1); i++){
+        
+        findSelections = self.MedsArray[i][@"Name"];
+        
+        //NSLog(@"found selections %@", findSelections);
+       
+        if ([findSelections isEqualToString:@"Zanaflex"]){
+            NSLog(@"found drug the type is %@: ", self.MedsArray[i][@"Type"]);
+
+        }
+     }
+    
+    
+    
 
     
 }

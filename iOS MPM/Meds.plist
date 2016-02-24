@@ -1,0 +1,2457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Meds</key>
+        <array>
+            <dict>
+                <key>Name</key>
+                <string>Abilify</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Acetaminophen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Acyclovir</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Adderall</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Albuterol</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Aleve</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Allopurinol</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Alprazolam</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ambien</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Amiodarone</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Amitriptyline</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Amlodipine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Amoxicillin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Aricept</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Aspirin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Atenolol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ativan</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Atorvastatin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Augmentin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Azithromycin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Baclofen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bactrim</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bactroban</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Belviq</string>
+                <key>Type</key>
+                <string>Obesity Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Benadryl</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Benicar</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Biaxin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bisoprolol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Brilinta</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Brintellix</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bupropion</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Buspar</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Buspirone</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Butrans</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bydureon</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Bystolic</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Carbamazepine</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Carvedilol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Celebrex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Celexa</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cephalexin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cetirizine</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cialis</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cipro</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ciprofloxacin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Citalopram</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Claritin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Clindamycin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Clonazepam</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Clonidine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Concerta</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Coreg</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Coumadin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Crestor</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cyclobenzaprine</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Cymbalta</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Demerol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Depakote</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dexamethasone</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dextromethorphan</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diazepam</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diclofenac</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diflucan</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Digoxin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dilantin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dilaudid</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diltiazem</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diovan</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Diphenhydramine</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ditropan</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dopamine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Doxazosin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Doxycycline</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Dulera</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>DuoNeb</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Effexor</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Effient</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Elavil</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Eliquis</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Enalapril</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Enbrel</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Endocet</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Entresto</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ephedrine</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>EpiPen</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Epogen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Erythromycin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Estrace</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Estradiol</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Etodolac</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Evista</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Excedrin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Exelon</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Exforge</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ezetimibe</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Famotidine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Farxiga</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Femara</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Fenofibrate</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Fentanyl</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Fetzima</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Fioricet</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Flagyl</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Flexeril</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Flomax</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Flonase</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Flovent</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Fluoxetine</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Focalin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Folic_Acid</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Furosemide</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gabapentin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gammagard</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gamunex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gardasil</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gelnique</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gemfibrozil</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gemzar</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Genvoya</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Geodon</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gilenya</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gilotrif</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gleevec</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glipizide</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glucophage</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glucotrol</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glucovance</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glyburide</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Glyxambi</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Gralise</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Guaifenesin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Halaven</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Harvoni</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Havrix</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Heparin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Herceptin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hizentra</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Horizant</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Humalog</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Humira</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Humulin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hydrochlorothiazide</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hydroxychloroquine</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hydroxyzine</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hytrin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Hyzaar</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ibrance</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ibuprofen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Imbruvica</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Imdur</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Imitrex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Imodium</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Implanon</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Inderal</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Insulin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Integrilin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Intelence</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Intermezzo</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Intuniv</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Invega</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Invokamet</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Invokana</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Isentress</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Isosorbide</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Jalyn</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Janumet</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Januvia</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Jardiance</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Jentadueto</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Jevtana</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Jublia</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Juvederm</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Juvisync</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Juxtapid</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kadcyla</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kadian</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kaletra</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kapvay</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kazano</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Keflex</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kenalog</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Keppra</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kerydin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Keytruda</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kineret</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Klonopin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kyprolis</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Kytril</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lamictal</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lansoprazole</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lantus</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lasix</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Latuda</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Levaquin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Levemir</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Levothyroxine</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lexapro</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Linzess</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lipitor</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lisinopril</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lithium</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Loratadine</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lorazepam</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lortab</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Losartan</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lovenox</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lunesta</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Lyrica</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Macrobid</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Meclizine</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Melatonin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Meloxicam</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Metformin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Methadone</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Methocarbamol</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Methotrexate</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Methylphenidate</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Methylprednisolone</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Metoclopramide</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Metoprolol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Metronidazole</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Mirtazapine</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Mobic</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Morphine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Motrin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Mucinex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Myrbetriq</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Naloxone</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Namenda</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Naprosyn</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Naproxen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nasonex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Neurontin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nexium</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Niacin</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Niaspan</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nifedipine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nitrofurantoin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Norco</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nortriptyline</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Norvasc</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>NovoLog</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nucynta</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Nuedexta</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>NuvaRing</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ofev</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Omeprazole</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Omnicef</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ondansetron</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Onfi</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Onglyza</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Opana</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Opdivo</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Opsumit</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Orapred</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Orencia</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Oseltamivir</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Osphena</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Otezla</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Oxybutynin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Oxycodone</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Oxycontin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Paracetamol</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Paroxetine</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Paxil</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Percocet</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Phenergan</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Phentermine</string>
+                <key>Type</key>
+                <string>Obesity Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Phenytoin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Plaquenil</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Plavix</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Potassium_Chloride</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Pradaxa</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Pravastatin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Prednisone</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Premarin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Prilosec</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Pristiq</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Propranolol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Protonix</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Prozac</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>QNASL</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Qsymia</string>
+                <key>Type</key>
+                <string>Obesity Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ramipril</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ranexa</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ranitidine</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Reclast</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Reglan</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Relafen</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Relpax</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Remeron</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Remicade</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Renvela</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Requip</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Restasis</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Restoril</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Rexulti</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Risperdal</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>risperidone</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ritalin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Rituxan</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Robaxin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Rocephin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Saphris</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Savella</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Sensipar</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Septra</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Seroquel</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Sertraline</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Sildenafil</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Simvastatin</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Singulair</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Skelaxin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Soma</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Sonata</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Spiriva</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Spironolactone</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Strattera</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Suboxone</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Sudafed</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Symbicort</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Synthroid</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tamoxifen</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tamsulosin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tegretol</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Temazepam</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Terazosin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Testosterone</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tetracycline</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tizanidine</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Topamax</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Toradol</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Toviaz</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tradjenta</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tramadol</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Trazodone</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Triamcinolone</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Triamterene</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tricor</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Trileptal</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Truvada</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Tylenol</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Uceris</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ultracet</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ultram</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ultresa</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Uptravi</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Uroxatral</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Valacyclovir</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Valium</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Valtrex</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vancomycin</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vasotec</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Venlafaxine</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ventolin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Verapamil</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vesicare</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Viagra</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vicodin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Victoza</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Viibryd</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vimovo</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vimpat</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vistaril</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Voltaren</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vytorin</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Vyvanse</string>
+                <key>Type</key>
+                <string>Obesity Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Warfarin</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Wellbutrin</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xalatan</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xalkori</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xanax</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xarelto</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xeljanz</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xeloda</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xenazine</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xgeva</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xiaflex</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xifaxan</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xolair</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xopenex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xtandi</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xyntha</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xyrem</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Xyzal</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Yasmin</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Yaz</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Yervoy</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Yondelis</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zanaflex</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zantac</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zestril</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zetia</string>
+                <key>Type</key>
+                <string>High Cholesterol Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Ziac</string>
+                <key>Type</key>
+                <string>Heart Disease Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zithromax</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zocor</string>
+                <key>Type</key>
+                <string>Diabetes Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zofran</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zoloft</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zolpidem</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zometa</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zostavax</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zosyn</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zovirax</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zubsolv</string>
+                <key>Type</key>
+                <string>Pain Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zyprexa</string>
+                <key>Type</key>
+                <string>Anxiety or Depression Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zyrtec</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zytiga</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            <dict>
+                <key>Name</key>
+                <string>Zyvox</string>
+                <key>Type</key>
+                <string>Infection Drug</string>
+            </dict>
+            </array>
+    </dict>
+</plist>
