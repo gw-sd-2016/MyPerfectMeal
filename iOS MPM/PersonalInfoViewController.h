@@ -16,7 +16,12 @@
     NSMutableArray *goalsArray;
     
     //find user selections as soon as they login
-    NSMutableArray *findSelections;
+    NSMutableArray *findUserSelections;
+    
+    //load meds
+    NSArray *MedsArray;
+    
+    NSMutableString *currentMed;
     
 }
 
@@ -26,8 +31,7 @@
 - (IBAction)selectHealthDisordersBTN:(id)sender;
 - (IBAction)selectGoal:(id)sender;
 
-//plist meds
-@property (strong, nonatomic) NSArray *MedsArray;
+
 
 
 

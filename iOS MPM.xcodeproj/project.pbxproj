@@ -48,6 +48,7 @@
 		80F4CB851BEC50CC009538A6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */; };
 		80FCB2151BF6C80100520167 /* MealTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB2141BF6C80100520167 /* MealTableTableViewController.m */; };
 		AC1601421C7E09F600904001 /* Meds.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1601411C7E09F600904001 /* Meds.plist */; };
+		AC1601851C7E6E2B00904001 /* MedsCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1601841C7E6E2B00904001 /* MedsCategories.plist */; };
 		AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */; };
 		AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29641C7BA3A0001C1707 /* Cardiology.png */; };
 		AC6F29691C7BA3A0001C1707 /* Health.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29651C7BA3A0001C1707 /* Health.png */; };
@@ -137,6 +138,7 @@
 		80FCB2131BF6C80100520167 /* MealTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MealTableTableViewController.h; path = ../MealTableTableViewController.h; sourceTree = "<group>"; };
 		80FCB2141BF6C80100520167 /* MealTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MealTableTableViewController.m; path = ../MealTableTableViewController.m; sourceTree = "<group>"; };
 		AC1601411C7E09F600904001 /* Meds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Meds.plist; sourceTree = "<group>"; };
+		AC1601841C7E6E2B00904001 /* MedsCategories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MedsCategories.plist; sourceTree = "<group>"; };
 		AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
 		AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
 		AC6F29641C7BA3A0001C1707 /* Cardiology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cardiology.png; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				80F4CB3E1BEC4888009538A6 /* Info.plist */,
 				80F4CB2E1BEC4887009538A6 /* main.m */,
 				AC1601411C7E09F600904001 /* Meds.plist */,
+				AC1601841C7E6E2B00904001 /* MedsCategories.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */,
 				80F4CB3A1BEC4888009538A6 /* Assets.xcassets in Resources */,
 				80F4CB381BEC4888009538A6 /* Main.storyboard in Resources */,
+				AC1601851C7E6E2B00904001 /* MedsCategories.plist in Resources */,
 				AC1601421C7E09F600904001 /* Meds.plist in Resources */,
 				AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */,
 				AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */,

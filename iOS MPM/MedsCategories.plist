@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MedsCategories</key>
+	<dict>
+		<key>Heart Disease</key>
+		<dict>
+			<key>Good Ingredients</key>
+			<array>
+				<string>salmon</string>
+				<string>oatmeal</string>
+				<string>blueberries</string>
+				<string>soy</string>
+				<string>potatoes</string>
+				<string>dark chocolate</string>
+				<string>citrus</string>
+				<string>tomatoes</string>
+				<string>nuts</string>
+				<string>legumes</string>
+				<string>olive oil</string>
+				<string>green tea</string>
+				<string>broccoli</string>
+				<string>spinach</string>
+				<string>kale</string>
+				<string>coffee</string>
+				<string>flax seeds</string>
+				<string>avocado</string>
+				<string>pomegranate</string>
+				<string>canola oil</string>
+				<string>fish</string>
+				<string>beans</string>
+				<string>vegetables</string>
+				<string>fruits</string>
+				<string>whole grains</string>
+				<string>brown rice</string>
+				<string>quinoa</string>
+				<string>sweet potatoes</string>
+				<string>fiber</string>
+				<string>garlic</string>
+				<string>sardine</string>
+				<string>lentils</string>
+				<string>almonds</string>
+				<string>orange</string>
+			</array>
+			<key>Bad Ingredients</key>
+			<array>
+				<string>Processed meats</string>
+				<string>processed grains</string>
+				<string>Soft drink</string>
+				<string>snacks</string>
+				<string>crackers</string>
+				<string>margarines</string>
+				<string>beef</string>
+				<string>lamb</string>
+				<string>butter</string>
+				<string>milk</string>
+				<string>salt</string>
+				<string>saturated fat</string>
+			</array>
+		</dict>
+		<key>High Blood Pressure</key>
+		<dict>
+			<key>Good Ingredients</key>
+			<array>
+                <string>white beans</string>
+                <string>fat-free plain yogurt</string>
+                <string>tilapia</string>
+                <string>peaches</string>
+                <string>nectarines</string>
+                <string>bananas</string>
+                <string>red bell pepper</string>
+                <string>sweet potato</string>
+                <string>quinoa</string>
+                <string>avocado</string>
+			</array>
+			<key>Bad Ingredients</key>
+			<array>
+                <string>salt</string>
+                <string>deli meat</string>
+                <string>pizza</string>
+                <string>pickles</string>
+                <string>canned</string>
+                <string>bottled</string>
+                <string>sugar</string>
+                <string>chicken skin</string>
+                <string>coffee</string>
+                <string>alcohol</string>
+                <string>baked</string>
+                <string>red meat</string>
+                <string>sauerkraut</string>
+                <string>ramen noodles</string>
+                <string>bacon</string>
+                <string>donuts</string>
+                <string>whole milk</string>
+			</array>
+		</dict>
+        
+
+        
+        <key>High Cholesterol</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>tub margarine</string>
+                <string>vegetable oil</string>
+                <string>olive oil</string>
+                <string>canola oil</string>
+                <string>skinless chicken</string>
+                <string>chicken</string>
+                <string>turkey</string>
+                <string>lean beef</string>
+                <string>veal</string>
+                <string>lamb</string>
+                <string>fish</string>
+                <string>meatless</string>
+                <string>beans</string>
+                <string>peas</string>
+                <string>pasta</string>
+                <string>rice</string>
+                <string>broiled</string>
+                <string>salad</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>butter</string>
+                <string>bacon dripping</string>
+                <string>lard</string>
+                <string>palm oil</string>
+                <string>coconut oil</string>
+                <string>hard margarines</string>
+                <string>snack crackers</string>
+                <string>cookies</string>
+                <string>chips</string>
+                <string>shortenings</string>
+                <string>corned beef</string>
+                <string>pastrami</string>
+                <string>beef</string>
+                <string>ribs</string>
+                <string>steak</string>
+                <string>ground meat</string>
+                <string>hot dog</string>
+                <string>sausage</string>
+                <string>bacon</string>
+                <string>processed meat</string>
+                <string>bologna</string>
+                <string>liver</string>
+                <string>kidney</string>
+                <string>egg</string>
+                <string>milk</string>
+                <string>snack</string>
+                <string>crackers</string>
+                <string>muffins</string>
+                <string>bread</string>
+                <string>croissant</string>
+                <string>cake</string>
+                <string>whole eggs</string>
+                <string>whole milk</string>
+                <string>butter</string>
+                <string>margarine</string>
+                <string>hamburgers</string>
+                <string>fries</string>
+                <string>fried chicken</string>
+                <string>tacos</string>
+                <string>cheese</string>
+                <string>dressing</string>
+                <string>mayonnaise</string>
+                <string>mayo</string>
+            </array>
+        </dict>
+        
+        
+        <key>Asthma</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>apple</string>
+                <string>Cantaloupe</string>
+                <string>carrots</string>
+                <string>coffee</string>
+                <string>flax seeds</string>
+                <string>garlic</string>
+                <string>avocado</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>egg</string>
+                <string>milk</string>
+                <string>peanut</string>
+                <string>salt</string>
+                <string>shellfish</string>
+                <string>wine</string>
+            </array>
+        </dict>
+        
+        
+        <key>Diabetes</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>apple</string>
+                <string>asparagus</string>
+                <string>avocado</string>
+                <string>bean</string>
+                <string>blueberries</string>
+                <string>broccoli</string>
+                <string>carrot</string>
+                <string>cranberries</string>
+                <string>fish</string>
+                <string>flaxseed</string>
+                <string>garlic</string>
+                <string>kale</string>
+                <string>lemon</string>
+                <string>nuts</string>
+                <string>oatmeal</string>
+                <string>quinoa</string>
+                <string>raspberries</string>
+                <string>grapefruit</string>
+                <string>onion</string>
+                <string>red peppers</string>
+                <string>soy</string>
+                <string>spinach</string>
+                <string>tea</string>
+                <string>tomatoes</string>
+                <string>yogurt</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>Nachos</string>
+                <string>Coffee</string>
+                <string>Biscuit</string>
+                <string>sausage gravy</string>
+                <string>battered fish</string>
+                <string>Juice</string>
+                <string>deep fried</string>
+                <string>cinnamon roll</string>
+                <string>french fries</string>
+                <string>cookies</string>
+                <string>fried chicken</string>
+                <string>pie</string>
+                <string>smoothies</string>
+                <string>meat</string>
+                <string>hamburger</string>
+                <string>doughnuts</string>
+                <string>baked</string>
+                <string>frozen</string>
+                <string>soft</string>
+                <string>cake</string>
+                <string>flavored</string>
+                <string>milk</string>
+                <string>shake</string>
+                <string>milk shake</string>
+                <string>pizza</string>
+            </array>
+        </dict>
+        
+        <key>Frequent Headaches</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>Salad</string>
+                <string>coffee</string>
+                <string>banana</string>
+                <string>spicy</string>
+                <string>bread</string>
+                <string>potato</string>
+                <string>yogurt</string>
+                <string>almond</string>
+                <string>watermelon</string>
+                <string>mushroom</string>
+                <string>salmon</string>
+                <string>cucumber</string>
+                <string>liver</string>
+                <string>quinoa</string>
+                <string>spinach</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>chocolate</string>
+                <string>red wine</string>
+                <string>alcohol</string>
+                <string>cheese</string>
+                <string>soy</string>
+                <string>ice cream</string>
+                <string>meat</string>
+            </array>
+        </dict>
+        
+        
+        <key>Depression</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>turkey</string>
+                <string>walnuts</string>
+                <string>fish</string>
+                <string>dairy</string>
+                <string>whole grain</string>
+                <string>green tea</string>
+                <string>Turmeric</string>
+                <string>dark chocolate</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>soda</string>
+                <string>sugar</string>
+                <string>margarine</string>
+                <string>processed pumpkin seed</string>
+                <string>potato chips</string>
+                <string>chips</string>
+                <string>bagel</string>
+                <string>peanuts</string>
+                <string>vegetable shortening</string>
+                <string>sweet potato</string>
+                <string>canned</string>
+            </array>
+        </dict>
+        
+        
+        <key>Anxiety</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>turkey</string>
+                <string>beef</string>
+                <string>whole wheat</string>
+                <string>salmon</string>
+                <string>greek yogurt</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>coffee</string>
+                <string>candy</string>
+                <string>alcohol</string>
+                <string>hot dog</string>
+            </array>
+        </dict>
+        
+        
+        <key>Gastrointestinal Problems</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>greek yogurt</string>
+                <string>sauerkraut</string>
+                <string>kimchi</string>
+                <string>artichoke</string>
+                <string>kombucha</string>
+                <string>miso soup</string>
+                <string>dark chocolate</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>Chocolate Milk</string>
+                <string>cottage cheese</string>
+                <string>sour cream</string>
+                <string>almond milk</string>
+                <string>chocolate soy milk</string>
+            </array>
+        </dict>
+        
+        <key>Alzheimer's Disease</key>
+        <dict>
+            <key>Good Ingredients</key>
+            <array>
+                <string>spinach</string>
+                <string>radish</string>
+                <string>kale</string>
+                <string>mackerel</string>
+                <string>halibut</string>
+                <string>sardine</string>
+                <string>tuna</string>
+                <string>flax seed</string>
+                <string>beans</string>
+                <string>coffee</string>
+                <string>chocolate</string>
+                <string>cinnamon</string>
+                <string>turmeric</string>
+                <string>strawberries</string>
+                <string>blueberries</string>
+                <string>orange</string>
+                <string>raspberries</string>
+                <string>plums</string>
+                <string>cherrie</string>
+                <string>extra virgin olive oil</string>
+            </array>
+            <key>Bad Ingredients</key>
+            <array>
+                <string>none</string>
+            </array>
+        </dict>
+        
+        
+        
+	</dict>
+</dict>
+</plist>
