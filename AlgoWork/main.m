@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-//#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 
 int main(int argc, const char * argv[]) {
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
         
         NSArray *Infection= @[@"infection",@"infections",@"herpes",@"virus",@"shingles",@"skin",@"antibiotic",@"bacteria",@"allergic",@"cancer",@"lung",@"diarrhea",@"swelling",@"hiv",@"hives",@"aids", @"bleeding", @"pregnancy", @"pregnant", @"itching", @"measles"];
         
-        
+        /*
         
         NSArray *allPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [allPaths objectAtIndex:0];
@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
         freopen([pathForLog cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
         
         
-        
+        */
         
         //====================================PULL HTML PAGE============================================
         NSArray *drugNames = @[/*@"Abilify",@"Acetaminophen",@"Acyclovir",@"Adderall",@"Albuterol",@"Aleve",@"Allopurinol",@"Alprazolam",@"Ambien",@"Amiodarone",@"Amitriptyline",@"Amlodipine",@"Amoxicillin",@"Aricept",@"Aspirin",@"Atenolol",@"Ativan",@"Atorvastatin",@"Augmentin",@"Azithromycin",@"Baclofen",@"Bactrim",@"Bactroban",@"Belsomra",@"Belviq",@"Benadryl",@"Benicar",@"Biaxin",@"Bisoprolol",@"Boniva",@"Breo_Ellipta",@"Brilinta",@"Brintellix",@"Bupropion",@"Buspar",@"Buspirone",@"Butrans",@"Bydureon",@"Bystolic",@"Carbamazepine",@"Carvedilol",@"Celebrex",@"Celexa",@"Cephalexin",@"Cetirizine",@"Cialis",@"Cipro",@"Ciprofloxacin",@"Citalopram",@"Claritin",@"Clindamycin",@"Clonazepam",@"Clonidine",@"Concerta",@"Coreg",@"Coumadin",@"Crestor",@"Cyclobenzaprine",@"Cymbalta",@"Demerol",@"Depakote",@"Depo_Provera",@"Dexamethasone",@"Dextromethorphan",@"Diazepam",@"Diclofenac",@"Diflucan",@"Digoxin",@"Dilantin",@"Dilaudid",@"Diltiazem",@"Diovan",@"Diphenhydramine",@"Ditropan",@"Dopamine",@"Doxazosin",@"Doxycycline",@"Dulera",@"DuoNeb",

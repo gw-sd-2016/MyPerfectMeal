@@ -54,20 +54,7 @@
         //NSLog(@"%@", findUserSelections[i]);
         //NSLog(@"");
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    
         
         /*//Find What selected drugs are for
         for (int j= 0; j <= (MedsArray.count -1); j++){
