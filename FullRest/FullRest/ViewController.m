@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 @interface ViewController ()
 
@@ -72,11 +73,11 @@
 }
 
 
--(NSString *) RestURL{
+-(NSMutableArray *) RestURL{
     
     NSScanner *getRestURLScanner;
     NSString *getRestURL = nil;
-    
+    NSMutableArray *getRestURLArray = [[NSMutableArray alloc] init];
     getRestURLScanner = [NSScanner scannerWithString:[self loadRawHTML]];
     
     while ([getRestURLScanner isAtEnd] == NO) {
@@ -86,22 +87,38 @@
         
         [getRestURLScanner scanUpToString:@"menu/\">" intoString:&getRestURL] ;
         
-       getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_name\"><a href=\""] withString:@""];
+        getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_name\"><a href=\""] withString:@""];
         
+        
+        /*
         //this gets all urls on the page
         //NSLog(@"%@", getRestURL);
         
+        if (![getRestURLArray containsObject:getRestURL]){
+            [getRestURLArray addObject:getRestURL];
+
+        }
+        else{
+            //NSLog(@" found before %@", getRestURL);
+        }
+        */
+        [getRestURLArray addObject:getRestURL];
+
+        
+        
     }
     
-    return getRestURL;
+    [getRestURLArray removeLastObject];
+    
+    return getRestURLArray;
 }
 
 
-- (NSString *) RestNames{
+- (NSMutableArray *) RestNames{
     
     NSScanner *getRestNamesScanner;
     NSString *getRestNames = nil;
-    
+    NSMutableArray *getRestNamesArray = [[NSMutableArray alloc] init];
     getRestNamesScanner = [NSScanner scannerWithString:[self loadRawHTML]];
     
     while ([getRestNamesScanner isAtEnd] == NO) {
@@ -115,22 +132,34 @@
         
         
         //get all rest names
-        NSLog(@"%@", getRestNames);
+        //NSLog(@"%@", getRestNames);
+        /*
+        if (![getRestNamesArray containsObject:getRestNames]){
+            [getRestNamesArray addObject:getRestNames];
+            
+        }
+        else{
+            NSLog(@" found before %@", getRestNames);
+        }
+        */
         
+        [getRestNamesArray addObject:getRestNames];
     }
     
-    return getRestNames;
+    [getRestNamesArray removeLastObject];
+    
+    return getRestNamesArray;
     
     
     
     
 }
 
-- (double) RestDistances{
+- (NSMutableArray *) RestDistances{
     
     NSScanner *getRestDistanceScanner;
     NSString *getRestDistance = nil;
-    
+    NSMutableArray *getRestDistanceArray = [[NSMutableArray alloc] init];
     getRestDistanceScanner = [NSScanner scannerWithString:[self loadRawHTML]];
     
     while ([getRestDistanceScanner isAtEnd] == NO) {
@@ -144,32 +173,123 @@
         
         
         //get all rest names
-        NSLog(@"%f", [getRestDistance doubleValue]);
+        //NSLog(@"%f", [getRestDistance doubleValue]);
+        
+        [getRestDistanceArray addObject:getRestDistance];
+
         
     }
     
-    return [getRestDistance doubleValue];
+    [getRestDistanceArray removeLastObject];
+
+    
+    return  getRestDistanceArray;
     
 }
 
 
+- (NSMutableArray *) RestDesc{
+    
+    NSScanner *getRestDescScanner;
+    NSString *getRestDesc = nil;
+    NSMutableArray *getRestDescArray = [[NSMutableArray alloc] init];
+    getRestDescScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    
+    while ([getRestDescScanner isAtEnd] == NO) {
+        
+        
+        [getRestDescScanner scanUpToString:@"<ul class=\"restaurant_cuisines\">" intoString:NULL] ;
+        
+        [getRestDescScanner scanUpToString:@"</li>        </ul>" intoString:&getRestDesc] ;
+        
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<ul class=\"restaurant_cuisines\">"] withString:@""];
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<li>"] withString:@""];
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"</li>"] withString:@""];
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"        "] withString:@""];
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+
+        [getRestDescArray addObject:getRestDesc];
+
+        
+        //get all rest names
+        //NSLog(@"%@", getRestDesc);
+        
+    }
+    
+    [getRestDescArray removeLastObject];
+    
+    return getRestDescArray;
+    
+}
+
+
+- (NSMutableArray *) RestAddress{
+    
+    NSScanner *getRestAddressScanner;
+    NSString *getRestAddress = nil;
+    NSMutableArray *getRestAddressArray = [[NSMutableArray alloc] init];
+    getRestAddressScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    
+    while ([getRestAddressScanner isAtEnd] == NO) {
+        
+        
+        [getRestAddressScanner scanUpToString:@"<p class=\"restaurant_address\">" intoString:NULL] ;
+        
+        [getRestAddressScanner scanUpToString:@"</p>" intoString:&getRestAddress] ;
+        
+        getRestAddress = [getRestAddress stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_address\">"] withString:@""];
+    
+        //get all rest names
+        //NSLog(@"%@", getRestAddress);
+        
+        
+        [getRestAddressArray addObject:getRestAddress];
+
+        
+    }
+    
+    [getRestAddressArray removeLastObject];
+    
+    
+    return getRestAddressArray;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //Get number of restaurants found around me
-   // NSLog(@"%d", [self NumOfRestNearMe]);
+    NSLog(@"%d", [self NumOfRestNearMe]);
     
     //get all rest urls near me
     //NSLog(@"%@", [self RestURL]);
+    //NSLog(@"%d", [[self RestURL] count]);
+    NSLog(@"%@", [self RestURL][5]);
+    
     
     //get all rest names near me
     //NSLog(@"%@", [self RestNames]);
-    
+    //NSLog(@"%d", [[self RestNames] count]);
+    NSLog(@"%@", [self RestNames][5]);
+
+
     //get all rest distances
     //NSLog(@"%f", [self RestDistances]);
+    //NSLog(@"%d", [[self RestDistances] count]);
+    NSLog(@"%@", [self RestDistances][5]);
+
     
-    
+    //get all rest desc near me
+    //NSLog(@"%@", [self RestDesc]);
+    //NSLog(@"%d", [[self RestDesc] count]);
+    NSLog(@"%@", [self RestDesc][5]);
+
+    //get all rest address near me
+    //NSLog(@"%@", [self RestAddress]);
+    //NSLog(@"%d", [[self RestAddress] count]);
+    NSLog(@"%@", [self RestAddress][5]);
+
+
     
 }
 

@@ -13,8 +13,6 @@
 
 
 
-- (double) RestDistances;
--(NSInteger *) NumOfRestNearMe;
 
 
 
