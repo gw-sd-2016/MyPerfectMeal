@@ -10,7 +10,7 @@
 
 int main(int argc, const char * argv[]) {
     
-   
+    /*
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/va/annandale/345297-thai-food/menu/"];
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];
@@ -24,12 +24,7 @@ int main(int argc, const char * argv[]) {
         
         [Scanner scanUpToString:@"<div id=\"menu\" style=\"clear:both;\"><div class=\"category\"><div class=\"category_head\">" intoString:NULL] ;
         [Scanner scanUpToString:@"<!-- alternative menus -->" intoString:&text] ;
-        /*
-        
-        loadPageHTML = [loadPageHTML stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"</script>"] withString:@""];
-        loadPageHTML = [loadPageHTML stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<script>"] withString:@""];
-
-         */
+     
         
     }
    //NSLog(@"%@", text);
@@ -142,7 +137,7 @@ int main(int argc, const char * argv[]) {
         
     }
     ////////////////////////////////////GET INGREDIENTS////////////////////////////////////////////
-
+*/
 
    
     return 0;
