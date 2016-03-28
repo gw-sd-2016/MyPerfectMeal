@@ -10,8 +10,8 @@
 
 int main(int argc, const char * argv[]) {
     
-    /*
-    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/va/annandale/345297-thai-food/menu/"];
+    
+    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington/244602-lindys-red-lion/menu/"];
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];
     NSMutableArray *getCategoriesArray = [[NSMutableArray alloc] init];
@@ -52,7 +52,7 @@ int main(int argc, const char * argv[]) {
         
     }
     
-    //NSLog(@"%@", getCategoriesArray);
+   // NSLog(@"%@", getCategoriesArray);
     
     ////////////////////////////////////GET CATEGORIES////////////////////////////////////////////
 
@@ -77,7 +77,7 @@ int main(int argc, const char * argv[]) {
         
         getMeals = [getMeals stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<dt>"] withString:@""];
         
-         //NSLog(@"%@", getMeals);
+         NSLog(@"%@", getMeals);
         
         
     }
@@ -101,10 +101,10 @@ int main(int argc, const char * argv[]) {
         [theFourthScanner scanUpToString:@"</p>" intoString:&getPrices] ;
         
        getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p>"] withString:@""];
-        //getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" "] withString:@""];
+       // getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" "] withString:@""];
 
         
-       // NSLog(@"%@", getPrices);
+       //NSLog(@"%@", getPrices);
         
         
     }
@@ -132,12 +132,12 @@ int main(int argc, const char * argv[]) {
         //getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" "] withString:@""];
         
         
-        NSLog(@"%@", getIngredients);
+        //NSLog(@"%@", getIngredients);
         
         
     }
     ////////////////////////////////////GET INGREDIENTS////////////////////////////////////////////
-*/
+
 
    
     return 0;

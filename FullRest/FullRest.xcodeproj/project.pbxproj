@@ -505,6 +505,7 @@
 				AC1602391C829BD600904001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC16023A1C829BD600904001 /* Build configuration list for PBXNativeTarget "FullRestTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				AC16023C1C829BD600904001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC16023D1C829BD600904001 /* Build configuration list for PBXNativeTarget "FullRestUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				AC16023F1C829BD600904001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

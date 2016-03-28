@@ -1,21 +1,20 @@
 //
-//  ViewController.m
-//  FullRest
+//  RestaurantsTableViewController.m
+//  iOS MPM
 //
-//  Created by guest on 2/27/16.
-//  Copyright © 2016 AKSolutions. All rights reserved.
+//  Created by guest on 3/21/16.
+//  Copyright © 2016 Abed Kassem. All rights reserved.
 //
 
-#import "ViewController.h"
-#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#import "RestaurantsTableViewController.h"
+#import "CustomTableViewCell.h"
+#import "MenuTableViewController.h"
 
-@interface ViewController ()
+@interface RestaurantsTableViewController ()
 
 @end
 
-@implementation ViewController
-
-
+@implementation RestaurantsTableViewController
 
 
 
@@ -28,10 +27,10 @@
     //Load HTML link
     //Store HTML Page for "X amount of restaurants Page"
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:loadURL
-                                                         usedEncoding:&encoding
-                                                                error:&error];
-
-  
+                                                        usedEncoding:&encoding
+                                                               error:&error];
+    
+    
     
     
     NSScanner *allRestNearMeHTMLScanner;
@@ -95,24 +94,26 @@
         
         
         /*
-        //this gets all urls on the page
-        //NSLog(@"%@", getRestURL);
-        
-        if (![getRestURLArray containsObject:getRestURL]){
-            [getRestURLArray addObject:getRestURL];
-
-        }
-        else{
-            //NSLog(@" found before %@", getRestURL);
-        }
-        */
+         //this gets all urls on the page
+         //NSLog(@"%@", getRestURL);
+         
+         if (![getRestURLArray containsObject:getRestURL]){
+         [getRestURLArray addObject:getRestURL];
+         
+         }
+         else{
+         //NSLog(@" found before %@", getRestURL);
+         }
+         */
         [getRestURLArray addObject:getRestURL];
-
+        
         
         
     }
     
     [getRestURLArray removeLastObject];
+    
+    
     
     return getRestURLArray;
 }
@@ -138,14 +139,14 @@
         //get all rest names
         //NSLog(@"%@", getRestNames);
         /*
-        if (![getRestNamesArray containsObject:getRestNames]){
-            [getRestNamesArray addObject:getRestNames];
-            
-        }
-        else{
-            NSLog(@" found before %@", getRestNames);
-        }
-        */
+         if (![getRestNamesArray containsObject:getRestNames]){
+         [getRestNamesArray addObject:getRestNames];
+         
+         }
+         else{
+         NSLog(@" found before %@", getRestNames);
+         }
+         */
         
         [getRestNamesArray addObject:getRestNames];
     }
@@ -180,12 +181,12 @@
         //NSLog(@"%f", [getRestDistance doubleValue]);
         
         [getRestDistanceArray addObject:getRestDistance];
-
+        
         
     }
     
     [getRestDistanceArray removeLastObject];
-
+    
     
     return  getRestDistanceArray;
     
@@ -211,9 +212,9 @@
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"</li>"] withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"        "] withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-
+        
         [getRestDescArray addObject:getRestDesc];
-
+        
         
         //get all rest names
         //NSLog(@"%@", getRestDesc);
@@ -242,13 +243,13 @@
         [getRestAddressScanner scanUpToString:@"</p>" intoString:&getRestAddress] ;
         
         getRestAddress = [getRestAddress stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_address\">"] withString:@""];
-    
+        
         //get all rest names
         //NSLog(@"%@", getRestAddress);
         
         
         [getRestAddressArray addObject:getRestAddress];
-
+        
         
     }
     
@@ -262,44 +263,165 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //register new custom table view cell
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomTableViewCell class])];
+    
+    _clickedRestaurant = [[NSString alloc] init];
+    _clickedURL = [[NSString alloc] init];
+
+    
+    allRestNames = [self RestNames];
+    allRestTypes = [self RestDesc];
+    allRestAddresses = [self RestAddress];
+    allRestDistances = [self RestDistances];
+    allRestURLs = [self RestURL];
+    
+   // NSLog(@"%i", [[self RestNames] count]);
+   // NSLog(@"%i", [[self RestURL] count]);
+    
+    
+    
+    
     //Get number of restaurants found around me
-    NSLog(@"%d", [self NumOfRestNearMe]);
+    //NSLog(@"%d", [self NumOfRestNearMe]);
     
     //get all rest urls near me
     //NSLog(@"%@", [self RestURL]);
     //NSLog(@"%d", [[self RestURL] count]);
-   // NSLog(@"%@", [self RestURL][5]);
+    // NSLog(@"%@", [self RestURL][5]);
     
     
     //get all rest names near me
-    NSLog(@"%@", [self RestNames]);
+   // NSLog(@"%@", [self RestNames]);
+    
+    
     //NSLog(@"%d", [[self RestNames] count]);
     //NSLog(@"%@", [self RestNames][5]);
-
-
+    
+    
     //get all rest distances
     //NSLog(@"%f", [self RestDistances]);
     //NSLog(@"%d", [[self RestDistances] count]);
     //NSLog(@"%@", [self RestDistances][5]);
-
+    
     
     //get all rest desc near me
     //NSLog(@"%@", [self RestDesc]);
     //NSLog(@"%d", [[self RestDesc] count]);
     //NSLog(@"%@", [self RestDesc][5]);
-
+    
     //get all rest address near me
     //NSLog(@"%@", [self RestAddress]);
     //NSLog(@"%d", [[self RestAddress] count]);
-   // NSLog(@"%@", [self RestAddress][5]);
-
-
+    // NSLog(@"%@", [self RestAddress][5]);
     
+    
+    
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 15;
+    //return [allRestNames count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomTableViewCell class]) forIndexPath:indexPath];
+    
+    //cell.textLabel.text = [allRestNames objectAtIndex:indexPath.row];
+    
+    cell.restNameLBL.text = [allRestNames objectAtIndex:indexPath.row];
+    cell.restTypeLBL.text = [allRestTypes objectAtIndex:indexPath.row];
+    cell.restAddressLBL.text = [allRestAddresses objectAtIndex:indexPath.row];
+    cell.restDistanceLBL.text = [allRestDistances objectAtIndex:indexPath.row];
+    
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //get clicked restaurant name
+    _clickedRestaurant = [allRestNames objectAtIndex:indexPath.row];
+    _clickedURL = [allRestURLs objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"showMenu" sender:self];
+
+    //NSLog(@"%@", clickedRestaurant);
+    //NSLog(@"%@", clickedURL);
+    
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showMenu"])
+    {
+        MenuTableViewController *MenuDetailsViewController = [segue destinationViewController];
+        MenuDetailsViewController.clickedRestaurantName = _clickedRestaurant;
+        MenuDetailsViewController.clickedRestaurantURL = _clickedURL;
+       
+        
+    }
+}
+
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
+
+/*
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+*/
+
+/*
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+}
+*/
+
+/*
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
+*/
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

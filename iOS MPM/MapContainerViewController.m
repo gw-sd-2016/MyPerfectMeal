@@ -7,8 +7,6 @@
 //
 
 #import "MapContainerViewController.h"
-#import "RestaurantViewController.h"
-#import "MealTableTableViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
