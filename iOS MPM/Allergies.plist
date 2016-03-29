@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Allergies</key>
+        <dict>
+            <key>Nuts</key>
+            <array>
+                <string>Almond</string>
+                <string>Australian Nut</string>
+                <string>Beech</string>
+                <string>Black Walnut</string>
+                <string>Blanched Almond</string>
+                <string>Brazil Nut</string>
+                <string>Butternut</string>
+                <string>Candle Nut</string>
+                <string>Candlenut</string>
+                <string>Cashew</string>
+                <string>Chestnuts</string>
+                <string>Chinese Almond</string>
+                <string>Chinese Chestnut</string>
+                <string>Chinkapin</string>
+                <string>Chufa Nut</string>
+                <string>Cobnut</string>
+                <string>Colocynth</string>
+                <string>Country Walnut</string>
+                <string>Cream Nut</string>
+                <string>Cucurbita Ficifolia</string>
+                <string>Earth Almond</string>
+                <string>Earth Nut</string>
+                <string>English Walnuts</string>
+                <string>Filbert</string>
+                <string>Florida Almond</string>
+                <string>Gevuina Avellana</string>
+                <string>Gingko Nut</string>
+                <string>Hazelnut</string>
+                <string>Heartnut</string>
+                <string>Hickory Nut</string>
+                <string>Horned Water Chestnut</string>
+                <string>Indian Beech</string>
+                <string>Indian Nut</string>
+                <string>Japanese Walnut</string>
+                <string>Java Almond</string>
+                <string>Jesuit Nut</string>
+                <string>Juniper Berry</string>
+                <string>Kluwak Nuts</string>
+                <string>Kola Nut</string>
+                <string>Macadamia</string>
+                <string>Malabar Chestnut</string>
+                <string>Mamoncillo</string>
+                <string>Maya Nut</string>
+                <string>Mongongo</string>
+                <string>Oak Acorns</string>
+                <string>Ogbono Nut</string>
+                <string>Para Nut</string>
+                <string>Paradise Nut</string>
+                <string>Pecan</string>
+                <string>Persian Walnuts</string>
+                <string>Pili Nut</string>
+                <string>Pine Nut</string>
+                <string>Pine Nut</string>
+                <string>Pinyon</string>
+                <string>Pistachio Nut</string>
+                <string>Pistacia</string>
+                <string>Polynesian Chestnut</string>
+                <string>Queensland Nut</string>
+                <string>Royal Walnuts</string>
+                <string>Rush Nut</string>
+                <string>Sapucaya Nut</string>
+                <string>Sapucia Nut</string>
+                <string>Shagbark Hickory</string>
+                <string>Sliced Almonds</string>
+                <string>Slivered Almond</string>
+                <string>Sweet Almond</string>
+                <string>Sweet Chestnut</string>
+                <string>Terminalia Catappa</string>
+                <string>Tiger Nut</string>
+                <string>Walnut</string>
+                <string>Water Caltrop</string>
+                <string>White Nut</string>
+                <string>White Walnut</string>
+            </array>
+            <key>Fish</key>
+            <array>
+                <string>Fish</string>
+                <string>Jellied eels</string>
+                <string>Monkfish </string>
+                <string>pomfret</string>
+                <string>swordfish</string>
+                <string>Tuna </string>
+                <string>Salmon </string>
+                <string>Squilla mantis</string>
+                <string>Anchovy</string>
+                <string>Basa</string>
+                <string>Bass </string>
+                <string>Black cod</string>
+                <string>Sablefish</string>
+                <string>Blowfish</string>
+                <string>Bluefish</string>
+                <string>Bombay duck</string>
+                <string>Bream</string>
+                <string>Brill</string>
+                <string>Butter fish</string>
+                <string>Catfish</string>
+                <string>Cod </string>
+                <string>Dogfish</string>
+                <string>Dorade</string>
+                <string>Eel</string>
+                <string>Flounder</string>
+                <string>Grouper</string>
+                <string>Haddock</string>
+                <string>Halibut</string>
+                <string>Herring</string>
+                <string>Ilish</string>
+                <string>John Dory</string>
+                <string>Kingfish</string>
+                <string>Lamprey</string>
+                <string>Lingcod</string>
+                <string>Mackerel</string>
+                <string>Mahi Mahi</string>
+                <string>Monkfish</string>
+                <string>Mullet</string>
+                <string>Orange roughy</string>
+                <string>Patagonian toothfish </string>
+                <string>Pike</string>
+                <string>Pollock</string>
+                <string>Pomfret</string>
+                <string>Pompano</string>
+                <string>Sablefish</string>
+                <string>Salmon</string>
+                <string>Sanddab</string>
+                <string>Sardine</string>
+                <string>Sea bass</string>
+                <string>Shad</string>
+                <string>Shark</string>
+                <string>Skate</string>
+                <string>Snakehead</string>
+                <string>Snapper</string>
+                <string>Sole</string>
+                <string>Sturgeon</string>
+                <string>Surimi</string>
+                <string>Swordfish</string>
+                <string>Tilapia</string>
+                <string>Tilefish</string>
+                <string>Trout </string>
+                <string>Tuna</string>
+                <string>Turbot</string>
+                <string>Wahoo</string>
+                <string>Whitefish</string>
+                <string>Whiting</string>
+                <string>Roe[edit]</string>
+                <string>Caviar</string>
+                <string>Ikura </string>
+                <string>Kazunoko </string>
+                <string>Lumpfish roe</string>
+                <string>Masago </string>
+                <string>Shad roe</string>
+                <string>Tobiko </string>
+                <string>Molluscs</string>
+                <string>Cockle</string>
+                <string>Conch</string>
+                <string>Cuttlefish</string>
+                <string>Loco</string>
+                <string>Mussel</string>
+                <string>Octopus</string>
+                <string>Oyster</string>
+                <string>Periwinkle</string>
+                <string>Scallop </string>
+                <string>Squid</string>
+            </array>
+            <key>Shellfish</key>
+            <array>
+                <string>Crab </string>
+                <string>Crayfish</string>
+                <string>Lobster</string>
+                <string>Shrimp </string>
+            </array>
+            <key>Milk Products</key>
+            <array>
+                <string>Aarts</string>
+                <string>Amasi</string>
+                <string>Ayran</string>
+                <string>Baked milk</string>
+                <string>Basundi</string>
+                <string>Bhuna khoya</string>
+                <string>Blaand</string>
+                <string>Black Kashk</string>
+                <string>Booza</string>
+                <string>Buffalo curd </string>
+                <string>Bulgarian yogurt</string>
+                <string>Butter </string>
+                <string>Butterfat</string>
+                <string>Buttermilk</string>
+                <string>Buttermilk koldskal</string>
+                <string>Buttermilk powder</string>
+                <string>Brunost</string>
+                <string>Cacık</string>
+                <string>Camel milk</string>
+                <string>Casein </string>
+                <string>Caudle</string>
+                <string>Chaas</string>
+                <string>Chal</string>
+                <string>Chalap</string>
+                <string>Chass</string>
+                <string>Cheese</string>
+                <string>Clabber </string>
+                <string>Clotted cream</string>
+                <string>Condensed milk</string>
+                <string>Cottage cheese</string>
+                <string>Cream</string>
+                <string>Cream cheese</string>
+                <string>Crème anglaise</string>
+                <string>Crème fraîche</string>
+                <string>Cuajada</string>
+                <string>Curd</string>
+                <string>Curd snack</string>
+                <string>Custard</string>
+                <string>Dadiah</string>
+                <string>Daigo</string>
+                <string>Dondurma</string>
+                <string>Donkey's milk</string>
+                <string>Dulce de Leche</string>
+                <string>Doogh</string>
+                <string>Evaporated milk</string>
+                <string>Filled milk</string>
+                <string>Filmjölk</string>
+                <string>Feta</string>
+                <string>Fromage frais</string>
+                <string>Fermented milk products</string>
+                <string>Frozen custard</string>
+                <string>Frozen yogurt</string>
+                <string>Galalith</string>
+                <string>Gelato</string>
+                <string>Goat milk</string>
+                <string>Gombe</string>
+                <string>Gomme</string>
+                <string>Horse milk</string>
+                <string>Ice cream</string>
+                <string>Ice milk</string>
+                <string>Indian dairy products</string>
+                <string>Infant formula</string>
+                <string>Junket</string>
+                <string>Kashk, aaruul, chortan, qurut</string>
+                <string>Kaymak</string>
+                <string>Kefir</string>
+                <string>Khoa</string>
+                <string>Kulfi</string>
+                <string>Kumis</string>
+                <string>Lassi</string>
+                <string>Leben (labneh)</string>
+                <string>Malai</string>
+                <string>Matzoon</string>
+                <string>Milk</string>
+                <string>Milk skin</string>
+                <string>Míša</string>
+                <string>Mitha Dahi</string>
+                <string>Moose milk</string>
+                <string>Mursik</string>
+                <string>Paneer</string>
+                <string>Pomazánkové máslo</string>
+                <string>Powdered milk</string>
+                <string>Processed cheese</string>
+                <string>Pytia</string>
+                <string>Qimiq</string>
+                <string>Quark</string>
+                <string>Qatiq</string>
+                <string>Reindeer milk</string>
+                <string>Ryazhenka</string>
+                <string>Semifreddo</string>
+                <string>Sergem</string>
+                <string>Sheep milk</string>
+                <string>Shrikhand</string>
+                <string>Skorup</string>
+                <string>Skyr</string>
+                <string>Smântână</string>
+                <string>Smetana</string>
+                <string>So</string>
+                <string>Soft serve</string>
+                <string>Sour cream</string>
+                <string>Soured milk</string>
+                <string>Spaghettieis</string>
+                <string>Stewler</string>
+                <string>Strained yogurt</string>
+                <string>Súrmjólk</string>
+                <string>Tarhana</string>
+                <string>Tuttis</string>
+                <string>Urdă</string>
+                <string>Uunijuusto</string>
+                <string>Vaccenic acid</string>
+                <string>Viili</string>
+                <string>Vla</string>
+                <string>Whey</string>
+                <string>Whey protein</string>
+                <string>Whipped cream</string>
+                <string>Yak butter</string>
+                <string>Yak milk</string>
+                <string>Yakult</string>
+                <string>Ymer</string>
+                <string>Yogurt</string>
+                <string>Žinčica</string>
+            </array>
+            <key>Egg</key>
+            <array>
+                <string>Albumin</string>
+                <string>Apovitellin</string>
+                <string>Cholesterol free egg substitute (e.g. Eggbeaters®)</string>
+                <string>Dried egg solids, dried egg</string>
+                <string>Egg, egg white, egg yolk</string>
+                <string>Egg wash</string>
+                <string>Eggnog</string>
+                <string>Fat substitutes</string>
+                <string>Globulin</string>
+                <string>Livetin</string>
+                <string>Lysozyme</string>
+                <string>Mayonnaise</string>
+                <string>Meringue, meringue powder</string>
+                <string>Ovalbumin</string>
+                <string>Ovoglobulin</string>
+                <string>Ovomucin</string>
+                <string>Ovomucoid</string>
+                <string>Ovotransferrin</string>
+                <string>Ovovitelia</string>
+                <string>Ovovitellin</string>
+                <string>Powdered eggs</string>
+                <string>Silici albuminate</string>
+                <string>Simplesse</string>
+                <string>Surimi</string>
+                <string>Trailblazer</string>
+                <string>Vitellin</string>
+                <string>Whole egg</string>
+                <string>Baked foods</string>
+                <string>Breaded and batter-fried foods</string>
+                <string>Caesar salad dressing</string>
+                <string>Cream pies, fillings, and puffs</string>
+                <string>Crepes and waffles</string>
+                <string>Custards, puddings, and ice cream</string>
+                <string>Eggnog</string>
+                <string>Eggrolls</string>
+                <string>Egg substitutes</string>
+                <string>Coffee drinks like cappuccino (eggs are sometimes used to help create the foam)</string>
+                <string>Fizzes</string>
+                <string>Lollipops and other candies</string>
+                <string>Marshmallows and marzipan</string>
+                <string>Mayonnaise</string>
+                <string>Meatloaf and meatballs</string>
+                <string>Meringue and frostings</string>
+                <string>Pastas</string>
+                <string>Sauces, including Hollandaise and tartar sauce</string>
+                <string>Simplesse (fat substitute)</string>
+                <string>Soufflés</string>
+                <string>Soups and consommés</string>
+                <string>Wine</string>
+                <string>Albumin</string>
+                <string>Globulin</string>
+                <string>Lecithin</string>
+                <string>Lysozyme</string>
+                <string>Ovalbumin</string>
+                <string>Ovovitellin</string>
+            </array>
+            <key>Soy</key>
+            <array>
+                <string>Bean curd</string>
+                <string>Edamame (soybeans in pods)</string>
+                <string>Hydrolyzed soy protein</string>
+                <string>Kinnoko flour</string>
+                <string>Kyodofu (freeze dried tofu)</string>
+                <string>Miso</string>
+                <string>Natto</string>
+                <string>Okara (soy pulp)</string>
+                <string>Shoyu sauce</string>
+                <string>Soy albumin</string>
+                <string>Soy concentrate</string>
+                <string>Soy fiber</string>
+                <string>Soy formula</string>
+                <string>Soy grits</string>
+                <string>Soy milk</string>
+                <string>Soy miso</string>
+                <string>Soy nuts</string>
+                <string>Soy nut butter</string>
+                <string>Soy protein, soy protein concentrate, soy protein isolate</string>
+                <string>Soy sauce</string>
+                <string>Soy sprouts</string>
+                <string>Soya</string>
+                <string>Soya flour</string>
+                <string>Soybeans</string>
+                <string>Soybean granules</string>
+                <string>Soybean curd</string>
+                <string>Soybean flour</string>
+                <string>Soy lecithin**</string>
+                <string>Soybean paste</string>
+                <string>Supro</string>
+                <string>Tamari</string>
+                <string>Tempeh</string>
+                <string>Teriyaki sauce</string>
+                <string>Textured soy flour (TSF)</string>
+                <string>Textured soy protein (TSP)</string>
+                <string>Textured vegetable protein (TVP)</string>
+                <string>Tofu</string>
+                <string>Yakidofu</string>
+                <string>Yuba (bean curd)</string>
+                <string>Artificial flavoring</string>
+                <string>Asian foods (e.g. Japanese, Chinese, Thai, etc.)</string>
+                <string>Baked goods</string>
+                <string>Hydrolyzed plant protein</string>
+                <string>Hydrolyzed vegetable protein (HVP)</string>
+                <string>Lecithin**</string>
+                <string>Natural flavoring</string>
+                <string>Vegetable broth</string>
+                <string>Vegetable gum</string>
+                <string>Vegetable starch</string>
+            </array>
+            <key>Wheat</key>
+            <array>
+                <string>white flour</string>
+                <string>whole wheat flour</string>
+                <string>durum wheat</string>
+                <string>graham four</string>
+                <string>triticale</string>
+                <string>kamut</string>
+                <string>semolina</string>
+                <string>spelt</string>
+                <string>wheat germ</string>
+                <string>wheat bran</string>
+                <string>pasta</string>
+                <string>couscous</string>
+                <string>bread</string>
+                <string>flour tortillas</string>
+                <string>cookies</string>
+                <string>cake</string>
+                <string>crackers</string>
+                <string>beer</string>
+                <string>cereal</string>
+                <string>oats</string>
+                <string>gravy </string>
+                <string>dressing</string>
+                <string>sauce</string>
+            </array>   
+        </dict>
+    </dict>
+</plist>

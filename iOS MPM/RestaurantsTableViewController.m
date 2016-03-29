@@ -1,14 +1,8 @@
-//
-//  RestaurantsTableViewController.m
-//  iOS MPM
-//
-//  Created by guest on 3/21/16.
-//  Copyright © 2016 Abed Kassem. All rights reserved.
-//
 
 #import "RestaurantsTableViewController.h"
 #import "CustomTableViewCell.h"
 #import "MenuTableViewController.h"
+#import "MapContainerViewController.h"
 
 @interface RestaurantsTableViewController ()
 
@@ -323,6 +317,12 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -359,8 +359,12 @@
     //get clicked restaurant name
     _clickedRestaurant = [allRestNames objectAtIndex:indexPath.row];
     _clickedURL = [allRestURLs objectAtIndex:indexPath.row];
+    _clickedAddress = [allRestAddresses objectAtIndex:indexPath.row];
+
     [self performSegueWithIdentifier:@"showMenu" sender:self];
 
+    
+    
     //NSLog(@"%@", clickedRestaurant);
     //NSLog(@"%@", clickedURL);
     
@@ -372,11 +376,18 @@
     if ([[segue identifier] isEqualToString:@"showMenu"])
     {
         MenuTableViewController *MenuDetailsViewController = [segue destinationViewController];
+
         MenuDetailsViewController.clickedRestaurantName = _clickedRestaurant;
         MenuDetailsViewController.clickedRestaurantURL = _clickedURL;
-       
+        MenuDetailsViewController.clickedRestaurantAddress = _clickedAddress;
+        /*
+        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantName);
+        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantURL);
+        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantAddress);
+        */
         
     }
+    
 }
 
 

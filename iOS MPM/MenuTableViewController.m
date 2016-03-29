@@ -1,12 +1,6 @@
-//
-//  MenuTableViewController.m
-//  iOS MPM
-//
-//  Created by guest on 3/23/16.
-//  Copyright © 2016 Abed Kassem. All rights reserved.
-//
 
 #import "MenuTableViewController.h"
+#import "MapContainerViewController.h"
 
 @interface MenuTableViewController ()
 
@@ -256,7 +250,6 @@
     MealSectionTitles = [[Meals allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 
     
-    NSLog(@"%@", [self getIngredients]);
     
     
     
@@ -323,6 +316,26 @@
     cell.textLabel.text = Meal;
     
     return cell;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // segue to push name of clicked restaurant to the map controller
+    if ([[segue identifier] isEqualToString:@"showMap"])
+    {
+        
+        
+        MapContainerViewController *MapDetailsViewController = [segue destinationViewController];
+        
+        MapDetailsViewController.clickedRestaurantNameInMap = _clickedRestaurantName;
+        MapDetailsViewController.clickedRestaurantAddressInMap = _clickedRestaurantAddress;
+        /*
+        NSLog(@"%@", MapDetailsViewController.clickedRestaurantNameInMap);
+        NSLog(@"%@", MapDetailsViewController.clickedRestaurantAddressInMap);
+        */
+        
+    }
 }
 
 

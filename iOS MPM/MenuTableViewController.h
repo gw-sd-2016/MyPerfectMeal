@@ -1,10 +1,4 @@
-//
-//  MenuTableViewController.h
-//  iOS MPM
-//
-//  Created by guest on 3/23/16.
-//  Copyright © 2016 Abed Kassem. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 
@@ -18,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *clickedRestaurantName;
 @property (nonatomic, strong) NSString *clickedRestaurantURL;
+@property (nonatomic, strong) NSString *clickedRestaurantAddress;
 
 
 

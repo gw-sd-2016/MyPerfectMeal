@@ -43,7 +43,10 @@
 		80F4CB851BEC50CC009538A6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */; };
 		AC1601421C7E09F600904001 /* Meds.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1601411C7E09F600904001 /* Meds.plist */; };
 		AC1601851C7E6E2B00904001 /* MedsCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1601841C7E6E2B00904001 /* MedsCategories.plist */; };
+		AC1A03FA1CA9E49800462AF9 /* Allergies.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1A03F91CA9E49800462AF9 /* Allergies.plist */; };
 		AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2904861CA31F7F0054B817 /* MenuTableViewController.m */; };
+		AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC43A1661CAAC1C7000A9BA8 /* Goals.plist */; };
+		AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */; };
 		AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */; };
 		AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */; };
 		AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29641C7BA3A0001C1707 /* Cardiology.png */; };
@@ -125,8 +128,12 @@
 		80F4CB841BEC50CC009538A6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		AC1601411C7E09F600904001 /* Meds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Meds.plist; sourceTree = "<group>"; };
 		AC1601841C7E6E2B00904001 /* MedsCategories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MedsCategories.plist; sourceTree = "<group>"; };
+		AC1A03F91CA9E49800462AF9 /* Allergies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Allergies.plist; sourceTree = "<group>"; };
 		AC2904851CA31F7F0054B817 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		AC2904861CA31F7F0054B817 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		AC43A1661CAAC1C7000A9BA8 /* Goals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Goals.plist; sourceTree = "<group>"; };
+		AC4AAF3A1CA9B8320048E38C /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
+		AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 		AC65FAB51CA09095000867A0 /* RestaurantsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsTableViewController.h; sourceTree = "<group>"; };
 		AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsTableViewController.m; sourceTree = "<group>"; };
 		AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
@@ -288,6 +295,7 @@
 				80A02C221C08280A007AA09C /* Registration */,
 				80E6414F1C08418600CF203A /* User Profile */,
 				80A02C201C08211E007AA09C /* Restaurant Tab */,
+				AC4AAF391CA9B8100048E38C /* Results Tab */,
 				80F4CB2D1BEC4887009538A6 /* Supporting Files */,
 			);
 			path = "iOS MPM";
@@ -304,6 +312,8 @@
 				80F4CB2E1BEC4887009538A6 /* main.m */,
 				AC1601411C7E09F600904001 /* Meds.plist */,
 				AC1601841C7E6E2B00904001 /* MedsCategories.plist */,
+				AC1A03F91CA9E49800462AF9 /* Allergies.plist */,
+				AC43A1661CAAC1C7000A9BA8 /* Goals.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -349,6 +359,15 @@
 				80F4CB6A1BEC4EC3009538A6 /* ParseUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC4AAF391CA9B8100048E38C /* Results Tab */ = {
+			isa = PBXGroup;
+			children = (
+				AC4AAF3A1CA9B8320048E38C /* ResultsTableViewController.h */,
+				AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */,
+			);
+			name = "Results Tab";
 			sourceTree = "<group>";
 		};
 		AC6F29621C7BA2A8001C1707 /* Resources */ = {
@@ -484,6 +503,8 @@
 				AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */,
 				AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */,
 				AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */,
+				AC1A03FA1CA9E49800462AF9 /* Allergies.plist in Resources */,
+				AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +532,7 @@
 				AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */,
 				AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
+				AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */,
 				803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */,

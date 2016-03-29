@@ -1,10 +1,4 @@
-//
-//  MapContainerViewController.m
-//  iOS MPM
-//
-//  Created by Abed Kassem on 11/17/15.
-//  Copyright © 2015 Abed Kassem. All rights reserved.
-//
+
 
 #import "MapContainerViewController.h"
 #import <ParseUI/ParseUI.h>
@@ -23,38 +17,13 @@
     
 
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Restaurants"];
     
-    //we know which restaurant we clicked on because we passed the info from the previous view controller
-    [query whereKey:@"Restaurant_Name" equalTo:_clickedRestaurant2];
+    self.nameLbl.text = _clickedRestaurantNameInMap;
+    self.addressLbl.text = _clickedRestaurantAddressInMap;
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (PFObject *object in objects) {
-                
-                //NSLog(@"%@", object);
-                NSString *CityStateZipCombo;
-                NSString *City;
-                NSString *State;
-                NSString *Zip;
-                NSString *AddressOne;
-                
-                //pull info from database
-                City = [object objectForKey:@"City"];
-                State = [object objectForKey:@"State"];
-                Zip = [object objectForKey:@"Zip"];
-                AddressOne = [object objectForKey:@"Street_Address"];
-                
-                //we have a full address now because we combined the pulled info
-                CityStateZipCombo = [NSString stringWithFormat:@"%@, %@, %@",City,State,Zip];
-
-                //set the info of the restaurant
-                self.nameLbl.text = [object objectForKey:@"Restaurant_Name"];
-                self.addressOneLbl.text = AddressOne;
-                self.addressTwoLbl.text = CityStateZipCombo;
 
                 //use the apple's geocoder to translate an address to logng and lat
-                NSString *fullAddress = [NSString stringWithFormat:@"%@, %@", AddressOne, CityStateZipCombo];
+                NSString *fullAddress =  _clickedRestaurantAddressInMap;
                 NSString *location = fullAddress;
                 CLGeocoder *geocoder = [[CLGeocoder alloc] init];
                 [geocoder geocodeAddressString:location
@@ -78,24 +47,9 @@
                                  }
                              }
                  ];
-
-                
-            }
-            
-            
-        }
-        
-    }];
-
-    
- 
-    
-    
-    
-    
- 
  
 
+     
 }
 
 
