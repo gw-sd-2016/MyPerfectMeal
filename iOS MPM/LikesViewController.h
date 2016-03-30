@@ -8,6 +8,10 @@
 
 #import <ParseUI/ParseUI.h>
 
-@interface LikesViewController : PFQueryTableViewController
+@interface LikesViewController : PFQueryTableViewController{
+    
+    NSMutableArray *findLikes;
+
+}
 
 @end
