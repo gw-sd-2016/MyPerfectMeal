@@ -14,12 +14,12 @@
     
     //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington/239197-potbelly-sandwich-works/amp/"];
     
-    self.title = _clickedRestaurantName;
+    //self.title = _clickedRestaurantName;
     
     //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington/437291-char-bar/amp/"];
-   NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com%@", _clickedRestaurantURL];
+    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com%@", _clickedRestaurantURL];
     
-    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington/437291-char-bar/amp/"];
+    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];
@@ -314,6 +314,8 @@
     NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
     NSString *Meal = [sectionMeals objectAtIndex:indexPath.row];
     cell.textLabel.text = Meal;
+    
+    cell.detailTextLabel.text = [[self getIngredients] objectAtIndex:indexPath.row];
     
     return cell;
 }

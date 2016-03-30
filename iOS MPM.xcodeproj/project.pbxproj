@@ -54,6 +54,8 @@
 		AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29661C7BA3A0001C1707 /* Microscope.png */; };
 		AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29671C7BA3A0001C1707 /* Pills.png */; };
 		AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */; };
+		AC7531181CAC6C430029AC9C /* LikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7531171CAC6C430029AC9C /* LikesViewController.m */; };
+		AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC75311A1CAC6C500029AC9C /* DislikesViewController.m */; };
 		AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */; };
 		AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -144,6 +146,10 @@
 		AC6F29671C7BA3A0001C1707 /* Pills.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pills.png; sourceTree = "<group>"; };
 		AC74C98A1C7CD7CA001BD589 /* SelectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionsViewController.h; sourceTree = "<group>"; };
 		AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionsViewController.m; sourceTree = "<group>"; };
+		AC7531161CAC6C430029AC9C /* LikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikesViewController.h; sourceTree = "<group>"; };
+		AC7531171CAC6C430029AC9C /* LikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikesViewController.m; sourceTree = "<group>"; };
+		AC7531191CAC6C500029AC9C /* DislikesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DislikesViewController.h; sourceTree = "<group>"; };
+		AC75311A1CAC6C500029AC9C /* DislikesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DislikesViewController.m; sourceTree = "<group>"; };
 		AC76D2641CA202E500DDC7FE /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 		80A6A55E1C0B4813001CFEDE /* Personal Info Container */ = {
 			isa = PBXGroup;
 			children = (
+				AC7531151CAC6C170029AC9C /* Preferences */,
 				80A6A55F1C0B4F88001CFEDE /* PersonalInfoViewController.h */,
 				80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */,
 				803C8CB91C0E6BC30086123D /* MedicationsViewController.h */,
@@ -389,6 +396,17 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		AC7531151CAC6C170029AC9C /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				AC7531161CAC6C430029AC9C /* LikesViewController.h */,
+				AC7531171CAC6C430029AC9C /* LikesViewController.m */,
+				AC7531191CAC6C500029AC9C /* DislikesViewController.h */,
+				AC75311A1CAC6C500029AC9C /* DislikesViewController.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -534,6 +552,7 @@
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
+				AC7531181CAC6C430029AC9C /* LikesViewController.m in Sources */,
 				80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */,
 				803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */,
 				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
@@ -541,6 +560,7 @@
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */,
 				8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */,
+				AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */,
 				AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */,
 				AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,

@@ -100,7 +100,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    //[tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
 
     static NSString *restaurantTableIdentifier = @"cell";
     
