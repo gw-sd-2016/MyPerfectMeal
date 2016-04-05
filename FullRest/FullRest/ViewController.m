@@ -40,19 +40,23 @@
     
     while ([allRestNearMeHTMLScanner isAtEnd] == NO) {
         
-        [allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
-        [allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@"<h1>We found <span id='rest_count'>" intoString:NULL] ;
+
+        [allRestNearMeHTMLScanner scanUpToString:@"delivery_option_label>" intoString:NULL] ;
+        [allRestNearMeHTMLScanner scanUpToString:@"2016 GrubHub, Inc. All rights reserved." intoString:&text] ;
         
         
     }
     
-    //NSLog(@"%@", loadPageHTML);
+    NSLog(@"%@", loadPageHTML);
     
     return loadPageHTML;
     
 }
 
-
+/*
 -(NSInteger *) NumOfRestNearMe{
     
     NSScanner *numOfRestNearMeScanner;
@@ -105,7 +109,7 @@
         else{
             //NSLog(@" found before %@", getRestURL);
         }
-        */
+ 
         [getRestURLArray addObject:getRestURL];
 
         
@@ -137,7 +141,7 @@
         
         //get all rest names
         //NSLog(@"%@", getRestNames);
-        /*
+ 
         if (![getRestNamesArray containsObject:getRestNames]){
             [getRestNamesArray addObject:getRestNames];
             
@@ -145,7 +149,7 @@
         else{
             NSLog(@" found before %@", getRestNames);
         }
-        */
+ 
         
         [getRestNamesArray addObject:getRestNames];
     }
@@ -258,12 +262,14 @@
     return getRestAddressArray;
     
 }
-
+*/
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self loadRawHTML];
+    
     //Get number of restaurants found around me
-    NSLog(@"%d", [self NumOfRestNearMe]);
+    //NSLog(@"%d", [self NumOfRestNearMe]);
     
     //get all rest urls near me
     //NSLog(@"%@", [self RestURL]);
@@ -272,7 +278,7 @@
     
     
     //get all rest names near me
-    NSLog(@"%@", [self RestNames]);
+    //NSLog(@"%@", [self RestNames]);
     //NSLog(@"%d", [[self RestNames] count]);
     //NSLog(@"%@", [self RestNames][5]);
 

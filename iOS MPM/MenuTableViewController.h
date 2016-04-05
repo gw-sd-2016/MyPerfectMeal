@@ -8,6 +8,7 @@
     NSArray *MealSectionTitles;
     NSString *clickedMealString;
     NSString *clickedMealIngredientsString;
+    NSString *loadedRawHTML;
 }
 
 

@@ -14,7 +14,6 @@
 
 -(NSString *) loadRawHTML{
     
-    //load url of near me restaurants
     NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
     NSStringEncoding encoding;
     NSError *error = nil;
@@ -33,13 +32,17 @@
     
     while ([allRestNearMeHTMLScanner isAtEnd] == NO) {
         
-        [allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
-        [allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@"<h1>We found <span id='rest_count'>" intoString:NULL] ;
+        
+        [allRestNearMeHTMLScanner scanUpToString:@"delivery_option_label>" intoString:NULL] ;
+        [allRestNearMeHTMLScanner scanUpToString:@"2016 GrubHub, Inc. All rights reserved." intoString:&text] ;
         
         
     }
     
-    //NSLog(@"%@", loadPageHTML);
+    NSLog(@"Loading html called");
     
     return loadPageHTML;
     
@@ -51,7 +54,7 @@
     NSScanner *numOfRestNearMeScanner;
     NSString *getNumOfRestNearMe = nil;
     
-    numOfRestNearMeScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    numOfRestNearMeScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([numOfRestNearMeScanner isAtEnd] == NO) {
         
@@ -75,7 +78,7 @@
     NSScanner *getRestURLScanner;
     NSString *getRestURL = nil;
     NSMutableArray *getRestURLArray = [[NSMutableArray alloc] init];
-    getRestURLScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getRestURLScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([getRestURLScanner isAtEnd] == NO) {
         
@@ -118,7 +121,7 @@
     NSScanner *getRestNamesScanner;
     NSString *getRestNames = nil;
     NSMutableArray *getRestNamesArray = [[NSMutableArray alloc] init];
-    getRestNamesScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getRestNamesScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([getRestNamesScanner isAtEnd] == NO) {
         
@@ -159,7 +162,7 @@
     NSScanner *getRestDistanceScanner;
     NSString *getRestDistance = nil;
     NSMutableArray *getRestDistanceArray = [[NSMutableArray alloc] init];
-    getRestDistanceScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getRestDistanceScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([getRestDistanceScanner isAtEnd] == NO) {
         
@@ -192,7 +195,7 @@
     NSScanner *getRestDescScanner;
     NSString *getRestDesc = nil;
     NSMutableArray *getRestDescArray = [[NSMutableArray alloc] init];
-    getRestDescScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getRestDescScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([getRestDescScanner isAtEnd] == NO) {
         
@@ -227,7 +230,7 @@
     NSScanner *getRestAddressScanner;
     NSString *getRestAddress = nil;
     NSMutableArray *getRestAddressArray = [[NSMutableArray alloc] init];
-    getRestAddressScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getRestAddressScanner = [NSScanner scannerWithString:loadedHTMLPage];
     
     while ([getRestAddressScanner isAtEnd] == NO) {
         
@@ -256,7 +259,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    loadedHTMLPage = [self loadRawHTML];
     //register new custom table view cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomTableViewCell class])];
     
@@ -269,6 +272,8 @@
     allRestAddresses = [self RestAddress];
     allRestDistances = [self RestDistances];
     allRestURLs = [self RestURL];
+    
+    
     
    // NSLog(@"%i", [[self RestNames] count]);
    // NSLog(@"%i", [[self RestURL] count]);

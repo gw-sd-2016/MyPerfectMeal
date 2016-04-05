@@ -48,7 +48,7 @@
     NSString *getCategories = nil;
     NSMutableArray  *getCategoriesArray = [[NSMutableArray alloc] init];
     
-    getCategoriesScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getCategoriesScanner = [NSScanner scannerWithString:loadedRawHTML];
     
     while ([getCategoriesScanner isAtEnd] == NO) {
         
@@ -79,7 +79,7 @@
     
     NSScanner *getHTMLScanner;
     NSString *secondHTML = @"";
-    getHTMLScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getHTMLScanner = [NSScanner scannerWithString:loadedRawHTML];
     //NSLog(@"%@ and %@", [self getCategoryNames][Y],[self getCategoryNames][Y+1]);
     
     NSString *firstCat = [NSString stringWithFormat:@"<h3>%@</h3>", [self getCategoryNames][Y]];
@@ -142,7 +142,7 @@
     
     NSScanner *getMealPricesScanner;
     NSString *getPrices = nil;
-    getMealPricesScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getMealPricesScanner = [NSScanner scannerWithString:loadedRawHTML];
     NSMutableArray *getPricesArray = [[NSMutableArray alloc] init];
     while ([getMealPricesScanner isAtEnd] == NO) {
         
@@ -173,7 +173,7 @@
     
     NSScanner *getIngredientsScanner;
     NSString *getIngredients = nil;
-    getIngredientsScanner = [NSScanner scannerWithString:[self loadRawHTML]];
+    getIngredientsScanner = [NSScanner scannerWithString:loadedRawHTML];
     NSMutableArray *getIngredientsArray = [[NSMutableArray alloc] init];
     while ([getIngredientsScanner isAtEnd] == NO) {
         
@@ -208,6 +208,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = _clickedRestaurantName;
+    
+    loadedRawHTML = [self loadRawHTML];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

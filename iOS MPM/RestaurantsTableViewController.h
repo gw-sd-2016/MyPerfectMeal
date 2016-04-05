@@ -10,6 +10,7 @@
     NSMutableArray *allRestAddresses;
     NSMutableArray *allRestDistances;
     NSMutableArray *allRestURLs;
+    NSString *loadedHTMLPage;
 
     
 }

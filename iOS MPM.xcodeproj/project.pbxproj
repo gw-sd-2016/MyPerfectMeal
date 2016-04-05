@@ -204,10 +204,10 @@
 		80A02C201C08211E007AA09C /* Restaurant Tab */ = {
 			isa = PBXGroup;
 			children = (
-				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
-				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
 				AC65FAB51CA09095000867A0 /* RestaurantsTableViewController.h */,
 				AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */,
+				804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */,
+				804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */,
 				AC2904851CA31F7F0054B817 /* MenuTableViewController.h */,
 				AC2904861CA31F7F0054B817 /* MenuTableViewController.m */,
 				ACE3C4711CB2F0DE003E4D94 /* MealIngredientsViewController.h */,
