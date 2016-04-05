@@ -58,6 +58,7 @@
 		AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC75311A1CAC6C500029AC9C /* DislikesViewController.m */; };
 		AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */; };
 		AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */; };
+		ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,8 @@
 		AC76D2641CA202E500DDC7FE /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		ACE3C4711CB2F0DE003E4D94 /* MealIngredientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealIngredientsViewController.h; sourceTree = "<group>"; };
+		ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealIngredientsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 				AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */,
 				AC2904851CA31F7F0054B817 /* MenuTableViewController.h */,
 				AC2904861CA31F7F0054B817 /* MenuTableViewController.m */,
+				ACE3C4711CB2F0DE003E4D94 /* MealIngredientsViewController.h */,
+				ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */,
 			);
 			name = "Restaurant Tab";
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */,
 				AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */,
 				AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */,
+				ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,
 				804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */,
@@ -717,7 +723,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.iOS-MPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -736,7 +742,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "SD.iOS-MPM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

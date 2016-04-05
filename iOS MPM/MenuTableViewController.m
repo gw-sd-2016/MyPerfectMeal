@@ -1,6 +1,7 @@
 
 #import "MenuTableViewController.h"
 #import "MapContainerViewController.h"
+#import "MealIngredientsViewController.h"
 
 @interface MenuTableViewController ()
 
@@ -17,9 +18,9 @@
     //self.title = _clickedRestaurantName;
     
     //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington/437291-char-bar/amp/"];
-    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com%@", _clickedRestaurantURL];
+    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com%@", _clickedRestaurantURL];
     
-    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
+   // NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];
@@ -313,11 +314,26 @@
     NSString *sectionTitle = [MealSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
     NSString *Meal = [sectionMeals objectAtIndex:indexPath.row];
+    
     cell.textLabel.text = Meal;
     
     cell.detailTextLabel.text = [[self getIngredients] objectAtIndex:indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSString *sectionTitle = [MealSectionTitles objectAtIndex:indexPath.section];
+    NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
+    clickedMealString = [sectionMeals objectAtIndex:indexPath.row];
+
+    clickedMealIngredientsString = [[self getIngredients] objectAtIndex:indexPath.row];
+
+    
+    
+    [self performSegueWithIdentifier:@"showIngredients" sender:self];
+    
 }
 
 
@@ -338,7 +354,20 @@
         */
         
     }
+    
+    if ([[segue identifier] isEqualToString:@"showIngredients"])
+    {
+        
+        MealIngredientsViewController *showIngredientsViewController = [segue destinationViewController];
+        showIngredientsViewController.clickedMealName = clickedMealString;
+        showIngredientsViewController.clickedMealIngredeients = clickedMealIngredientsString;
+        
+        
+        
+                
+    }
 }
+
 
 
 /*

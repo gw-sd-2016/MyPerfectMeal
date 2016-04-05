@@ -6,7 +6,8 @@
     
     NSMutableDictionary *Meals;
     NSArray *MealSectionTitles;
-    
+    NSString *clickedMealString;
+    NSString *clickedMealIngredientsString;
 }
 
 
