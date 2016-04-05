@@ -37,6 +37,8 @@
         
     }
     
+    NSLog(@"loaded raw html for a specific restaurant");
+    
     return loadHTMLPage;
     
 }

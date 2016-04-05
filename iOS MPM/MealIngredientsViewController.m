@@ -144,6 +144,8 @@
             }
             
         }
+        [_textView setAttributedText:string];
+
         
     }
     else{
