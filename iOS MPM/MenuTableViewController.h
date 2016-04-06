@@ -10,6 +10,7 @@
     NSString *clickedMealIngredientsString;
     NSString *loadedRawHTML;
     NSMutableArray *allMealsAsSeen;
+    NSMutableDictionary *subtitleDict;
     
 }
 

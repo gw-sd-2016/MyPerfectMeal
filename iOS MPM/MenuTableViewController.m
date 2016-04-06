@@ -13,12 +13,12 @@
 -(NSString *) loadRawHTML{
     
     
-    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/18286-the-pita-pit/menu/"];
-    //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
+    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/18286-the-pita-pit/menu/"];
+     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/437291-char-bar/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/373615-the-deli/menu/"];
-
-    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://m.allmenus.com%@", _clickedRestaurantURL];
+    NSLog(@"%@", _clickedRestaurantURL);
+    NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", _clickedRestaurantURL];
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];
@@ -170,49 +170,40 @@
 
 */
 
-/*
+
 
 -(NSString *) getIngredients: (NSString *) mealName{
     
-    //NSLog(@"%@", allMealsAsSeen);
     
-    NSMutableString *scannerBeginingString = [[NSMutableString alloc] initWithFormat:@"<dt>%@</dt><dd>", mealName];
-    NSMutableString *removeString = [[NSMutableString alloc] initWithFormat:@"<dt>%@</dt>", mealName];
+    NSMutableString *scannerBeginingString = [[NSMutableString alloc] initWithFormat:@"<span class=\"name\">%@</span>", mealName];
     
     NSScanner *getIngredientsScanner;
     NSString *getIngredients = nil;
     getIngredientsScanner = [NSScanner scannerWithString:loadedRawHTML];
-    
-    //NSLog(@"%@", [Meals allValues]);
-    
-    
-    
-    
     
     while ([getIngredientsScanner isAtEnd] == NO) {
         
         
         
         [getIngredientsScanner scanUpToString:scannerBeginingString intoString:NULL] ;
-        [getIngredientsScanner scanUpToString:@"</dd>" intoString:&getIngredients] ;
+        [getIngredientsScanner scanUpToString:@"</p>" intoString:&getIngredients] ;
         
         
         //[getIngredientsScanner scanUpToString:@"<dd>" intoString:NULL] ;
         
         //[getIngredientsScanner scanUpToString:@"</dd>" intoString:&getIngredients] ;
         
-        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<dd>"] withString:@""];
-        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"amp;"] withString:@""];
         
-        
-        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:removeString withString:@""];
-        
-        
-        //getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:mealName] withString:@""];
-        
-        
-        
-        //getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" "] withString:@""];
+        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:scannerBeginingString] withString:@""];
+        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"description\">"] withString:@""];
+        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"  "] withString:@""];
+        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" <span class=\"price\">"] withString:@""];
+        getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"</span>"] withString:@" "];
+
+
+        getIngredients = [[getIngredients componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
+
+
         
         
         //NSLog(@"%@", getIngredients);
@@ -227,7 +218,6 @@
 }
 
 
-*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -256,7 +246,7 @@
     
     
     
-    /*
+    
     allMealsAsSeen = [[NSMutableArray alloc] init];
     
     
@@ -269,23 +259,10 @@
         
         
     }
-    */
     
+
     
-   // NSLog(@"%@", allMealsAsSeen);
-    //NSLog(@"%@", [self getAllIngredientsFound]);
-    
-    //all meals seen will be the keys
-   //NSLog(@"%@", allMealsAsSeen);
-    
-   //NSLog(@"%i", [allMealsAsSeen count]);
-    //NSLog(@"%i", [[self getAllIngredientsFound]count]);
-    
-    
-    
-    
-    /*
-    NSMutableDictionary *subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
+    subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
     
     
     for (int i = 0; i <= [allMealsAsSeen count]-1; i++){
@@ -295,12 +272,11 @@
 
     }
     
-    NSLog(@"%@", subtitleDict);
-    */
+    //NSLog(@"%@", subtitleDict);
     
 }
 
-/*
+
 -(NSMutableArray *) getAllIngredientsFound{
     
     
@@ -312,12 +288,10 @@
         [allIngredeientsFoundArray addObject:[self getIngredients:allMealsAsSeen[i]]];
     }
     
-    
-    
     return allIngredeientsFoundArray;
     
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -359,7 +333,10 @@
     
     cell.textLabel.text = Meal;
     
-    //cell.detailTextLabel.text = @"testing123";
+    
+    NSString *subtitleOfMeal = [subtitleDict valueForKey:Meal];
+    
+    cell.detailTextLabel.text = subtitleOfMeal;
     
     //cell.detailTextLabel.text = [[self getAllIngredientsFound] objectAtIndex:indexPath.row];
     
@@ -371,7 +348,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    /*
+    
     NSString *sectionTitle = [MealSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
     clickedMealString = [sectionMeals objectAtIndex:indexPath.row];
@@ -381,10 +358,10 @@
     
     
     [self performSegueWithIdentifier:@"showIngredients" sender:self];
-    */
+    
 }
 
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // segue to push name of clicked restaurant to the map controller
@@ -415,7 +392,7 @@
         
     }
 }
-*/
+
 
 
 
