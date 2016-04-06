@@ -9,6 +9,8 @@
     NSString *clickedMealString;
     NSString *clickedMealIngredientsString;
     NSString *loadedRawHTML;
+    NSMutableArray *allMealsAsSeen;
+    
 }
 
 
