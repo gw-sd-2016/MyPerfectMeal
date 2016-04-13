@@ -12,11 +12,6 @@
     
     //store all health goals in this array
     NSMutableArray *findSelections;
-    
-    
-    
-    
-    
+  
 }
-
 @end

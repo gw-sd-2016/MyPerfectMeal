@@ -17,7 +17,7 @@
      //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/437291-char-bar/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/373615-the-deli/menu/"];
-    NSLog(@"%@", _clickedRestaurantURL);
+    //NSLog(@"%@", _clickedRestaurantURL);
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", _clickedRestaurantURL];
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
@@ -346,6 +346,7 @@
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
@@ -353,8 +354,7 @@
     NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
     clickedMealString = [sectionMeals objectAtIndex:indexPath.row];
     
-    //clickedMealIngredientsString = [[self getIngredients] objectAtIndex:indexPath.row];
-    
+    clickedMealIngredientsString = [subtitleDict valueForKey:clickedMealString];
     
     
     [self performSegueWithIdentifier:@"showIngredients" sender:self];
@@ -373,10 +373,10 @@
         
         MapDetailsViewController.clickedRestaurantNameInMap = _clickedRestaurantName;
         MapDetailsViewController.clickedRestaurantAddressInMap = _clickedRestaurantAddress;
- 
-         NSLog(@"%@", MapDetailsViewController.clickedRestaurantNameInMap);
-         NSLog(@"%@", MapDetailsViewController.clickedRestaurantAddressInMap);
- 
+        
+        //NSLog(@"%@", MapDetailsViewController.clickedRestaurantNameInMap);
+        //NSLog(@"%@", MapDetailsViewController.clickedRestaurantAddressInMap);
+        
         
     }
     
@@ -392,7 +392,6 @@
         
     }
 }
-
 
 
 

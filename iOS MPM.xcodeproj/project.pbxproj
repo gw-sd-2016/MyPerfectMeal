@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		803C8CB81C0E6AB30086123D /* FoodAllergiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */; };
-		803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */; };
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
 		8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074486C1C0F433000A8766A /* HealthDisorderViewController.m */; };
@@ -48,7 +46,6 @@
 		AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC43A1661CAAC1C7000A9BA8 /* Goals.plist */; };
 		AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */; };
 		AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */; };
-		AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */; };
 		AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29641C7BA3A0001C1707 /* Cardiology.png */; };
 		AC6F29691C7BA3A0001C1707 /* Health.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29651C7BA3A0001C1707 /* Health.png */; };
 		AC6F296A1C7BA3A0001C1707 /* Microscope.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6F29661C7BA3A0001C1707 /* Microscope.png */; };
@@ -58,6 +55,9 @@
 		AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC75311A1CAC6C500029AC9C /* DislikesViewController.m */; };
 		AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */; };
 		AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */; };
+		ACCD4BFF1CBDD072008CCAB7 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */; };
+		ACCD4C021CBDD2E8008CCAB7 /* MedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */; };
+		ACDADB371CBDEF1500374367 /* FoodAllergiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */; };
 		ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -79,10 +79,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAllergiesViewController.h; sourceTree = "<group>"; };
-		803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAllergiesViewController.m; sourceTree = "<group>"; };
-		803C8CB91C0E6BC30086123D /* MedicationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationsViewController.h; sourceTree = "<group>"; };
-		803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationsViewController.m; sourceTree = "<group>"; };
 		804A7B271BFC3434000F2DD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContainerViewController.h; sourceTree = "<group>"; };
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
@@ -139,8 +135,6 @@
 		AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
 		AC65FAB51CA09095000867A0 /* RestaurantsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestaurantsTableViewController.h; sourceTree = "<group>"; };
 		AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestaurantsTableViewController.m; sourceTree = "<group>"; };
-		AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsViewController.h; sourceTree = "<group>"; };
-		AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsViewController.m; sourceTree = "<group>"; };
 		AC6F29641C7BA3A0001C1707 /* Cardiology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cardiology.png; sourceTree = "<group>"; };
 		AC6F29651C7BA3A0001C1707 /* Health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Health.png; sourceTree = "<group>"; };
 		AC6F29661C7BA3A0001C1707 /* Microscope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microscope.png; sourceTree = "<group>"; };
@@ -154,6 +148,12 @@
 		AC76D2641CA202E500DDC7FE /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		ACCD4BFD1CBDD072008CCAB7 /* GoalsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoalsTableViewController.h; sourceTree = "<group>"; };
+		ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
+		ACCD4C001CBDD2E8008CCAB7 /* MedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedsTableViewController.h; sourceTree = "<group>"; };
+		ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedsTableViewController.m; sourceTree = "<group>"; };
+		ACDADB351CBDEF1500374367 /* FoodAllergiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAllergiesTableViewController.h; sourceTree = "<group>"; };
+		ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAllergiesTableViewController.m; sourceTree = "<group>"; };
 		ACE3C4711CB2F0DE003E4D94 /* MealIngredientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealIngredientsViewController.h; sourceTree = "<group>"; };
 		ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealIngredientsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,14 +244,14 @@
 				AC7531151CAC6C170029AC9C /* Preferences */,
 				80A6A55F1C0B4F88001CFEDE /* PersonalInfoViewController.h */,
 				80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */,
-				803C8CB91C0E6BC30086123D /* MedicationsViewController.h */,
-				803C8CBA1C0E6BC30086123D /* MedicationsViewController.m */,
-				803C8CB61C0E6AB30086123D /* FoodAllergiesViewController.h */,
-				803C8CB71C0E6AB30086123D /* FoodAllergiesViewController.m */,
+				ACCD4C001CBDD2E8008CCAB7 /* MedsTableViewController.h */,
+				ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */,
+				ACDADB351CBDEF1500374367 /* FoodAllergiesTableViewController.h */,
+				ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */,
 				8074486B1C0F433000A8766A /* HealthDisorderViewController.h */,
 				8074486C1C0F433000A8766A /* HealthDisorderViewController.m */,
-				AC6F295F1C7B8AD8001C1707 /* GoalsViewController.h */,
-				AC6F29601C7B8AD8001C1707 /* GoalsViewController.m */,
+				ACCD4BFD1CBDD072008CCAB7 /* GoalsTableViewController.h */,
+				ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */,
 				AC74C98A1C7CD7CA001BD589 /* SelectionsViewController.h */,
 				AC74C98B1C7CD7CA001BD589 /* SelectionsViewController.m */,
 			);
@@ -554,23 +554,23 @@
 			files = (
 				AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */,
 				AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */,
+				ACCD4C021CBDD2E8008CCAB7 /* MedsTableViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
+				ACDADB371CBDEF1500374367 /* FoodAllergiesTableViewController.m in Sources */,
 				AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				AC7531181CAC6C430029AC9C /* LikesViewController.m in Sources */,
 				80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */,
-				803C8CBB1C0E6BC30086123D /* MedicationsViewController.m in Sources */,
 				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
-				803C8CB81C0E6AB30086123D /* FoodAllergiesViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */,
 				8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */,
 				AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */,
-				AC6F29611C7B8AD8001C1707 /* GoalsViewController.m in Sources */,
 				AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */,
 				ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,
+				ACCD4BFF1CBDD072008CCAB7 /* GoalsTableViewController.m in Sources */,
 				804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

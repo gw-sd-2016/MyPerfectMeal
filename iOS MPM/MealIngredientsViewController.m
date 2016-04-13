@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     InstructionsLBL.text = @"Tap once on ingredients to Like. Tap twice on ingredients to Dislike.";
     mealNameLBL.text = _clickedMealName;
     _textView.text = _clickedMealIngredeients;
@@ -28,7 +28,7 @@
     ThingsDisliked = [[NSMutableArray alloc] init];
     
     
-
+    
     //----firstly you have to alloc the double and single tap gesture-------//
     UITapGestureRecognizer* doubleTap = [[UITapGestureRecognizer alloc] initWithTarget : self action : @selector (handleDoubleTap:)];
     
@@ -145,7 +145,7 @@
             
         }
         [_textView setAttributedText:string];
-
+        
         
     }
     else{
