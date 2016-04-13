@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		804A7B281BFC3434000F2DD4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804A7B271BFC3434000F2DD4 /* MapKit.framework */; };
 		804A7B2B1BFC36BA000F2DD4 /* MapContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */; };
-		8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8074486C1C0F433000A8766A /* HealthDisorderViewController.m */; };
 		80A02C251C08284A007AA09C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C241C08284A007AA09C /* LoginViewController.m */; };
 		80A02C281C082899007AA09C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A02C271C082899007AA09C /* SignUpViewController.m */; };
 		80A6A5611C0B4F88001CFEDE /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6A5601C0B4F88001CFEDE /* PersonalInfoViewController.m */; };
@@ -43,6 +42,7 @@
 		AC1601851C7E6E2B00904001 /* MedsCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1601841C7E6E2B00904001 /* MedsCategories.plist */; };
 		AC1A03FA1CA9E49800462AF9 /* Allergies.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1A03F91CA9E49800462AF9 /* Allergies.plist */; };
 		AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2904861CA31F7F0054B817 /* MenuTableViewController.m */; };
+		AC3009231CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3009221CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m */; };
 		AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC43A1661CAAC1C7000A9BA8 /* Goals.plist */; };
 		AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */; };
 		AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */; };
@@ -82,8 +82,6 @@
 		804A7B271BFC3434000F2DD4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		804A7B291BFC36BA000F2DD4 /* MapContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapContainerViewController.h; sourceTree = "<group>"; };
 		804A7B2A1BFC36BA000F2DD4 /* MapContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapContainerViewController.m; sourceTree = "<group>"; };
-		8074486B1C0F433000A8766A /* HealthDisorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthDisorderViewController.h; sourceTree = "<group>"; };
-		8074486C1C0F433000A8766A /* HealthDisorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthDisorderViewController.m; sourceTree = "<group>"; };
 		80A02C231C08284A007AA09C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		80A02C241C08284A007AA09C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		80A02C261C082899007AA09C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -130,6 +128,8 @@
 		AC1A03F91CA9E49800462AF9 /* Allergies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Allergies.plist; sourceTree = "<group>"; };
 		AC2904851CA31F7F0054B817 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		AC2904861CA31F7F0054B817 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		AC3009211CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedDisordersTableViewController.h; sourceTree = "<group>"; };
+		AC3009221CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedDisordersTableViewController.m; sourceTree = "<group>"; };
 		AC43A1661CAAC1C7000A9BA8 /* Goals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Goals.plist; sourceTree = "<group>"; };
 		AC4AAF3A1CA9B8320048E38C /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
 		AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
@@ -248,8 +248,8 @@
 				ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */,
 				ACDADB351CBDEF1500374367 /* FoodAllergiesTableViewController.h */,
 				ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */,
-				8074486B1C0F433000A8766A /* HealthDisorderViewController.h */,
-				8074486C1C0F433000A8766A /* HealthDisorderViewController.m */,
+				AC3009211CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.h */,
+				AC3009221CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m */,
 				ACCD4BFD1CBDD072008CCAB7 /* GoalsTableViewController.h */,
 				ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */,
 				AC74C98A1C7CD7CA001BD589 /* SelectionsViewController.h */,
@@ -554,6 +554,7 @@
 			files = (
 				AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */,
 				AC74C98C1C7CD7CA001BD589 /* SelectionsViewController.m in Sources */,
+				AC3009231CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m in Sources */,
 				ACCD4C021CBDD2E8008CCAB7 /* MedsTableViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				ACDADB371CBDEF1500374367 /* FoodAllergiesTableViewController.m in Sources */,
@@ -564,7 +565,6 @@
 				80A02C251C08284A007AA09C /* LoginViewController.m in Sources */,
 				80F4CB2F1BEC4887009538A6 /* main.m in Sources */,
 				AC76D2671CA202E500DDC7FE /* CustomTableViewCell.m in Sources */,
-				8074486D1C0F433000A8766A /* HealthDisorderViewController.m in Sources */,
 				AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */,
 				AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */,
 				ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */,

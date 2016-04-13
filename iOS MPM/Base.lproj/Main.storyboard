@@ -920,10 +920,10 @@
             </objects>
             <point key="canvasLocation" x="-1117.5" y="-1102.5"/>
         </scene>
-        <!--Health Disorder View Controller-->
+        <!--Selected Disorders Table View Controller-->
         <scene sceneID="ZQ4-jy-Aj1">
             <objects>
-                <tableViewController id="54k-z4-bKw" customClass="HealthDisorderViewController" sceneMemberID="viewController">
+                <tableViewController id="54k-z4-bKw" customClass="SelectedDisordersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Qk-5z-O6e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
