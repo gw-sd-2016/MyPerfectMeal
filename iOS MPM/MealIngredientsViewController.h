@@ -22,7 +22,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *InstructionsLBL;
 @property (weak, nonatomic) IBOutlet UILabel *mealNameLBL;
-@property (weak, nonatomic) IBOutlet UIButton *submitPreferencesBTN;
+
+- (IBAction)submitPreferencesBTN:(id)sender;
 
 @property (nonatomic, strong) NSString *clickedMealName;
 @property (nonatomic, strong) NSString *clickedMealIngredeients;

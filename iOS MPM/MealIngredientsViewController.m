@@ -7,6 +7,8 @@
 //
 
 #import "MealIngredientsViewController.h"
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
 
 @interface MealIngredientsViewController ()
 
@@ -14,7 +16,7 @@
 
 @implementation MealIngredientsViewController
 
-@synthesize InstructionsLBL, mealNameLBL, submitPreferencesBTN;
+@synthesize InstructionsLBL, mealNameLBL;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,10 +24,35 @@
     InstructionsLBL.text = @"Tap once on ingredients to Like. Tap twice on ingredients to Dislike.";
     mealNameLBL.text = _clickedMealName;
     _textView.text = _clickedMealIngredeients;
+    _textView.text = [_textView.text stringByReplacingOccurrencesOfString:@"," withString:@""];
     string = [[NSMutableAttributedString alloc]initWithString:_textView.text];
     words = [_textView.text componentsSeparatedByString:@" "];
     ThingsLiked = [[NSMutableArray alloc] init];
     ThingsDisliked = [[NSMutableArray alloc] init];
+    
+    NSArray *selectedLikes = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
+    NSArray *selectedDislikes = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
+    
+    for (NSString *word in words) {
+        NSLog(@"%@", word);
+        if ([selectedLikes containsObject:word]) {
+            NSRange range=[_textView.text rangeOfString:word];
+            [string addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:range];
+            [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0f] range:range];
+
+        }
+        
+        else if ([selectedDislikes containsObject:word]){
+            NSRange range=[_textView.text rangeOfString:word];
+            [string addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:range];
+            [string addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"Helvetica-Bold" size:30.0f] range:range];
+
+        }
+
+    }
+    [_textView setAttributedText:string];
+
+
     
     
     
@@ -46,8 +73,7 @@
     [_textView addGestureRecognizer : doubleTap];
     [_textView addGestureRecognizer : singleTap];
     
-    
-    
+   
     
 }
 
@@ -70,7 +96,7 @@
 -(void)handleSingleTap:(UITapGestureRecognizer*)recognizer
 {
     
-    NSLog(@"Single Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
+    //NSLog(@"Single Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
     
     
     if ([ThingsDisliked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
@@ -114,15 +140,15 @@
     }
     
     
-    NSLog(@"All things Likes are: %@", ThingsLiked);
-    NSLog(@"All things disliked are: %@", ThingsDisliked);
+    //NSLog(@"All things Likes are: %@", ThingsLiked);
+    //NSLog(@"All things disliked are: %@", ThingsDisliked);
     
 }
 
 -(void)handleDoubleTap:(UITapGestureRecognizer*)recognizer
 {
     
-    NSLog(@"Double Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
+    //NSLog(@"Double Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
     
     
     if ([ThingsLiked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
@@ -166,13 +192,25 @@
         
     }
     
-    NSLog(@"All things Likes are: %@", ThingsLiked);
-    NSLog(@"All things disliked are: %@", ThingsDisliked);
+   
     
     
 }
 
 
 
+- (IBAction)submitPreferencesBTN:(id)sender {
+    
+    //NSLog(@"All things Likes are: %@", ThingsLiked);
+    //NSLog(@"All things disliked are: %@", ThingsDisliked);
+    
+
+        [[PFUser currentUser] addObjectsFromArray:ThingsLiked forKey:@"selectedLikes"];
+        [[PFUser currentUser] saveInBackground];
+
+        [[PFUser currentUser] addObjectsFromArray:ThingsDisliked forKey:@"selectedDislikes"];
+        [[PFUser currentUser] saveInBackground];
+    
+}
 
 @end

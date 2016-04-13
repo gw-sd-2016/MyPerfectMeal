@@ -34,7 +34,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="65" id="0bt-hP-dZH">
-                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bt-hP-dZH" id="104-zI-h9H">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="64.5"/>
@@ -75,7 +75,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="qS1-05-Pz2" detailTextLabel="I7N-zc-z3Z" style="IBUITableViewCellStyleSubtitle" id="UvG-Cs-QCr">
-                                <rect key="frame" x="0.0" y="320" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="384" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvG-Cs-QCr" id="ZJd-k8-221">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -158,6 +158,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitPreferencesBTN:" destination="NTp-vu-xJi" eventType="touchUpInside" id="QgD-Oz-kul"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -167,7 +170,6 @@
                     <connections>
                         <outlet property="InstructionsLBL" destination="0km-HH-ZTF" id="VLt-zN-oIj"/>
                         <outlet property="mealNameLBL" destination="dQv-fk-Sr4" id="YY0-It-2g6"/>
-                        <outlet property="submitPreferencesBTN" destination="h87-MN-hZP" id="WOx-Tt-21e"/>
                         <outlet property="textView" destination="V7u-0F-Q9g" id="yQo-Sr-byR"/>
                     </connections>
                 </viewController>
@@ -570,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="-213.5" y="240.5"/>
         </scene>
-        <!--User Profile-->
+        <!--Account Settings-->
         <scene sceneID="yN8-WD-2VY">
             <objects>
                 <viewController id="aBX-1H-xuf" sceneMemberID="viewController">
@@ -607,7 +609,7 @@
                         <color key="tintColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User Profile" id="BFs-Jx-yZi"/>
-                    <navigationItem key="navigationItem" id="nHL-5i-ye2"/>
+                    <navigationItem key="navigationItem" title="Account Settings" id="nHL-5i-ye2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUc-tT-ocs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -633,7 +635,7 @@
                                 <rect key="frame" x="20" y="57" width="335" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="View My Selections">
+                                <state key="normal" title="View My Personal Selections">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1078,7 +1080,7 @@
                                 <color key="textColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6WG-eA-ETy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6WG-eA-ETy">
                                 <rect key="frame" x="158" y="56" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1117,7 +1119,7 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZe-K1-zAl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZe-K1-zAl">
                                 <rect key="frame" x="158" y="29" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1197,7 +1199,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="58u-pn-wDR"/>
         <segue reference="HMP-vK-86N"/>
+        <segue reference="58u-pn-wDR"/>
     </inferredMetricsTieBreakers>
 </document>
