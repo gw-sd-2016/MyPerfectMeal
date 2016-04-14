@@ -29,9 +29,9 @@
     words = [_textView.text componentsSeparatedByString:@" "];
     
     
+    
     selectedLikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
     selectedDislikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
-    thingsToRemove = [[NSMutableArray alloc] init];
     
     for (NSString *word in words) {
         //NSLog(@"%@", word);
@@ -106,14 +106,9 @@
     if ([selectedLikes containsObject:[self getPressedWordWithRecognizer:recognizer]]){
         
         [selectedLikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
-        
-        if ([thingsToRemove containsObject:[self getPressedWordWithRecognizer:recognizer]]){
-            NSLog(@"this object already in here to be remove");
-         }
-        else{
-            [thingsToRemove addObject:[self getPressedWordWithRecognizer:recognizer]];
-        }
-        
+        [[PFUser currentUser] removeObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedLikes"];
+        [[PFUser currentUser] saveInBackground];
+
         
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
@@ -126,12 +121,18 @@
         }
         
         [_textView setAttributedText:string];
+    
         
     }
     else{
         [selectedLikes addObject:[self getPressedWordWithRecognizer:recognizer]];
+        [[PFUser currentUser] addUniqueObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedLikes"];
+        [[PFUser currentUser] saveInBackground];
+        
         [selectedDislikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
-	
+        [[PFUser currentUser] removeObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedDislikes"];
+        [[PFUser currentUser] saveInBackground];
+
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -142,19 +143,22 @@
         }
         
         [_textView setAttributedText:string];
+
+
     }
     
     
     NSLog(@"LIKED %@", selectedLikes);
     NSLog(@"DISLIKED %@", selectedDislikes);
 
-    NSLog(@"All things to remove are: %@", thingsToRemove);
-    
 }
-/*
+
+
+
+
+
 -(void)handleDoubleTap:(UITapGestureRecognizer*)recognizer
 {
-    
     
     if ([[self getPressedWordWithRecognizer:recognizer] isEqualToString:@""]){
         NSLog(@"you clicked on nothing this will be ignored");
@@ -165,8 +169,9 @@
     if ([selectedDislikes containsObject:[self getPressedWordWithRecognizer:recognizer]]){
         
         [selectedDislikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
-        [thingsToRemove addObject:[self getPressedWordWithRecognizer:recognizer]];
-
+        [[PFUser currentUser] removeObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedDislikes"];
+        [[PFUser currentUser] saveInBackground];
+        
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -177,14 +182,19 @@
             
         }
         [_textView setAttributedText:string];
-        
+
         
     }
     else{
         
         [selectedDislikes addObject:[self getPressedWordWithRecognizer:recognizer]];
+        [[PFUser currentUser] addUniqueObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedDislikes"];
+        [[PFUser currentUser] saveInBackground];
+        
         [selectedLikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
-
+        [[PFUser currentUser] removeObject:[self getPressedWordWithRecognizer:recognizer] forKey:@"selectedLikes"];
+        [[PFUser currentUser] saveInBackground];
+        
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -195,18 +205,51 @@
         }
         
         [_textView setAttributedText:string];
-        
+
         
     }
-    //NSLog(@"LIKE %@", selectedLikes);
-    //NSLog(@"DISLIKE %@", selectedDislikes);
     
+    NSLog(@"LIKE %@", selectedLikes);
+    NSLog(@"DISLIKE %@", selectedDislikes);
     
-}
-*/
 
-/*
+}
+
+
+
 - (IBAction)submitPreferencesBTN:(id)sender {
+       /*
+    everythingInLikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
+    everythingInDislikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
+    
+
+    if ([everythingInLikes count] > 0){
+        [[PFUser currentUser] removeObjectsInArray:everythingInLikes forKey:@"selectedLikes"];
+        [[PFUser currentUser] addObjectsFromArray:selectedLikes forKey:@"selectedLikes"];
+    }else{
+    
+    [[PFUser currentUser] addObjectsFromArray:selectedLikes forKey:@"selectedLikes"];
+    
+    }
+ 
+    if ([everythingInDislikes count] > 0){
+        [[PFUser currentUser] removeObjectsInArray:everythingInLikes forKey:@"selectedLikes"];
+        [[PFUser currentUser] addObjectsFromArray:selectedLikes forKey:@"selectedLikes"];
+
+    }else{
+        
+        [[PFUser currentUser] addObjectsFromArray:selectedLikes forKey:@"selectedLikes"];
+        
+    }
+    */
+    //[[PFUser currentUser] saveInBackground];
+    
+  //  NSLog(@"OPERATION COMPLETE");
+    
+    //[[PFUser currentUser] removeObjectsInArray:thingsToRemove forKey:@"selectedLikes"];
+    //[[PFUser currentUser] saveInBackground];
+    
+    /*
     
     NSLog(@"user's likes%@", selectedLikes);
     NSLog(@"user's dislikes%@", selectedDislikes);
@@ -276,17 +319,15 @@
      
      
      
-     [[PFUser currentUser] removeObjectsInArray:thingsToRemove forKey:@"selectedLikes"];
-     [[PFUser currentUser] removeObjectsInArray:thingsToRemove forKey:@"selectedDislikes"];
-     [[PFUser currentUser] saveEventually];
+
 
     
-    
+    */
     
     
     
     
 }
-*/
+
 
 @end

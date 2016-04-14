@@ -16,7 +16,9 @@
     NSArray *words;
     NSMutableArray *selectedLikes;
     NSMutableArray *selectedDislikes;
-    NSMutableArray *thingsToRemove;
+    
+    NSMutableArray *everythingInLikes;
+    NSMutableArray *everythingInDislikes;
     
 }
 
