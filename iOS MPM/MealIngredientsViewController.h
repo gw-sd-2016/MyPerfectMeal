@@ -11,9 +11,12 @@
 @interface MealIngredientsViewController : UIViewController <UITextViewDelegate>{
     
     NSMutableAttributedString * string;
-    NSMutableArray *ThingsLiked;
-    NSMutableArray *ThingsDisliked;
+
+    
     NSArray *words;
+    NSMutableArray *selectedLikes;
+    NSMutableArray *selectedDislikes;
+    NSMutableArray *thingsToRemove;
     
 }
 

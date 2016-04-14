@@ -27,14 +27,14 @@
     _textView.text = [_textView.text stringByReplacingOccurrencesOfString:@"," withString:@""];
     string = [[NSMutableAttributedString alloc]initWithString:_textView.text];
     words = [_textView.text componentsSeparatedByString:@" "];
-    ThingsLiked = [[NSMutableArray alloc] init];
-    ThingsDisliked = [[NSMutableArray alloc] init];
     
-    NSArray *selectedLikes = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
-    NSArray *selectedDislikes = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
+    
+    selectedLikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
+    selectedDislikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
+    thingsToRemove = [[NSMutableArray alloc] init];
     
     for (NSString *word in words) {
-        NSLog(@"%@", word);
+        //NSLog(@"%@", word);
         if ([selectedLikes containsObject:word]) {
             NSRange range=[_textView.text rangeOfString:word];
             [string addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:range];
@@ -74,7 +74,6 @@
     [_textView addGestureRecognizer : singleTap];
     
    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,17 +98,22 @@
     //NSLog(@"Single Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
     
     
-    if ([ThingsDisliked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
-        [ThingsDisliked removeObject:[self getPressedWordWithRecognizer:recognizer]];
+    if ([[self getPressedWordWithRecognizer:recognizer] isEqualToString:@""]){
+        NSLog(@"you clicked on nothing this will be ignored");
     }
     
-    
-    
-    
-    if ([ThingsLiked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
-        // NSLog(@"This item is already in the list of things likes, so lets deselect it");
+
+    if ([selectedLikes containsObject:[self getPressedWordWithRecognizer:recognizer]]){
         
-        [ThingsLiked removeObject:[self getPressedWordWithRecognizer:recognizer]];
+        [selectedLikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
+        
+        if ([thingsToRemove containsObject:[self getPressedWordWithRecognizer:recognizer]]){
+            NSLog(@"this object already in here to be remove");
+         }
+        else{
+            [thingsToRemove addObject:[self getPressedWordWithRecognizer:recognizer]];
+        }
+        
         
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
@@ -125,8 +129,9 @@
         
     }
     else{
-        [ThingsLiked addObject:[self getPressedWordWithRecognizer:recognizer]];
-        
+        [selectedLikes addObject:[self getPressedWordWithRecognizer:recognizer]];
+        [selectedDislikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
+	
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -140,27 +145,28 @@
     }
     
     
-    //NSLog(@"All things Likes are: %@", ThingsLiked);
-    //NSLog(@"All things disliked are: %@", ThingsDisliked);
+    NSLog(@"LIKED %@", selectedLikes);
+    NSLog(@"DISLIKED %@", selectedDislikes);
+
+    NSLog(@"All things to remove are: %@", thingsToRemove);
     
 }
-
+/*
 -(void)handleDoubleTap:(UITapGestureRecognizer*)recognizer
 {
     
-    //NSLog(@"Double Tap On: %@", [self getPressedWordWithRecognizer:recognizer]);
     
-    
-    if ([ThingsLiked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
-        [ThingsLiked removeObject:[self getPressedWordWithRecognizer:recognizer]];
+    if ([[self getPressedWordWithRecognizer:recognizer] isEqualToString:@""]){
+        NSLog(@"you clicked on nothing this will be ignored");
     }
     
     
     
-    if ([ThingsDisliked containsObject:[self getPressedWordWithRecognizer:recognizer]]){
+    if ([selectedDislikes containsObject:[self getPressedWordWithRecognizer:recognizer]]){
         
-        [ThingsDisliked removeObject:[self getPressedWordWithRecognizer:recognizer]];
-        
+        [selectedDislikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
+        [thingsToRemove addObject:[self getPressedWordWithRecognizer:recognizer]];
+
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -176,8 +182,9 @@
     }
     else{
         
-        [ThingsDisliked addObject:[self getPressedWordWithRecognizer:recognizer]];
-        
+        [selectedDislikes addObject:[self getPressedWordWithRecognizer:recognizer]];
+        [selectedLikes removeObject:[self getPressedWordWithRecognizer:recognizer]];
+
         for (NSString *word in words) {
             if ([word containsString:[self getPressedWordWithRecognizer:recognizer]]) {
                 NSRange range=[_textView.text rangeOfString:word];
@@ -191,26 +198,95 @@
         
         
     }
-    
-   
+    //NSLog(@"LIKE %@", selectedLikes);
+    //NSLog(@"DISLIKE %@", selectedDislikes);
     
     
 }
+*/
 
-
-
+/*
 - (IBAction)submitPreferencesBTN:(id)sender {
     
-    //NSLog(@"All things Likes are: %@", ThingsLiked);
-    //NSLog(@"All things disliked are: %@", ThingsDisliked);
+    NSLog(@"user's likes%@", selectedLikes);
+    NSLog(@"user's dislikes%@", selectedDislikes);
     
+    
+    	
+    
+    NSArray *temp = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
+    NSArray *temp2 = [[NSArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
 
-        [[PFUser currentUser] addObjectsFromArray:ThingsLiked forKey:@"selectedLikes"];
-        [[PFUser currentUser] saveInBackground];
+    
+    NSLog(@"server knows these likes %@", temp);
+    NSLog(@"server knows these dislikes%@", temp2);
+    
+    NSLog(@"things to remove from the server %@", thingsToRemove);
+    
+    
+    NSLog(@"%lu", [temp count]);
 
-        [[PFUser currentUser] addObjectsFromArray:ThingsDisliked forKey:@"selectedDislikes"];
+     
+    
+    if ([temp count] == 0) {
+        //NSLog(@"this is empty lets add everything");
+        [[PFUser currentUser] addObject:selectedLikes forKey:@"selectedLikes"];
         [[PFUser currentUser] saveInBackground];
+    }else{
+        
+        for (int i = 0; i <=[selectedLikes count]-1; i++) {
+            
+            if ([temp containsObject:selectedLikes[i]]){
+                
+                NSLog(@"found a match do not add %@", selectedLikes[i]);
+            }
+            else{
+                NSLog(@"this word did not match anything in the database go ahead and add it: %@", selectedLikes[i]);
+                [[PFUser currentUser] addObject:selectedLikes[i] forKey:@"selectedLikes"];
+                [[PFUser currentUser] saveInBackground];
+            }
+            
+        }
+
+        
+        
+    }
+    if ([temp2 count] == 0) {
+        //NSLog(@"this is empty lets add everything");
+        [[PFUser currentUser] addObject:selectedDislikes forKey:@"selectedDislikes"];
+        [[PFUser currentUser] saveInBackground];
+    }else{
+        
+        for (int i = 0; i <=[selectedDislikes count]-1; i++) {
+            
+            if ([temp2 containsObject:selectedDislikes[i]]){
+                
+                NSLog(@"found a match do not add %@", selectedDislikes[i]);
+            }
+            else{
+                NSLog(@"this word did not match anything in the database go ahead and add it: %@", selectedDislikes[i]);
+                [[PFUser currentUser] addObject:selectedDislikes[i] forKey:@"selectedDislikes"];
+                [[PFUser currentUser] saveInBackground];
+            }
+            
+        }
+        
+        
+    }
+     
+     
+     
+     [[PFUser currentUser] removeObjectsInArray:thingsToRemove forKey:@"selectedLikes"];
+     [[PFUser currentUser] removeObjectsInArray:thingsToRemove forKey:@"selectedDislikes"];
+     [[PFUser currentUser] saveEventually];
+
+    
+    
+    
+    
+    
     
 }
+*/
 
 @end

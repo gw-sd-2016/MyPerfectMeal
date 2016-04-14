@@ -43,6 +43,7 @@
 		AC1A03FA1CA9E49800462AF9 /* Allergies.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC1A03F91CA9E49800462AF9 /* Allergies.plist */; };
 		AC2904871CA31F7F0054B817 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2904861CA31F7F0054B817 /* MenuTableViewController.m */; };
 		AC3009231CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3009221CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m */; };
+		AC3009261CBEC989003DF9C5 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3009251CBEC989003DF9C5 /* UserProfileViewController.m */; };
 		AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC43A1661CAAC1C7000A9BA8 /* Goals.plist */; };
 		AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */; };
 		AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC65FAB61CA09095000867A0 /* RestaurantsTableViewController.m */; };
@@ -130,6 +131,8 @@
 		AC2904861CA31F7F0054B817 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		AC3009211CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedDisordersTableViewController.h; sourceTree = "<group>"; };
 		AC3009221CBDF2B2003DF9C5 /* SelectedDisordersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedDisordersTableViewController.m; sourceTree = "<group>"; };
+		AC3009241CBEC989003DF9C5 /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		AC3009251CBEC989003DF9C5 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
 		AC43A1661CAAC1C7000A9BA8 /* Goals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Goals.plist; sourceTree = "<group>"; };
 		AC4AAF3A1CA9B8320048E38C /* ResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableViewController.h; sourceTree = "<group>"; };
 		AC4AAF3B1CA9B8320048E38C /* ResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableViewController.m; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 			children = (
 				80A6A55E1C0B4813001CFEDE /* Personal Info Container */,
 				80E641561C08E83200CF203A /* Account Info Container */,
+				AC3009241CBEC989003DF9C5 /* UserProfileViewController.h */,
+				AC3009251CBEC989003DF9C5 /* UserProfileViewController.m */,
 			);
 			name = "User Profile";
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				ACCD4C021CBDD2E8008CCAB7 /* MedsTableViewController.m in Sources */,
 				80E641521C0843B100CF203A /* AccountInfoViewController.m in Sources */,
 				ACDADB371CBDEF1500374367 /* FoodAllergiesTableViewController.m in Sources */,
+				AC3009261CBEC989003DF9C5 /* UserProfileViewController.m in Sources */,
 				AC4AAF3C1CA9B8320048E38C /* ResultsTableViewController.m in Sources */,
 				80F4CB321BEC4888009538A6 /* AppDelegate.m in Sources */,
 				AC7531181CAC6C430029AC9C /* LikesViewController.m in Sources */,

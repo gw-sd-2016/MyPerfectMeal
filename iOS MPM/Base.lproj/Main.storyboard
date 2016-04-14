@@ -575,7 +575,7 @@
         <!--Account Settings-->
         <scene sceneID="yN8-WD-2VY">
             <objects>
-                <viewController id="aBX-1H-xuf" sceneMemberID="viewController">
+                <viewController id="aBX-1H-xuf" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oHO-6u-bpZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -609,12 +609,19 @@
                         <color key="tintColor" red="0.0" green="0.81173972319999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User Profile" id="BFs-Jx-yZi"/>
-                    <navigationItem key="navigationItem" title="Account Settings" id="nHL-5i-ye2"/>
+                    <navigationItem key="navigationItem" title="Account Settings" id="nHL-5i-ye2">
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="oai-4C-LJk">
+                            <connections>
+                                <action selector="signOutBTN:" destination="aBX-1H-xuf" id="TXP-W8-lND"/>
+                                <segue destination="62s-8f-Ki8" kind="modal" id="yfA-Vz-eb9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUc-tT-ocs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2131.5" y="-2287.5"/>
+            <point key="canvasLocation" x="2131.5" y="-2489.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9Ex-Z7-Ekw">
@@ -1200,6 +1207,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HMP-vK-86N"/>
-        <segue reference="58u-pn-wDR"/>
+        <segue reference="yfA-Vz-eb9"/>
     </inferredMetricsTieBreakers>
 </document>
