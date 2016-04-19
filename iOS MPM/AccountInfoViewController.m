@@ -9,72 +9,100 @@
 #import "AccountInfoViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
+#import "RestaurantsTableViewController.h"
 
-@interface AccountInfoViewController ()
+
+@interface AccountInfoViewController () <MKMapViewDelegate>{
+    CLLocationManager *locationManager;
+    CLLocation *currentLocation;
+
+
+}
 
 @end
 
 @implementation AccountInfoViewController
 
-@synthesize nameLBL, locationLBL; //userNameLBL;
-
+@synthesize nameLBL, locationLBL;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    //displays (pulls from database and displays) user info
-      
+    geocoder = [[CLGeocoder alloc] init] ;
+    locationManager = [CLLocationManager new];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+
+    
     nameLBL.text = [NSString stringWithFormat:@"%@ %@", [[PFUser currentUser] valueForKey:@"First_Name"], [[PFUser currentUser] valueForKey:@"Last_Name" ]];
-    //locationLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]];
     
     
-    //NSLog(@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]);
-    //userNameLBL.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser] valueForKey:@"username"]];
-
-    
-    
-    
-    //NSLog(@"%@", [[PFUser currentUser] valueForKey:@"currentLocation"]);
-    
-  
-    //display address in the location label
-    PFGeoPoint *getCoordinates = [[PFUser currentUser] objectForKey:@"currentLocation"]; //grab the geo point
-    double Latitude = getCoordinates.latitude; //set the lat to variable
-    double Longitude = getCoordinates.longitude; //set the long to variable
-    
-    
-    //NSLog(@"The lat is: %f and the long is: %f", Latitude, Longitude);
-
-    //rever location protocol
-    CLLocation *location = [[CLLocation alloc]  initWithLatitude:Latitude longitude:Longitude];
-    
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error)
-     {
-         if(placemarks && placemarks.count > 0)
-         {
-             CLPlacemark *placemark= [placemarks objectAtIndex:0];
-             
-             //for full address use [placemark thoroughfare],[placemark locality],[placemark administrativeArea]];
-             
-             locationLBL.text = [NSString stringWithFormat:@"%@, %@" , [placemark locality], [placemark administrativeArea]];
-             
-             
-         }
-     }];
     
     
 }
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (IBAction)getUserLocationBTN:(id)sender {
+    
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [locationManager requestWhenInUseAuthorization];
+        
+    }
+    [locationManager startUpdatingLocation];
+    
+    float Lat = locationManager.location.coordinate.latitude;
+    float Lon = locationManager.location.coordinate.longitude;
+    NSLog(@"Lat : %f  Lon : %f",Lat,Lon);
+    
+    
+    [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lat] forKey:@"Lat"];
+    [[PFUser currentUser] saveInBackground];
+    [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lon] forKey:@"Lon"];
+    [[PFUser currentUser] saveInBackground];
+    
+    
+    [geocoder reverseGeocodeLocation:currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       //NSLog(@"placemark.ISOcountryCode %@", placemark.ISOcountryCode);
+                       //NSLog(@"placemark.ISOcountryCode %@", placemark.locality);
+                       locationLBL.text = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
+                       
+                   }];
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    currentLocation = [locations objectAtIndex:0];
+    [locationManager stopUpdatingLocation];
+   // NSLog(@"Detected Location : %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
+    [geocoder reverseGeocodeLocation:currentLocation
+                   completionHandler:^(NSArray *placemarks, NSError *error) {
+                       if (error){
+                           NSLog(@"Geocode failed with error: %@", error);
+                           return;
+                       }
+                       CLPlacemark *placemark = [placemarks objectAtIndex:0];
+                       //NSLog(@"placemark.ISOcountryCode %@", placemark.ISOcountryCode);
+                       //NSLog(@"placemark.ISOcountryCode %@", placemark.locality);
+                       locationLBL.text = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
+                       
+                   }];
+}
+
+
 
 
 - (IBAction)changePasswordBTN:(id)sender {

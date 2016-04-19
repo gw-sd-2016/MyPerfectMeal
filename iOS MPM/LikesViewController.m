@@ -87,4 +87,16 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [[PFUser currentUser] removeObject:[findLikes objectAtIndex:indexPath.row] forKey:@"selectedLikes"];
+        [[PFUser currentUser] saveInBackground];
+
+        [findLikes removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 @end

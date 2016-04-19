@@ -148,8 +148,8 @@
     }
     
     
-    NSLog(@"LIKED %@", selectedLikes);
-    NSLog(@"DISLIKED %@", selectedDislikes);
+    //NSLog(@"LIKED %@", selectedLikes);
+    //NSLog(@"DISLIKED %@", selectedDislikes);
 
 }
 
@@ -209,8 +209,8 @@
         
     }
     
-    NSLog(@"LIKE %@", selectedLikes);
-    NSLog(@"DISLIKE %@", selectedDislikes);
+    //NSLog(@"LIKE %@", selectedLikes);
+    //NSLog(@"DISLIKE %@", selectedDislikes);
     
 
 }

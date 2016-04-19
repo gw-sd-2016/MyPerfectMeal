@@ -14,7 +14,18 @@
 
 -(NSString *) loadRawHTML{
     
-    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    
+    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"Lat"] lastObject] , [[[PFUser currentUser] objectForKey:@"Lon"] lastObject]];
+    NSLog(@"%@", link);
+    //NSLog(@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/");
+    
+    
+    NSURL *loadURL = [[NSURL alloc] initWithString:link];
+
+    
+    
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    
     NSStringEncoding encoding;
     NSError *error = nil;
     //Load HTML link
@@ -440,4 +451,22 @@
 }
 */
 
+- (IBAction)refreshRestBTN:(id)sender {
+    loadedHTMLPage = [self loadRawHTML];
+    //register new custom table view cell
+    
+    allRestNames = [self RestNames];
+    allRestTypes = [self RestDesc];
+    allRestAddresses = [self RestAddress];
+    allRestDistances = [self RestDistances];
+    allRestURLs = [self RestURL];
+    
+    
+    [self.tableView reloadData];
+    
+    
+    
+    
+    
+}
 @end

@@ -10,11 +10,16 @@
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
-@interface AccountInfoViewController : UIViewController
+@interface AccountInfoViewController : UIViewController{
+    CLGeocoder *geocoder;
+}
+
 @property (strong, nonatomic) IBOutlet UILabel *nameLBL;
 @property (strong, nonatomic) IBOutlet UILabel *locationLBL;
+
 //@property (strong, nonatomic) IBOutlet UILabel *userNameLBL;
 
+- (IBAction)getUserLocationBTN:(id)sender;
 
 - (IBAction)changePasswordBTN:(id)sender;
 

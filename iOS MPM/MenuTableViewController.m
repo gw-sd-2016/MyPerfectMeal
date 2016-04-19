@@ -12,13 +12,15 @@
 
 -(NSString *) loadRawHTML{
     
-    
     //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/18286-the-pita-pit/menu/"];
      //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/437291-char-bar/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/373615-the-deli/menu/"];
     //NSLog(@"%@", _clickedRestaurantURL);
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", _clickedRestaurantURL];
+    
+    NSLog(@"Navigating to %@", restaurantDirectoryURLString);
+
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:restaurantDirectoryURL];

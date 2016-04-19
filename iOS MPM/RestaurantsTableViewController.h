@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *clickedURL;
 @property (nonatomic, strong) NSString *clickedAddress;
 
+- (IBAction)refreshRestBTN:(id)sender;
 
 
 
