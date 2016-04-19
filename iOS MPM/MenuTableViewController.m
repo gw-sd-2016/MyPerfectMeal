@@ -2,6 +2,7 @@
 #import "MenuTableViewController.h"
 #import "MapContainerViewController.h"
 #import "MealIngredientsViewController.h"
+#import "RestaurantsTableViewController.h"
 
 @interface MenuTableViewController ()
 
@@ -37,7 +38,9 @@
         
     }
     
-    NSLog(@"loaded raw html for a specific restaurant");
+    NSLog(@"Loaded Raw Html For A Specific Restaurant");
+    
+    //NSLog(@"%@", loadHTMLPage);
     
     return loadHTMLPage;
     
@@ -64,14 +67,22 @@
         getCategories = [getCategories stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<h3>"] withString:@""];
 
         
-        [getCategoriesArray addObject:getCategories];
+        if ([getCategoriesArray containsObject:getCategories]){
+
+        }
+        else{
+            [getCategoriesArray addObject:getCategories];
+
+        }
         
         
         
     }
     
-    [getCategoriesArray removeLastObject];
+    //[getCategoriesArray removeLastObject];
     [getCategoriesArray addObject:@"<!-- foreach menu -->"];
+    
+   // NSLog(@"%@", getCategoriesArray);
     
     return getCategoriesArray;
 }
@@ -98,6 +109,8 @@
         
         
     }
+    
+
     
     return secondHTML;
     
@@ -129,6 +142,8 @@
     }
     
     [getMealNamesArray removeLastObject];
+    
+
     
     return getMealNamesArray;
     
@@ -205,11 +220,6 @@
 
         getIngredients = [[getIngredients componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]] componentsJoinedByString:@" "];
 
-
-        
-        
-        //NSLog(@"%@", getIngredients);
-        
         
         
     }
@@ -223,58 +233,83 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.navigationItem.title = _clickedRestaurantName;
     
     loadedRawHTML = [self loadRawHTML];
 
     
     NSArray *saveGetCategoryNames = [[NSArray alloc] initWithArray:[self getCategoryNames]];
-    NSMutableArray *saveGetMealNames = [[NSMutableArray alloc ] init];
     
-    Meals = [[NSMutableDictionary alloc]initWithCapacity:[[self getCategoryNames] count]];
+    //NSLog(@"%@", saveGetCategoryNames);
     
-    for (int i = 0; i <= ([[self getCategoryNames] count] - 2); i++){
-       
+    if ([saveGetCategoryNames count] <= 1) {
+        NSLog(@"WEBSITE DOES NOT EXIST");
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:@"Message" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }else{
+        NSMutableArray *saveGetMealNames = [[NSMutableArray alloc ] init];
+        
+        Meals = [[NSMutableDictionary alloc]initWithCapacity:[[self getCategoryNames] count]];
         
         
-        [saveGetMealNames addObject:[self getMealNames:i]];
-        
-        [Meals setObject:saveGetMealNames[i] forKey:saveGetCategoryNames[i]];
-        
-        
-    }
-    
-    MealSectionTitles = [[Meals allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    
-    
-    
-    
-    allMealsAsSeen = [[NSMutableArray alloc] init];
-    
-    
-    for (int i = 0; i <= [[Meals allKeys]count]-1; i++){
-        
-        for (int j = 0; j <= [[Meals allValues][i] count]-1; j++){
-            //NSLog(@"%@", [Meals allValues][i][j]);
-            [allMealsAsSeen addObject:[Meals allValues][i][j]];
+        for (int i = 0; i <= ([[self getCategoryNames] count] - 2); i++){
+            
+            
+            
+            [saveGetMealNames addObject:[self getMealNames:i]];
+            
+            [Meals setObject:saveGetMealNames[i] forKey:saveGetCategoryNames[i]];
+            
+            
+            
         }
         
         
-    }
-    
-
-    
-    subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
-    
-    
-    for (int i = 0; i <= [allMealsAsSeen count]-1; i++){
         
-        [subtitleDict setObject:[self getAllIngredientsFound][i] forKey:allMealsAsSeen[i]];
+        MealSectionTitles = [[Meals allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+        
+        
+        
+        
+        allMealsAsSeen = [[NSMutableArray alloc] init];
+        
+        
+        for (int i = 0; i <= [[Meals allKeys]count]-1; i++){
+            
+            for (int j = 0; j <= [[Meals allValues][i] count]-1; j++){
+                //NSLog(@"%@", [Meals allValues][i][j]);
+                [allMealsAsSeen addObject:[Meals allValues][i][j]];
+            }
+            
+            
+        }
        
+        
 
+                
+        subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
+        
+        //NSLog(@"%i", [[self getAllIngredientsFound] count]);
+        
+        for (int i = 0; i <= [allMealsAsSeen count]-1; i++){
+            
+            [subtitleDict setObject:[self getAllIngredientsFound][i] forKey:allMealsAsSeen[i]];
+            NSLog(@"%i out of %lu", i, (unsigned long)[allMealsAsSeen count]);
+        }
+        
+
+        
     }
     
-    //NSLog(@"%@", subtitleDict);
+    
+   
     
 }
 
@@ -341,7 +376,6 @@
     cell.detailTextLabel.text = subtitleOfMeal;
     
     //cell.detailTextLabel.text = [[self getAllIngredientsFound] objectAtIndex:indexPath.row];
-    
     
     
     

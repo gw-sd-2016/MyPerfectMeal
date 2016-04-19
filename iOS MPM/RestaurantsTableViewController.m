@@ -270,6 +270,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+
     loadedHTMLPage = [self loadRawHTML];
     //register new custom table view cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomTableViewCell class])];
@@ -376,7 +379,7 @@
     _clickedRestaurant = [allRestNames objectAtIndex:indexPath.row];
     _clickedURL = [allRestURLs objectAtIndex:indexPath.row];
     _clickedAddress = [allRestAddresses objectAtIndex:indexPath.row];
-
+    
     [self performSegueWithIdentifier:@"showMenu" sender:self];
 
     
@@ -396,6 +399,7 @@
         MenuDetailsViewController.clickedRestaurantName = _clickedRestaurant;
         MenuDetailsViewController.clickedRestaurantURL = _clickedURL;
         MenuDetailsViewController.clickedRestaurantAddress = _clickedAddress;
+        
         /*
         NSLog(@"%@", MenuDetailsViewController.clickedRestaurantName);
         NSLog(@"%@", MenuDetailsViewController.clickedRestaurantURL);
