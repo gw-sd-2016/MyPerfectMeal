@@ -32,9 +32,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="RXp-Rp-m0C">
+                            <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.16162922239999999" green="1" blue="0.00083137051919999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </progressView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="65" id="0bt-hP-dZH">
-                                <rect key="frame" x="0.0" y="92" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bt-hP-dZH" id="104-zI-h9H">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="64.5"/>
@@ -1251,7 +1256,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="58u-pn-wDR"/>
         <segue reference="HMP-vK-86N"/>
-        <segue reference="yfA-Vz-eb9"/>
     </inferredMetricsTieBreakers>
 </document>

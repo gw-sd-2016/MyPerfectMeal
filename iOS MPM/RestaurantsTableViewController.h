@@ -15,7 +15,6 @@
     
 }
 
-
 @property (nonatomic, strong) NSString *clickedRestaurant;
 @property (nonatomic, strong) NSString *clickedURL;
 @property (nonatomic, strong) NSString *clickedAddress;

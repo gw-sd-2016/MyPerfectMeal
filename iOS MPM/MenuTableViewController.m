@@ -42,6 +42,7 @@
     
     //NSLog(@"%@", loadHTMLPage);
     
+    
     return loadHTMLPage;
     
 }
@@ -133,17 +134,15 @@
         [getMealNamesScanner scanUpToString:@"</span>" intoString:&getMeals] ;
         
         getMeals = [getMeals stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<span class=\"name\">"] withString:@""];
-
         
         
         [getMealNamesArray addObject:getMeals];
         
         
+        
     }
     
     [getMealNamesArray removeLastObject];
-    
-
     
     return getMealNamesArray;
     
@@ -233,9 +232,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.navigationItem.title = _clickedRestaurantName;
     
+    NSLog(@"WEBSITE DOES NOT EXIST");
+
     loadedRawHTML = [self loadRawHTML];
 
     
@@ -254,6 +255,7 @@
         [self presentViewController:alertController animated:YES completion:nil];
         
     }else{
+        
         NSMutableArray *saveGetMealNames = [[NSMutableArray alloc ] init];
         
         Meals = [[NSMutableDictionary alloc]initWithCapacity:[[self getCategoryNames] count]];
@@ -265,12 +267,13 @@
             
             [saveGetMealNames addObject:[self getMealNames:i]];
             
+            
+            
             [Meals setObject:saveGetMealNames[i] forKey:saveGetCategoryNames[i]];
             
             
             
         }
-        
         
         
         MealSectionTitles = [[Meals allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -284,7 +287,7 @@
         for (int i = 0; i <= [[Meals allKeys]count]-1; i++){
             
             for (int j = 0; j <= [[Meals allValues][i] count]-1; j++){
-                //NSLog(@"%@", [Meals allValues][i][j]);
+               // NSLog(@"%@", [Meals allValues][i][j]);
                 [allMealsAsSeen addObject:[Meals allValues][i][j]];
             }
             
@@ -297,18 +300,20 @@
         subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
         
         //NSLog(@"%i", [[self getAllIngredientsFound] count]);
+       
         
         for (int i = 0; i <= [allMealsAsSeen count]-1; i++){
             
             [subtitleDict setObject:[self getAllIngredientsFound][i] forKey:allMealsAsSeen[i]];
             NSLog(@"%i out of %lu", i, (unsigned long)[allMealsAsSeen count]);
+            
         }
         
 
         
     }
     
-    
+
    
     
 }

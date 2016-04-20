@@ -100,7 +100,8 @@
         
         getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_name\"><a href=\""] withString:@""];
         
-        
+        getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
+
         /*
          //this gets all urls on the page
          //NSLog(@"%@", getRestURL);
@@ -142,7 +143,8 @@
         [getRestNamesScanner scanUpToString:@"</a></p>" intoString:&getRestNames] ;
         
         getRestNames = [getRestNames stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"/menu/\">"] withString:@""];
-        
+        getRestNames = [getRestNames stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
+
         
         //get all rest names
         //NSLog(@"%@", getRestNames);
@@ -220,7 +222,8 @@
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"</li>"] withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"        "] withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        
+        getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
+
         [getRestDescArray addObject:getRestDesc];
         
         
@@ -271,8 +274,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
-
     loadedHTMLPage = [self loadRawHTML];
     //register new custom table view cell
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomTableViewCell class])];
@@ -370,6 +371,7 @@
     cell.restDistanceLBL.text = [allRestDistances objectAtIndex:indexPath.row];
     
     
+    
     return cell;
 }
 
@@ -380,8 +382,11 @@
     _clickedURL = [allRestURLs objectAtIndex:indexPath.row];
     _clickedAddress = [allRestAddresses objectAtIndex:indexPath.row];
     
-    [self performSegueWithIdentifier:@"showMenu" sender:self];
 
+  
+    [self performSegueWithIdentifier:@"showMenu" sender:self];
+    
+  
     
     
     //NSLog(@"%@", clickedRestaurant);
@@ -394,6 +399,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showMenu"])
     {
+        
+        
         MenuTableViewController *MenuDetailsViewController = [segue destinationViewController];
 
         MenuDetailsViewController.clickedRestaurantName = _clickedRestaurant;
