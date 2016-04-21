@@ -6,6 +6,8 @@
     
     NSMutableArray *GoodIngredients;
     NSMutableArray *BadIngredients;
+    NSMutableString *LoadedHTML;
+    NSMutableString *LoadedSpecificRestaurant ;
 }
 
 @end
