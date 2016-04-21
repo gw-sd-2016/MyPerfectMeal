@@ -2,7 +2,6 @@
 #import "ResultsTableViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
-
 #define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 @interface ResultsTableViewController ()
@@ -320,8 +319,9 @@
     
     NSMutableArray *restDictArray = [[NSMutableArray alloc] init];
     
-    for (int ak = 0; ak <= 5;ak++) {
     
+    for (int ak = 0; ak <= 6;ak++) {
+        
     LoadedSpecificRestaurant = [self loadRawHTML:ak];
     /*
     NSLog(@"%@", [self RestNames][ak]);
@@ -329,27 +329,36 @@
     NSLog(@"%@", [self RestAddress][ak]);
     NSLog(@"%@", [self RestDistances][ak]);
 */
+        
+        
     NSArray *FinalMeals = [[NSArray alloc] initWithArray:[self getMealNames:ak]];
+        
     FinalMeals = [FinalMeals sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    //NSLog(@"%@", FinalMeals);
+    
+        if ([FinalMeals count] != 0){
+            
+        NSMutableArray *temp = [[NSMutableArray alloc] init];
 
-    NSMutableArray *temp = [[NSMutableArray alloc] init];
-   
-    for (int i =0; i <= [FinalMeals count]-1; i++) {
-        
+        for (int i =0; i <= [FinalMeals count]-1; i++) {
+                
         [temp addObject:[self getIngredients:FinalMeals[i] :ak]];
+                
+        }
+            
+        NSDictionary *MealsDict = [NSDictionary dictionaryWithObjects:temp forKeys:FinalMeals];
+
+        [restDictArray addObject:MealsDict];
+            
+        }
         
-    }
-
-    
-    
-    NSDictionary *MealsDict = [NSDictionary dictionaryWithObjects:temp forKeys:FinalMeals];
-    
-    [restDictArray addObject:MealsDict];
+        else{
+            
+        }
     
     }
     
-
+    
+    
     GoodIngredients = [[NSMutableArray alloc] init];
     BadIngredients = [[NSMutableArray alloc] init];
     
@@ -370,28 +379,73 @@
     
     NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
     
-    for (int j = 0; j <= [[restDictArray[1] allValues] count] -1 ; j++){
+    int AXZ = 3;
+    
+    for (int j = 0; j <= [[restDictArray[AXZ] allValues] count] -1 ; j++){
         
         for (int i = 0; i <= [GoodIngredients count] -1; i++){
-            if ([[restDictArray[1] allValues][j] containsString:GoodIngredients[i]]){
+            if ([[restDictArray[AXZ] allValues][j] containsString:GoodIngredients[i]]){
                 //NSLog(@"Found a match %@ contains the word %@", [restDictArray[1] allValues][j], GoodIngredients[i]);
-                [potentialSuggestions addObject:[restDictArray[1] allValues][j]];
+                //NSLog(@"%@", [restDictArray[1] allValues][j]);
+                
+                if ([[restDictArray[AXZ] allValues][j] length] <= 100){
+                   // NSLog(@"TOO SHORT THIS WILL BE IGNORED");
+                }
+                else{
+                    [potentialSuggestions addObject:[restDictArray[AXZ] allValues][j]];
+                }
+                
             }
             else{
                 //NSLog(@"KEYWORD NOT FOUND");
+                
             }
         }
         
     }
-   
-
+    
+    NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
+    
+    for (int a = 0; a <= [potentialSuggestions count] -1; a++){
+        for (int b = 0; b <= [BadIngredients count] -1; b++){
+            if ([potentialSuggestions[a] containsString:BadIngredients[b]]){
+                //NSLog(@"This Potential Suggestion Does Not Qualify: %@", potentialSuggestions[a]);
+            }
+            else{
+                if ([SecondSuggestionFilter containsObject:potentialSuggestions[a]]){
+                    
+                }
+                else{
+                    [SecondSuggestionFilter addObject:potentialSuggestions[a]];
+                }
+            }
+        }
+    }
+     
+    
     NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
     //NSLog(@"%@", countedSet);
     
     for (id item in countedSet)
     {
-        NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+        
+        if ((unsigned long)[countedSet countForObject:item] <= 3){
+            //NSLog(@"NOT ENOUGH LIKES");
+        }
+        else{
+            NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+            
+        }
+        
+        
     }
+    
+    
+    NSLog(@"%lu", (unsigned long)[countedSet count]);
+
+    NSLog(@"%lu", (unsigned long)[SecondSuggestionFilter count]);
+    
+ 
  
     
     
