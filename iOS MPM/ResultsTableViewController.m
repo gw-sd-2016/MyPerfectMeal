@@ -363,6 +363,7 @@
     BadIngredients = [[NSMutableArray alloc] init];
     
     
+    
     [self getListForUserLikesAndDislikes];
     [self getListForDisorders];
     [self getListForAllergies];
@@ -404,24 +405,9 @@
         
     }
     
+
     NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
-    
-    for (int a = 0; a <= [potentialSuggestions count] -1; a++){
-        for (int b = 0; b <= [BadIngredients count] -1; b++){
-            if ([potentialSuggestions[a] containsString:BadIngredients[b]]){
-                //NSLog(@"This Potential Suggestion Does Not Qualify: %@", potentialSuggestions[a]);
-            }
-            else{
-                if ([SecondSuggestionFilter containsObject:potentialSuggestions[a]]){
-                    
-                }
-                else{
-                    [SecondSuggestionFilter addObject:potentialSuggestions[a]];
-                }
-            }
-        }
-    }
-     
+
     
     NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
     //NSLog(@"%@", countedSet);
@@ -433,23 +419,41 @@
             //NSLog(@"NOT ENOUGH LIKES");
         }
         else{
-            NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
-            
+            //NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+            [SecondSuggestionFilter addObject:item];
         }
         
         
     }
     
-    
-    NSLog(@"%lu", (unsigned long)[countedSet count]);
-
-    NSLog(@"%lu", (unsigned long)[SecondSuggestionFilter count]);
-    
- 
- 
+    //NSLog(@"%@", SecondSuggestionFilter);
     
     
 
+    NSMutableArray *ThirdSuggestionFilter = [[NSMutableArray alloc] init];
+    NSMutableArray *badStrings = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i <= [SecondSuggestionFilter count] -1; i++){
+        for (int j = 0; j <= [BadIngredients count] -1; j++){
+            if ([SecondSuggestionFilter[i] containsString:BadIngredients[j]]){
+               //This is a bad string
+                //NSLog(@"Added Bad String: %@.", SecondSuggestionFilter[i]);
+                [badStrings addObject:SecondSuggestionFilter[i]];
+                //NSLog(@"Found word %@", BadIngredients[j]);
+            }
+        }
+        
+        if ( [badStrings containsObject:SecondSuggestionFilter[i]]){
+            //NSLog(@"BAD STRING: %@" , SecondSuggestionFilter[i]);
+        }
+        else{
+            [ThirdSuggestionFilter addObject:SecondSuggestionFilter[i]];
+
+        }
+        
+    }
+    
+    NSLog(@"%@", ThirdSuggestionFilter);
     
 }
 
