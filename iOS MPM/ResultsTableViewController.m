@@ -3,6 +3,8 @@
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
+#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
 @interface ResultsTableViewController ()
 
 @end
@@ -347,7 +349,7 @@
     
     }
     
-    
+
     GoodIngredients = [[NSMutableArray alloc] init];
     BadIngredients = [[NSMutableArray alloc] init];
     
@@ -364,10 +366,33 @@
     NSOrderedSet *orderedSetBadIngredients = [NSOrderedSet orderedSetWithArray:BadIngredients];
     BadIngredients = [orderedSetBadIngredients array];
     
+
     
-    NSLog(@"%@", GoodIngredients);
-    NSLog(@"%@", BadIngredients);
+    NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
     
+    for (int j = 0; j <= [[restDictArray[1] allValues] count] -1 ; j++){
+        
+        for (int i = 0; i <= [GoodIngredients count] -1; i++){
+            if ([[restDictArray[1] allValues][j] containsString:GoodIngredients[i]]){
+                //NSLog(@"Found a match %@ contains the word %@", [restDictArray[1] allValues][j], GoodIngredients[i]);
+                [potentialSuggestions addObject:[restDictArray[1] allValues][j]];
+            }
+            else{
+                //NSLog(@"KEYWORD NOT FOUND");
+            }
+        }
+        
+    }
+   
+
+    NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
+    //NSLog(@"%@", countedSet);
+    
+    for (id item in countedSet)
+    {
+        NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+    }
+ 
     
     
 
