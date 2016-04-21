@@ -318,7 +318,8 @@
     LoadedHTML = [self getCloseRestHTML];
     
     NSMutableArray *restDictArray = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *ThirdSuggestionFilter = [[NSMutableArray alloc] init];
+
     
     for (int ak = 0; ak <= 6;ak++) {
         
@@ -328,11 +329,11 @@
     NSLog(@"%@", [self RestDesc][ak]);
     NSLog(@"%@", [self RestAddress][ak]);
     NSLog(@"%@", [self RestDistances][ak]);
-*/
-        
+
+        */
         
     NSArray *FinalMeals = [[NSArray alloc] initWithArray:[self getMealNames:ak]];
-        
+    
     FinalMeals = [FinalMeals sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
         if ([FinalMeals count] != 0){
@@ -344,9 +345,10 @@
         [temp addObject:[self getIngredients:FinalMeals[i] :ak]];
                 
         }
-            
+        
         NSDictionary *MealsDict = [NSDictionary dictionaryWithObjects:temp forKeys:FinalMeals];
-
+            
+            
         [restDictArray addObject:MealsDict];
             
         }
@@ -356,8 +358,7 @@
         }
     
     }
-    
-    
+
     
     GoodIngredients = [[NSMutableArray alloc] init];
     BadIngredients = [[NSMutableArray alloc] init];
@@ -377,83 +378,97 @@
     BadIngredients = [orderedSetBadIngredients array];
     
 
-    
-    NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
-    
-    int AXZ = 3;
-    
-    for (int j = 0; j <= [[restDictArray[AXZ] allValues] count] -1 ; j++){
+    for (int AXZ = 0; AXZ <= 5; AXZ++){
+        NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
         
-        for (int i = 0; i <= [GoodIngredients count] -1; i++){
-            if ([[restDictArray[AXZ] allValues][j] containsString:GoodIngredients[i]]){
-                //NSLog(@"Found a match %@ contains the word %@", [restDictArray[1] allValues][j], GoodIngredients[i]);
-                //NSLog(@"%@", [restDictArray[1] allValues][j]);
-                
-                if ([[restDictArray[AXZ] allValues][j] length] <= 100){
-                   // NSLog(@"TOO SHORT THIS WILL BE IGNORED");
+        
+        
+        for (int j = 0; j <= [[restDictArray[AXZ] allValues] count] -1 ; j++){
+            
+            for (int i = 0; i <= [GoodIngredients count] -1; i++){
+                if ([[restDictArray[AXZ] allValues][j] containsString:GoodIngredients[i]]){
+                    //NSLog(@"Found a match %@ contains the word %@", [restDictArray[1] allValues][j], GoodIngredients[i]);
+                    //NSLog(@"%@", [restDictArray[1] allValues][j]);
+                    
+                    if ([[restDictArray[AXZ] allValues][j] length] <= 75){
+                        // NSLog(@"TOO SHORT THIS WILL BE IGNORED");
+                    }
+                    else{
+                        [potentialSuggestions addObject:[restDictArray[AXZ] allValues][j]];
+                    }
+                    
                 }
                 else{
-                    [potentialSuggestions addObject:[restDictArray[AXZ] allValues][j]];
+                    //NSLog(@"KEYWORD NOT FOUND");
+                    
+                }
+            }
+            
+        }
+        
+        if ([potentialSuggestions count] > 0){
+            
+            
+            
+            NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
+            
+            
+            NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
+            //NSLog(@"%@", countedSet);
+            
+            for (id item in countedSet)
+            {
+                
+                if ((unsigned long)[countedSet countForObject:item] <= 3){
+                    //NSLog(@"NOT ENOUGH LIKES");
+                }
+                else{
+                    //NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+                    [SecondSuggestionFilter addObject:item];
+                }
+                
+                
+            }
+            
+            //NSLog(@"%@", SecondSuggestionFilter);
+            
+            
+            
+            NSMutableArray *badStrings = [[NSMutableArray alloc] init];
+            
+            for (int i = 0; i <= [SecondSuggestionFilter count] -1; i++){
+                for (int j = 0; j <= [BadIngredients count] -1; j++){
+                    if ([SecondSuggestionFilter[i] containsString:BadIngredients[j]]){
+                        //This is a bad string
+                        //NSLog(@"Added Bad String: %@.", SecondSuggestionFilter[i]);
+                        [badStrings addObject:SecondSuggestionFilter[i]];
+                        // NSLog(@"Found word %@", BadIngredients[j]);
+                    }
+                }
+                
+                if ( [badStrings containsObject:SecondSuggestionFilter[i]]){
+                    //NSLog(@"BAD STRING: %@" , SecondSuggestionFilter[i]);
+                }
+                else{
+                    [ThirdSuggestionFilter addObject:SecondSuggestionFilter[i]];
+                    
                 }
                 
             }
-            else{
-                //NSLog(@"KEYWORD NOT FOUND");
-                
-            }
-        }
-        
-    }
-    
+            
+            //NSLog(@"%@", ThirdSuggestionFilter);
+            //NSLog(@"%@", [restDictArray[AXZ] allKeysForObject:ThirdSuggestionFilter[0]]);
 
-    NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
-
-    
-    NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
-    //NSLog(@"%@", countedSet);
-    
-    for (id item in countedSet)
-    {
-        
-        if ((unsigned long)[countedSet countForObject:item] <= 3){
-            //NSLog(@"NOT ENOUGH LIKES");
         }
         else{
-            //NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
-            [SecondSuggestionFilter addObject:item];
+            //NSLog(@"This restaurant has no potentional suggestions yet...");
         }
-        
-        
+
     }
     
-    //NSLog(@"%@", SecondSuggestionFilter);
-    
-    
-
-    NSMutableArray *ThirdSuggestionFilter = [[NSMutableArray alloc] init];
-    NSMutableArray *badStrings = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i <= [SecondSuggestionFilter count] -1; i++){
-        for (int j = 0; j <= [BadIngredients count] -1; j++){
-            if ([SecondSuggestionFilter[i] containsString:BadIngredients[j]]){
-               //This is a bad string
-                //NSLog(@"Added Bad String: %@.", SecondSuggestionFilter[i]);
-                [badStrings addObject:SecondSuggestionFilter[i]];
-                //NSLog(@"Found word %@", BadIngredients[j]);
-            }
-        }
-        
-        if ( [badStrings containsObject:SecondSuggestionFilter[i]]){
-            //NSLog(@"BAD STRING: %@" , SecondSuggestionFilter[i]);
-        }
-        else{
-            [ThirdSuggestionFilter addObject:SecondSuggestionFilter[i]];
-
-        }
-        
-    }
     
     NSLog(@"%@", ThirdSuggestionFilter);
+    
     
 }
 
