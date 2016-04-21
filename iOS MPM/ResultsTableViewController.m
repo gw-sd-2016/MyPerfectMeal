@@ -36,7 +36,7 @@
         
     }
     
-    NSLog(@"Loaded HTML Page");
+    //NSLog(@"Loaded HTML Page");
     
     return loadPageHTML;
     
@@ -208,7 +208,7 @@
     
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", [self RestURL][X]];
     
-    NSLog(@"Navigating to %@", restaurantDirectoryURLString);
+    //NSLog(@"Navigating to %@", restaurantDirectoryURLString);
     
     
     NSURL *restaurantDirectoryURL = [[NSURL alloc] initWithString:restaurantDirectoryURLString];
@@ -226,7 +226,7 @@
         
     }
     
-    NSLog(@"Loaded Raw Html For A Specific Restaurant");
+    //NSLog(@"Loaded Raw Html For A Specific Restaurant");
     
     //NSLog(@"%@", loadHTMLPage);
     
@@ -315,20 +315,18 @@
     [super viewDidLoad];
     
     LoadedHTML = [self getCloseRestHTML];
-    /*
-    NSLog(@"%lu", (unsigned long)[[self RestURL]count]);
-    NSLog(@"%lu", [[self RestDistances] count]);
-    NSLog(@"%lu", [[self RestAddress] count]);
-    NSLog(@"%lu", [[self RestNames] count]);
-    NSLog(@"%lu", [[self RestDesc] count]);
     
-    */
+    NSMutableArray *restDictArray = [[NSMutableArray alloc] init];
     
     for (int ak = 0; ak <= 5;ak++) {
     
-    NSLog(@"===========================LOADING WEBSITE NUMBER %i===========================", ak);
     LoadedSpecificRestaurant = [self loadRawHTML:ak];
-
+    /*
+    NSLog(@"%@", [self RestNames][ak]);
+    NSLog(@"%@", [self RestDesc][ak]);
+    NSLog(@"%@", [self RestAddress][ak]);
+    NSLog(@"%@", [self RestDistances][ak]);
+*/
     NSArray *FinalMeals = [[NSArray alloc] initWithArray:[self getMealNames:ak]];
     FinalMeals = [FinalMeals sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     //NSLog(@"%@", FinalMeals);
@@ -337,134 +335,28 @@
    
     for (int i =0; i <= [FinalMeals count]-1; i++) {
         
-        //NSLog(@"%@", [self getIngredients:[self getMealNames:0][i] :0]);
         [temp addObject:[self getIngredients:FinalMeals[i] :ak]];
         
     }
 
-    //NSLog(@"%@", temp );
     
     
     NSDictionary *MealsDict = [NSDictionary dictionaryWithObjects:temp forKeys:FinalMeals];
-
-    NSLog(@"%@", MealsDict);
-        
-    NSLog(@"===========================FINISHED LOADING WEBSITE NUMBER %i===========================", ak);
-
+    
+    [restDictArray addObject:MealsDict];
     
     }
     
-    //NSLog(@"%@", [self getMealNames:0]);
     
-    /*
-     
-     for (int i =0; i <= [[self getMealNames:0]count]-1; i++) {
-     
-     //NSLog(@"%@", [self getIngredients:[self getMealNames:0][i] :0]);
-     [temp addObject:[self getIngredients:[self getMealNames:0][i] :0]];
-     
-     }
-     */
+    GoodIngredients = [[NSMutableArray alloc] init];
+    BadIngredients = [[NSMutableArray alloc] init];
     
-    //[self loadRawHTML:0];
-    
-    
-   // NSLog(@"%lu", (unsigned long)[[self getMealNames:0]count]);
-    //[self getMealNames:0];
-
-    //NSLog(@"%@", [self getIngredients:@"Awakin' with Bacon":0]);
-    
-    
-    
-    //GoodIngredients = [[NSMutableArray alloc] init];
-    //BadIngredients = [[NSMutableArray alloc] init];
-    
-    
-   // NSLog(@"The first restuarant is %@, the second restuarant is %@, the third restaurant is %@", [self RestURL][0], [self RestURL][1], [self RestURL][2]);
-    
-    //NSLog(@"%@", [self RestURL][0]);
-    //NSLog(@"%@", [self getIngredients:0]);
-    
-   // NSLog(@"%@", [self RestURL][1]);
-    //NSLog(@"%@", [self getIngredients:1]);
-    
-    //NSLog(@"%@", [self RestURL][2]);
-    //NSLog(@"%@", [self getIngredients:2]);
-    
-    //NSLog(@"%@", [self RestURL][3]);
-   // NSLog(@"%@", [self getIngredients:3]);
-    
-
-    /*
-    
-    NSString *MedsPath = [[NSBundle mainBundle] pathForResource:@"Meds" ofType:@"plist"];
-    NSDictionary *MedsDict = [[NSDictionary alloc] initWithContentsOfFile:MedsPath];
-    NSLog(@"%@", MedsDict);
-   
-    
-    NSString *MedsCategoriesPath = [[NSBundle mainBundle] pathForResource:@"MedsCategories" ofType:@"plist"];
-    NSDictionary *MedsCategoriesDict = [[NSDictionary alloc] initWithContentsOfFile:MedsCategoriesPath];
-    NSLog(@"%@", MedsCategoriesDict);
-    
-    
-    NSString *AllergiesPath = [[NSBundle mainBundle] pathForResource:@"Allergies" ofType:@"plist"];
-    NSDictionary *AllergiesDict = [[NSDictionary alloc] initWithContentsOfFile:AllergiesPath];
-    NSLog(@"%@", AllergiesDict);
-    
-    
-    
-    NSString *GoalsPath = [[NSBundle mainBundle] pathForResource:@"Goals" ofType:@"plist"];
-    NSDictionary *GoalsDict = [[NSDictionary alloc] initWithContentsOfFile:GoalsPath];
-    NSLog(@"%@", GoalsDict);
- */
-    //NSLog(@"%@", MedsCategoriesDict);
-   // NSLog(@"%@", [[[MedsCategoriesDict valueForKey:@"MedsCategories"] valueForKey:@"Heart Disease"]valueForKey:@"Good Ingredients"] );
-    
-    //NSLog(@"%@", [MedsCategoriesDict valueForKey:@"MedsCategories"] );
-   
-//    [self getListForGoals];
-
-    
-    //NSLog(@"%@", GoodIngredients);
-    
-    //NSLog(@"%@", BadIngredients);
-    
-    //NSLog(@"%@", [[PFUser currentUser] objectForKey:@"selectedGoal"]);
-    
-    
-    
-    
-    //NSLog(@"%@", [[MedsDict objectForKey:@"Meds"][0] objectForKey:@"Name"] );
-   // NSLog(@"%lu", [[MedsDict objectForKey:@"Meds"] count]);
-    
-    
-    
-    
-    /*
-     
-     
-    NSLog(@"%@", [[PFUser currentUser] objectForKey:@"selectedFoodAllergy"]);
-    NSLog(@"%@", [[PFUser currentUser] objectForKey:@"selectedDisorder"]);
-*/
-    
-    //NSLog(@"%@", [self getMedTypes]);
-    
-    //[self getListForMedTypes];
-
-    //[self getListForDisorders];
-    
-    /*
     
     [self getListForUserLikesAndDislikes];
     [self getListForDisorders];
     [self getListForAllergies];
     [self getListForMedTypes];
     [self getListForGoals];
-    
-    
-   // NSLog(@"%@", GoodIngredients);
-    
-   // NSLog(@"%@", BadIngredients);
     
     NSOrderedSet *orderedSetGoodIngredients = [NSOrderedSet orderedSetWithArray:GoodIngredients];
     GoodIngredients = [orderedSetGoodIngredients array];
@@ -475,10 +367,8 @@
     
     NSLog(@"%@", GoodIngredients);
     NSLog(@"%@", BadIngredients);
-   */ 
-    //[self getListForAllergies];
     
-//    NSLog(@"%@", BadIngredients);
+    
     
 
     
