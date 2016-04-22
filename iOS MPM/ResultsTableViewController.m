@@ -309,56 +309,47 @@
     
 }
 
-
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(NSDictionary*) getMealsAndIngredients: (int) restNumber{
     
-    LoadedHTML = [self getCloseRestHTML];
-    
-    NSMutableArray *restDictArray = [[NSMutableArray alloc] init];
-    NSMutableArray *ThirdSuggestionFilter = [[NSMutableArray alloc] init];
+    NSMutableArray *FinalMeals = [[NSMutableArray alloc] init];
+    NSMutableArray *Ingredients = [[NSMutableArray alloc] init];
+    NSMutableDictionary *MealsDict = [[NSMutableDictionary alloc] init];
 
     
-    for (int ak = 0; ak <= 6;ak++) {
-        
-    LoadedSpecificRestaurant = [self loadRawHTML:ak];
-    /*
-    NSLog(@"%@", [self RestNames][ak]);
-    NSLog(@"%@", [self RestDesc][ak]);
-    NSLog(@"%@", [self RestAddress][ak]);
-    NSLog(@"%@", [self RestDistances][ak]);
+    LoadedSpecificRestaurant = [self loadRawHTML:restNumber];
 
-        */
-        
-    NSArray *FinalMeals = [[NSArray alloc] initWithArray:[self getMealNames:ak]];
+    [FinalMeals addObject:@"Restaurant Name"];
+    [FinalMeals addObject:@"Restaurant Description"];
+    [FinalMeals addObject:@"Restaurant Address"];
+    [FinalMeals addObject:@"Restaurant Distances"];
+
+    [Ingredients addObject:[self RestNames][restNumber]];
+    [Ingredients addObject:[self RestDesc][restNumber]];
+    [Ingredients addObject:[self RestAddress][restNumber]];
+    [Ingredients addObject:[self RestDistances][restNumber]];
+
+    [FinalMeals addObjectsFromArray:[self getMealNames:restNumber]];
     
-    FinalMeals = [FinalMeals sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    
-        if ([FinalMeals count] != 0){
+ 
+    for (int i =4; i <= [FinalMeals count]-1; i++) {
             
-        NSMutableArray *temp = [[NSMutableArray alloc] init];
-
-        for (int i =0; i <= [FinalMeals count]-1; i++) {
-                
-        [temp addObject:[self getIngredients:FinalMeals[i] :ak]];
-                
-        }
-        
-        NSDictionary *MealsDict = [NSDictionary dictionaryWithObjects:temp forKeys:FinalMeals];
+        [Ingredients addObject:[self getIngredients:FinalMeals[i] :restNumber]];
             
-            
-        [restDictArray addObject:MealsDict];
-            
-        }
-        
-        else{
-            
-        }
-    
     }
+        
+    MealsDict = [NSMutableDictionary dictionaryWithObjects:Ingredients forKeys:FinalMeals];
+    
+    //NSLog(@"%@", MealsDict );
+    
+    return MealsDict;
+    
+}
 
+
+
+
+
+-(void) getGoodAndBadIngredients{
     
     GoodIngredients = [[NSMutableArray alloc] init];
     BadIngredients = [[NSMutableArray alloc] init];
@@ -371,67 +362,195 @@
     [self getListForMedTypes];
     [self getListForGoals];
     
+    
     NSOrderedSet *orderedSetGoodIngredients = [NSOrderedSet orderedSetWithArray:GoodIngredients];
-    GoodIngredients = [orderedSetGoodIngredients array];
+    GoodIngredients = [orderedSetGoodIngredients mutableCopy];
     
     NSOrderedSet *orderedSetBadIngredients = [NSOrderedSet orderedSetWithArray:BadIngredients];
-    BadIngredients = [orderedSetBadIngredients array];
-    
+    BadIngredients = [orderedSetBadIngredients mutableCopy];
 
-    for (int AXZ = 0; AXZ <= 5; AXZ++){
-        NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
+}
+
+
+
+
+
+
+-(NSArray*) FirstCheck : (int) restNumber{
+    
+    NSMutableArray *FirstCheck = [[NSMutableArray alloc] init];
+    NSMutableArray *FilteredResults = [[NSMutableArray alloc] init];
+    NSDictionary *tempDict = [[NSDictionary alloc] initWithDictionary:[self getMealsAndIngredients:restNumber]];
+    
+    
+    for (int i = 0; i <= [[tempDict allValues] count] -1; i++ ){
+
+        
+        for (int j = 0; j <= [GoodIngredients count] -1; j++){
+        
+            if ([[tempDict allValues][i] containsString:GoodIngredients[j]] && [[tempDict allValues][i] length] >= 75){
+                
+                [FirstCheck addObject:[tempDict allValues][i]];
+                
+            }
+            else{
+                //NSLog(@"KEYWORD NOT FOUND");
+                
+            }
+        }
+    }
+    
+    [FilteredResults addObject:[tempDict objectForKey:@"Restaurant Name"]];
+    [FilteredResults addObject:[tempDict objectForKey:@"Restaurant Description"]];
+    [FilteredResults addObject:[tempDict objectForKey:@"Restaurant Address"]];
+    [FilteredResults addObject:[tempDict objectForKey:@"Restaurant Distances"]];
+    
+    NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:FirstCheck];
+    
+    for (id item in countedSet)
+    {
+        
+        if ((unsigned long)[countedSet countForObject:item] <= 3){
+            //NSLog(@"NOT ENOUGH LIKES");
+        }
+        else{
+           // NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
+            [FilteredResults addObject:item];
+        }
         
         
+    }
+
+    //NSLog(@"%@", FilteredResults);
+    
+    return FilteredResults;
+
+    
+}
+
+
+
+
+
+-(void) SecondCheck : (NSArray *) FirstCheckResults{
+    
+    
+    NSMutableArray *FinalSuggestions = [[NSMutableArray alloc] init];
+    NSMutableArray *BadStrings = [[NSMutableArray alloc] init];
+    
+    
+    
+    if ([FirstCheckResults count] > 4){
         
-        for (int j = 0; j <= [[restDictArray[AXZ] allValues] count] -1 ; j++){
+        [FinalSuggestions addObject:FirstCheckResults[0]];
+        [FinalSuggestions addObject:FirstCheckResults[1]];
+        [FinalSuggestions addObject:FirstCheckResults[2]];
+        [FinalSuggestions addObject:FirstCheckResults[3]];
+        
+        for (int i = 4; i <= [FirstCheckResults count] -1; i++){
             
-            for (int i = 0; i <= [GoodIngredients count] -1; i++){
-                if ([[restDictArray[AXZ] allValues][j] containsString:GoodIngredients[i]]){
-                    //NSLog(@"Found a match %@ contains the word %@", [restDictArray[1] allValues][j], GoodIngredients[i]);
-                    //NSLog(@"%@", [restDictArray[1] allValues][j]);
-                    
-                    if ([[restDictArray[AXZ] allValues][j] length] <= 75){
-                        // NSLog(@"TOO SHORT THIS WILL BE IGNORED");
-                    }
-                    else{
-                        [potentialSuggestions addObject:[restDictArray[AXZ] allValues][j]];
-                    }
-                    
+            for (int j = 0; j <= [BadIngredients count] -1; j++){
+                
+                if ([FirstCheckResults[i] containsString:BadIngredients[j]]){
+                   
+                    [BadStrings addObject:FirstCheckResults[i]];
                 }
-                else{
-                    //NSLog(@"KEYWORD NOT FOUND");
-                    
-                }
+            
+            }
+            
+            //NSLog(@"%@", BadStrings);
+            
+            if ( [BadStrings containsObject:FirstCheckResults[i]]){
+                //NSLog(@"BAD STRING: %@" , FirstCheckResults[i]);
+            }
+            else{
+                [FinalSuggestions addObject:FirstCheckResults[i]];
+                
             }
             
         }
+    }
+    else{
+        NSLog(@"This restaurant has no potentional suggestions yet...");
+    }
+    
+    NSLog(@"BEFORE");
+    NSLog(@"%@", FirstCheckResults);
+    NSLog(@"AFTER");
+    NSLog(@"%@", FinalSuggestions);
+}
+
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    LoadedHTML = [self getCloseRestHTML];
+    
+    
+    //[self getMealsAndIngredients:1];
+    
+
+
+    [self getGoodAndBadIngredients];
+
+
+    
+    [self SecondCheck:[self FirstCheck:3]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:4]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:5]];
+    sleep(5);
+    
+    [self SecondCheck:[self FirstCheck:6]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:7]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:8]];
+    sleep(5);
+    
+    
+    [self SecondCheck:[self FirstCheck:9]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:10]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:11]];
+    sleep(5);
+    
+    
+    [self SecondCheck:[self FirstCheck:12]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:13]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:5]];
+    sleep(5);
+    
+    
+    [self SecondCheck:[self FirstCheck:14]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:15]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:16]];
+    sleep(5);
+    
+    
+    [self SecondCheck:[self FirstCheck:17]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:18]];
+    sleep(5);
+    [self SecondCheck:[self FirstCheck:19]];
+    /*
+    
+        NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
         
         if ([potentialSuggestions count] > 0){
             
             
             
             NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
-            
-            
-            NSCountedSet *countedSet = [[NSCountedSet alloc] initWithArray:potentialSuggestions];
-            //NSLog(@"%@", countedSet);
-            
-            for (id item in countedSet)
-            {
-                
-                if ((unsigned long)[countedSet countForObject:item] <= 3){
-                    //NSLog(@"NOT ENOUGH LIKES");
-                }
-                else{
-                    //NSLog(@"Name=%@, Count=%lu", item, (unsigned long)[countedSet countForObject:item]);
-                    [SecondSuggestionFilter addObject:item];
-                }
-                
-                
-            }
-            
-            //NSLog(@"%@", SecondSuggestionFilter);
-            
+
             
             
             NSMutableArray *badStrings = [[NSMutableArray alloc] init];
@@ -464,11 +583,11 @@
             //NSLog(@"This restaurant has no potentional suggestions yet...");
         }
 
-    }
+    
     
     
     NSLog(@"%@", ThirdSuggestionFilter);
-    
+   */
     
 }
 
