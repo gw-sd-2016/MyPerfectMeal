@@ -10,7 +10,7 @@
     NSMutableString *LoadedSpecificRestaurant ;
     
     
-    NSMutableArray *restDictArray;
+    NSMutableDictionary *tempDict;
     
 }
 

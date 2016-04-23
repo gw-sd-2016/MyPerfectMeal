@@ -13,7 +13,9 @@
 -(NSString *) getCloseRestHTML{ //This is the page for the full list of rest names/address
     
     //load url of near me restaurants
-    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
+    
     NSStringEncoding encoding;
     NSError *error = nil;
     //Load HTML link
@@ -208,7 +210,7 @@
 -(NSString *) loadRawHTML: (int) X{ //now load the url for a specific website
     
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", [self RestURL][X]];
-    
+    NSLog(@"Accessed specific restaurant");
     //NSLog(@"Navigating to %@", restaurantDirectoryURLString);
     
     
@@ -380,7 +382,7 @@
     
     NSMutableArray *FirstCheck = [[NSMutableArray alloc] init];
     NSMutableArray *FilteredResults = [[NSMutableArray alloc] init];
-    NSDictionary *tempDict = [[NSDictionary alloc] initWithDictionary:[self getMealsAndIngredients:restNumber]];
+    tempDict = [[NSMutableDictionary alloc] initWithDictionary:[self getMealsAndIngredients:restNumber]];
     
     
     for (int i = 0; i <= [[tempDict allValues] count] -1; i++ ){
@@ -420,8 +422,6 @@
         
         
     }
-
-    //NSLog(@"%@", FilteredResults);
     
     return FilteredResults;
 
@@ -432,9 +432,9 @@
 
 
 
--(void) SecondCheck : (NSArray *) FirstCheckResults{
+-(NSArray*) SecondCheck : (NSArray *) FirstCheckResults{
     
-    
+    NSMutableArray *SecondCheckFilteredResults = [[NSMutableArray alloc] init];
     NSMutableArray *FinalSuggestions = [[NSMutableArray alloc] init];
     NSMutableArray *BadStrings = [[NSMutableArray alloc] init];
     
@@ -442,10 +442,10 @@
     
     if ([FirstCheckResults count] > 4){
         
-        [FinalSuggestions addObject:FirstCheckResults[0]];
-        [FinalSuggestions addObject:FirstCheckResults[1]];
-        [FinalSuggestions addObject:FirstCheckResults[2]];
-        [FinalSuggestions addObject:FirstCheckResults[3]];
+        [SecondCheckFilteredResults addObject:FirstCheckResults[0]];
+        [SecondCheckFilteredResults addObject:FirstCheckResults[1]];
+        [SecondCheckFilteredResults addObject:FirstCheckResults[2]];
+        [SecondCheckFilteredResults addObject:FirstCheckResults[3]];
         
         for (int i = 4; i <= [FirstCheckResults count] -1; i++){
             
@@ -457,27 +457,32 @@
                 }
             
             }
-            
-            //NSLog(@"%@", BadStrings);
-            
+                        
             if ( [BadStrings containsObject:FirstCheckResults[i]]){
                 //NSLog(@"BAD STRING: %@" , FirstCheckResults[i]);
             }
             else{
-                [FinalSuggestions addObject:FirstCheckResults[i]];
+                [SecondCheckFilteredResults addObject:[tempDict allKeysForObject:FirstCheckResults[i]][0]];
+                [SecondCheckFilteredResults addObject:FirstCheckResults[i]];
                 
             }
             
         }
     }
     else{
-        NSLog(@"This restaurant has no potentional suggestions yet...");
+        //NSLog(@"This restaurant has no potentional suggestions yet...");
     }
     
-    NSLog(@"BEFORE");
-    NSLog(@"%@", FirstCheckResults);
-    NSLog(@"AFTER");
-    NSLog(@"%@", FinalSuggestions);
+    if (SecondCheckFilteredResults != NULL && [SecondCheckFilteredResults count] > 4){
+        FinalSuggestions = SecondCheckFilteredResults;
+    }
+    else{
+        //NSLog(@"None of the potential recommendations made the cut");
+    }
+
+    return FinalSuggestions;
+
+    
 }
 
 
@@ -488,106 +493,28 @@
     
     LoadedHTML = [self getCloseRestHTML];
     
-    
-    //[self getMealsAndIngredients:1];
-    
 
 
     [self getGoodAndBadIngredients];
 
-
+    for (int i = 0; i <= 50; i++){
     
-    [self SecondCheck:[self FirstCheck:3]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:4]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:5]];
-    sleep(5);
-    
-    [self SecondCheck:[self FirstCheck:6]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:7]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:8]];
-    sleep(5);
-    
-    
-    [self SecondCheck:[self FirstCheck:9]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:10]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:11]];
-    sleep(5);
-    
-    
-    [self SecondCheck:[self FirstCheck:12]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:13]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:5]];
-    sleep(5);
-    
-    
-    [self SecondCheck:[self FirstCheck:14]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:15]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:16]];
-    sleep(5);
-    
-    
-    [self SecondCheck:[self FirstCheck:17]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:18]];
-    sleep(5);
-    [self SecondCheck:[self FirstCheck:19]];
-    /*
-    
-        NSMutableArray *potentialSuggestions = [[NSMutableArray alloc] init];
+        NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
         
-        if ([potentialSuggestions count] > 0){
-            
-            
-            
-            NSMutableArray *SecondSuggestionFilter = [[NSMutableArray alloc] init];
-
-            
-            
-            NSMutableArray *badStrings = [[NSMutableArray alloc] init];
-            
-            for (int i = 0; i <= [SecondSuggestionFilter count] -1; i++){
-                for (int j = 0; j <= [BadIngredients count] -1; j++){
-                    if ([SecondSuggestionFilter[i] containsString:BadIngredients[j]]){
-                        //This is a bad string
-                        //NSLog(@"Added Bad String: %@.", SecondSuggestionFilter[i]);
-                        [badStrings addObject:SecondSuggestionFilter[i]];
-                        // NSLog(@"Found word %@", BadIngredients[j]);
-                    }
-                }
-                
-                if ( [badStrings containsObject:SecondSuggestionFilter[i]]){
-                    //NSLog(@"BAD STRING: %@" , SecondSuggestionFilter[i]);
-                }
-                else{
-                    [ThirdSuggestionFilter addObject:SecondSuggestionFilter[i]];
-                    
-                }
-                
-            }
-            
-            //NSLog(@"%@", ThirdSuggestionFilter);
-            //NSLog(@"%@", [restDictArray[AXZ] allKeysForObject:ThirdSuggestionFilter[0]]);
-
+        if ([temp count] > 4){
+            NSLog(@"%@", temp);
+            NSLog(@"%d", i);
+            sleep(11);
         }
         else{
-            //NSLog(@"This restaurant has no potentional suggestions yet...");
+            NSLog(@"%d", i);
+
+            sleep(11
+                  );
         }
 
+    }
     
-    
-    
-    NSLog(@"%@", ThirdSuggestionFilter);
-   */
     
 }
 
