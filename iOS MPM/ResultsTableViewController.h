@@ -12,6 +12,17 @@
     
     NSMutableDictionary *tempDict;
     NSMutableArray *FinalSuggestionsArray;
+    
+    
+    
+    NSMutableArray *DisplayRestName;
+    NSMutableArray *DisplayRestType;
+    NSMutableArray *DisplayRestAddress;
+    NSMutableArray *DisplayRestDistance;
+    NSMutableArray *DisplayMealName;
+    NSMutableArray *DisplayMealDesc;
+    
+    
 }
 
 @end

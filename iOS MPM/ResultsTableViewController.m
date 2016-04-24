@@ -493,17 +493,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    DisplayRestName = [[NSMutableArray alloc] init];
+    DisplayRestType = [[NSMutableArray alloc] init];
+    DisplayRestAddress = [[NSMutableArray alloc] init];
+    DisplayRestDistance = [[NSMutableArray alloc] init];
+    DisplayMealName = [[NSMutableArray alloc] init];
+    DisplayMealDesc = [[NSMutableArray alloc] init];
+
+    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomResultsTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomResultsTableViewCell class])];
     
 
-    /*
+    
     LoadedHTML = [self getCloseRestHTML];
     
     FinalSuggestionsArray = [[NSMutableArray alloc] init];
 
     [self getGoodAndBadIngredients];
 
-    for (int i = 0; i <= 0; i++){
+    for (int i = 0; i <= 10; i++){
     
         NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
         
@@ -549,9 +557,26 @@
     }
     
     //gets rest info of first rest first array is first rest second is rest info
-    //NSLog(@"%@", FinalSuggestionsArray[0][0]);
-    */
+    //NSLog(@"%lu", (unsigned long)[FinalSuggestionsArray[0][1] count]);
+    for (int i = 0; i <= [FinalSuggestionsArray count] -1 ; i++){
+        for (int j = 0; j <= [FinalSuggestionsArray[i][1]count] -1 ; j++){
+            [DisplayRestName addObject:FinalSuggestionsArray[i][0][0]];
+            [DisplayRestType addObject:FinalSuggestionsArray[i][0][1]];
+            [DisplayRestAddress addObject:FinalSuggestionsArray[i][0][2]];
+            [DisplayRestDistance addObject:FinalSuggestionsArray[i][0][3]];
+            [DisplayMealName addObject:FinalSuggestionsArray[i][1][j]];
+            [DisplayMealDesc addObject:FinalSuggestionsArray[i][2][j]];
+        }
+    }
     
+    
+    NSLog(@"%@", DisplayRestName);
+    NSLog(@"%@", DisplayRestType);
+    NSLog(@"%@", DisplayRestAddress);
+    NSLog(@"%@", DisplayRestDistance);
+    NSLog(@"%@", DisplayMealName);
+    NSLog(@"%@", DisplayMealDesc);
+
 }
 
 -(void) getListForUserLikesAndDislikes{
@@ -911,7 +936,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return [DisplayRestName count];
 }
 
 
@@ -920,12 +945,12 @@
     CustomResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomResultsTableViewCell class]) forIndexPath:indexPath];
     
     
-    cell.restNameLBL.text = @"This is a test";
-    cell.restTypeLBL.text = @"This is a test";
-    cell.restAddressLBL.text = @"This is a test";
-    cell.restDistanceLBL.text = @"9999";
-    cell.restMealNameLBL.text = @"This is a test";
-    cell.restMealDescriptionLBL.text = @"This is a test";
+    cell.restNameLBL.text = [DisplayRestName objectAtIndex:indexPath.row];
+    cell.restTypeLBL.text = [DisplayRestType objectAtIndex:indexPath.row];
+    cell.restAddressLBL.text = [DisplayRestAddress objectAtIndex:indexPath.row];
+    cell.restDistanceLBL.text = [DisplayRestDistance objectAtIndex:indexPath.row];
+    cell.restMealNameLBL.text = [DisplayMealName objectAtIndex:indexPath.row];
+    cell.restMealDescriptionLBL.text = [DisplayMealDesc objectAtIndex:indexPath.row];
 
     
     
