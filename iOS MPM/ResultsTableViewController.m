@@ -2,6 +2,8 @@
 #import "ResultsTableViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
+#import "CustomResultsTableViewCell.h"
+
 #define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 @interface ResultsTableViewController ()
@@ -491,6 +493,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomResultsTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomResultsTableViewCell class])];
+    
+
+    /*
     LoadedHTML = [self getCloseRestHTML];
     
     FinalSuggestionsArray = [[NSMutableArray alloc] init];
@@ -544,7 +550,7 @@
     
     //gets rest info of first rest first array is first rest second is rest info
     //NSLog(@"%@", FinalSuggestionsArray[0][0]);
-    
+    */
     
 }
 
@@ -910,10 +916,18 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
+    CustomResultsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CustomResultsTableViewCell class]) forIndexPath:indexPath];
+    
+    
+    cell.restNameLBL.text = @"This is a test";
+    cell.restTypeLBL.text = @"This is a test";
+    cell.restAddressLBL.text = @"This is a test";
+    cell.restDistanceLBL.text = @"9999";
+    cell.restMealNameLBL.text = @"This is a test";
+    cell.restMealDescriptionLBL.text = @"This is a test";
 
-    //cell.textLabel.text = [[self RestURL] objectAtIndex:indexPath.row];
+    
     
     return cell;
 }

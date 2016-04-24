@@ -202,7 +202,7 @@
                     <connections>
                         <segue destination="yxy-zz-x59" kind="relationship" relationship="viewControllers" id="QhG-P2-oGu"/>
                         <segue destination="Ctu-N1-aUl" kind="relationship" relationship="viewControllers" id="c3S-nW-erY"/>
-                        <segue destination="am6-vt-J0u" kind="relationship" relationship="viewControllers" id="EX4-Lw-scU"/>
+                        <segue destination="b3U-OK-ZMC" kind="relationship" relationship="viewControllers" id="EX4-Lw-scU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9Y-SP-zGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -213,17 +213,17 @@
         <scene sceneID="RSS-zA-W2p">
             <objects>
                 <tableViewController title="Recommendations" id="am6-vt-J0u" customClass="ResultsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Sp-a8-m1a">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Sp-a8-m1a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="oaf-qz-Fdw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="142" id="oaf-qz-Fdw">
+                                <rect key="frame" x="0.0" y="92" width="375" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oaf-qz-Fdw" id="D50-YI-Hhp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -233,12 +233,12 @@
                             <outlet property="delegate" destination="am6-vt-J0u" id="opG-fS-jz7"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Recommendations" id="pRj-vk-IDY"/>
+                    <navigationItem key="navigationItem" id="RXI-uu-IAW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVv-f5-s8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018.5" y="1179.5"/>
+            <point key="canvasLocation" x="1605.5" y="1179.5"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="puy-5h-1Lh">
@@ -1253,6 +1253,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLe-oh-Oze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3516.5" y="-335.5"/>
+        </scene>
+        <!--Recommendations-->
+        <scene sceneID="Pw3-Dh-Ii5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b3U-OK-ZMC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Recommendations" id="pRj-vk-IDY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eV0-mV-Lp3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="am6-vt-J0u" kind="relationship" relationship="rootViewController" id="A1B-Ro-XOO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtb-aN-6tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018.5" y="1179.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

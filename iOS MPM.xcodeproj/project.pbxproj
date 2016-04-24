@@ -58,6 +58,8 @@
 		AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */; };
 		ACCD4BFF1CBDD072008CCAB7 /* GoalsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */; };
 		ACCD4C021CBDD2E8008CCAB7 /* MedsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */; };
+		ACCF50871CCC63DD0055256B /* CustomResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCF50851CCC63DD0055256B /* CustomResultsTableViewCell.m */; };
+		ACCF50881CCC63DD0055256B /* CustomResultsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCF50861CCC63DD0055256B /* CustomResultsTableViewCell.xib */; };
 		ACDADB371CBDEF1500374367 /* FoodAllergiesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */; };
 		ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE3C4721CB2F0DE003E4D94 /* MealIngredientsViewController.m */; };
 /* End PBXBuildFile section */
@@ -155,6 +157,9 @@
 		ACCD4BFE1CBDD072008CCAB7 /* GoalsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoalsTableViewController.m; sourceTree = "<group>"; };
 		ACCD4C001CBDD2E8008CCAB7 /* MedsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedsTableViewController.h; sourceTree = "<group>"; };
 		ACCD4C011CBDD2E8008CCAB7 /* MedsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedsTableViewController.m; sourceTree = "<group>"; };
+		ACCF50841CCC63DD0055256B /* CustomResultsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomResultsTableViewCell.h; sourceTree = "<group>"; };
+		ACCF50851CCC63DD0055256B /* CustomResultsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomResultsTableViewCell.m; sourceTree = "<group>"; };
+		ACCF50861CCC63DD0055256B /* CustomResultsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomResultsTableViewCell.xib; sourceTree = "<group>"; };
 		ACDADB351CBDEF1500374367 /* FoodAllergiesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodAllergiesTableViewController.h; sourceTree = "<group>"; };
 		ACDADB361CBDEF1500374367 /* FoodAllergiesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodAllergiesTableViewController.m; sourceTree = "<group>"; };
 		ACE3C4711CB2F0DE003E4D94 /* MealIngredientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealIngredientsViewController.h; sourceTree = "<group>"; };
@@ -223,9 +228,12 @@
 			isa = PBXGroup;
 			children = (
 				80F4CB361BEC4888009538A6 /* Main.storyboard */,
+				AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */,
 				AC76D2641CA202E500DDC7FE /* CustomTableViewCell.h */,
 				AC76D2651CA202E500DDC7FE /* CustomTableViewCell.m */,
-				AC76D2661CA202E500DDC7FE /* CustomTableViewCell.xib */,
+				ACCF50861CCC63DD0055256B /* CustomResultsTableViewCell.xib */,
+				ACCF50841CCC63DD0055256B /* CustomResultsTableViewCell.h */,
+				ACCF50851CCC63DD0055256B /* CustomResultsTableViewCell.m */,
 			);
 			name = "App UI";
 			sourceTree = "<group>";
@@ -531,6 +539,7 @@
 				AC6F296B1C7BA3A0001C1707 /* Pills.png in Resources */,
 				AC76D2681CA202E500DDC7FE /* CustomTableViewCell.xib in Resources */,
 				AC6F29681C7BA3A0001C1707 /* Cardiology.png in Resources */,
+				ACCF50881CCC63DD0055256B /* CustomResultsTableViewCell.xib in Resources */,
 				AC1A03FA1CA9E49800462AF9 /* Allergies.plist in Resources */,
 				AC43A1671CAAC1C7000A9BA8 /* Goals.plist in Resources */,
 			);
@@ -574,6 +583,7 @@
 				AC75311B1CAC6C500029AC9C /* DislikesViewController.m in Sources */,
 				AC65FAB71CA09095000867A0 /* RestaurantsTableViewController.m in Sources */,
 				ACE3C4731CB2F0DE003E4D94 /* MealIngredientsViewController.m in Sources */,
+				ACCF50871CCC63DD0055256B /* CustomResultsTableViewCell.m in Sources */,
 				80A02C281C082899007AA09C /* SignUpViewController.m in Sources */,
 				80E641551C08572B00CF203A /* ChangePasswordViewController.m in Sources */,
 				ACCD4BFF1CBDD072008CCAB7 /* GoalsTableViewController.m in Sources */,
