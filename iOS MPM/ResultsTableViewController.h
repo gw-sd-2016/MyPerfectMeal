@@ -11,7 +11,7 @@
     
     
     NSMutableDictionary *tempDict;
-    
+    NSMutableArray *FinalSuggestionsArray;
 }
 
 @end

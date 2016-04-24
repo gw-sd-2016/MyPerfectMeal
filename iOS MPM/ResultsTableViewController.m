@@ -493,27 +493,57 @@
     
     LoadedHTML = [self getCloseRestHTML];
     
-
+    FinalSuggestionsArray = [[NSMutableArray alloc] init];
 
     [self getGoodAndBadIngredients];
 
-    for (int i = 0; i <= 50; i++){
+    for (int i = 0; i <= 0; i++){
     
         NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
         
         if ([temp count] > 4){
-            NSLog(@"%@", temp);
+            
+            NSMutableArray *restInfo = [[NSMutableArray alloc] init];
+            NSMutableArray *restMealNames = [[NSMutableArray alloc] init];
+            NSMutableArray *restMealDesc = [[NSMutableArray alloc] init];
+            NSMutableArray *SumArray = [[NSMutableArray alloc] init];
+            
+            [restInfo addObject:temp[0]];
+            [restInfo addObject:temp[1]];
+            [restInfo addObject:temp[2]];
+            [restInfo addObject:temp[3]];
+            
+            for ( int i = 4; i <= [temp count] -1 ; i++){
+                
+                [restMealNames addObject:temp[i]];
+                i++;
+            }
+            
+            for ( int i = 5; i <= [temp count] -1 ; i++){
+                
+                [restMealDesc addObject:temp[i]];
+                i++;
+            }
+            
+            [SumArray addObject:restInfo];
+            [SumArray addObject:restMealNames];
+            [SumArray addObject:restMealDesc];
+            
+            [FinalSuggestionsArray addObject:SumArray];
+            
             NSLog(@"%d", i);
             sleep(11);
         }
         else{
             NSLog(@"%d", i);
 
-            sleep(11
-                  );
+            sleep(11);
         }
 
     }
+    
+    //gets rest info of first rest first array is first rest second is rest info
+    //NSLog(@"%@", FinalSuggestionsArray[0][0]);
     
     
 }

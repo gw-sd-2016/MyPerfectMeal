@@ -86,7 +86,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="qS1-05-Pz2" detailTextLabel="I7N-zc-z3Z" style="IBUITableViewCellStyleSubtitle" id="UvG-Cs-QCr">
-                                <rect key="frame" x="0.0" y="320" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="384" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvG-Cs-QCr" id="ZJd-k8-221">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
