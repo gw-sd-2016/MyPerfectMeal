@@ -16,7 +16,7 @@
     
     
     NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"Lat"] lastObject] , [[[PFUser currentUser] objectForKey:@"Lon"] lastObject]];
-    NSLog(@"%@", link);
+    //NSLog(@"%@", link);
     //NSLog(@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/");
     
     

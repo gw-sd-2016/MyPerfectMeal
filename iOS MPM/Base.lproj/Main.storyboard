@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Restaurants-->
+        <!--Discover-->
         <scene sceneID="DV9-Ir-XO2">
             <objects>
                 <navigationController id="Ctu-N1-aUl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Restaurants" id="h6Y-5c-zNR"/>
+                    <tabBarItem key="tabBarItem" title="Discover" id="h6Y-5c-zNR"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwy-g9-ZYV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -32,14 +32,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="RXp-Rp-m0C">
-                            <rect key="frame" x="0.0" y="64" width="375" height="2"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="tintColor" red="0.16162922239999999" green="1" blue="0.00083137051919999995" alpha="1" colorSpace="calibratedRGB"/>
-                        </progressView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="65" id="0bt-hP-dZH">
-                                <rect key="frame" x="0.0" y="94" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bt-hP-dZH" id="104-zI-h9H">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="64.5"/>
@@ -213,17 +208,17 @@
         <scene sceneID="RSS-zA-W2p">
             <objects>
                 <tableViewController title="Recommendations" id="am6-vt-J0u" customClass="ResultsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="142" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Sp-a8-m1a">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Sp-a8-m1a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="142" id="oaf-qz-Fdw">
-                                <rect key="frame" x="0.0" y="92" width="375" height="142"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="175" id="oaf-qz-Fdw">
+                                <rect key="frame" x="0.0" y="92" width="375" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oaf-qz-Fdw" id="D50-YI-Hhp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -233,7 +228,7 @@
                             <outlet property="delegate" destination="am6-vt-J0u" id="opG-fS-jz7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RXI-uu-IAW"/>
+                    <navigationItem key="navigationItem" title="Recommendations" id="RXI-uu-IAW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVv-f5-s8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1254,11 +1249,11 @@
             </objects>
             <point key="canvasLocation" x="3516.5" y="-335.5"/>
         </scene>
-        <!--Recommendations-->
+        <!--Find My Meal!-->
         <scene sceneID="Pw3-Dh-Ii5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b3U-OK-ZMC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recommendations" id="pRj-vk-IDY"/>
+                    <tabBarItem key="tabBarItem" title="Find My Meal!" id="pRj-vk-IDY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eV0-mV-Lp3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

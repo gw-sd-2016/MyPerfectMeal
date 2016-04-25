@@ -15,8 +15,14 @@
 -(NSString *) getCloseRestHTML{ //This is the page for the full list of rest names/address
     
     //load url of near me restaurants
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
-    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
+    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    
+    
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
+    //NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"Lat"] lastObject] , [[[PFUser currentUser] objectForKey:@"Lon"] lastObject]];
+    
+    //NSURL *loadURL = [[NSURL alloc] initWithString:link];
+    
     
     NSStringEncoding encoding;
     NSError *error = nil;
@@ -425,6 +431,7 @@
         
     }
     
+    
     return FilteredResults;
 
     
@@ -543,18 +550,25 @@
             [SumArray addObject:restMealNames];
             [SumArray addObject:restMealDesc];
             
-            [FinalSuggestionsArray addObject:SumArray];
+            if (![FinalSuggestionsArray containsObject:SumArray]){
+                [FinalSuggestionsArray addObject:SumArray];
+            }
+            else{
+                NSLog(@"Found In Final Suggestions Array Already");
+            }
+            
             
             NSLog(@"%d", i);
-            sleep(11);
+            sleep(12);
         }
         else{
             NSLog(@"%d", i);
 
-            sleep(11);
+            sleep(12);
         }
 
     }
+    
     
     //gets rest info of first rest first array is first rest second is rest info
     //NSLog(@"%lu", (unsigned long)[FinalSuggestionsArray[0][1] count]);
