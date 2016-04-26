@@ -15,13 +15,13 @@
 -(NSString *) getCloseRestHTML{ //This is the page for the full list of rest names/address
     
     //load url of near me restaurants
-    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
     
     
     //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
-    //NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"Lat"] lastObject] , [[[PFUser currentUser] objectForKey:@"Lon"] lastObject]];
+    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"LatStringArray"] lastObject] , [[[PFUser currentUser] objectForKey:@"LonStringArray"] lastObject]];
     
-    //NSURL *loadURL = [[NSURL alloc] initWithString:link];
+    NSURL *loadURL = [[NSURL alloc] initWithString:link];
     
     
     NSStringEncoding encoding;
@@ -494,7 +494,64 @@
     
 }
 
-
+-(void) RecommendationFinder: (int) numOfRequests{
+    
+    for (int i = 0; i <= (numOfRequests - 1); i++){
+        
+        
+        
+   
+    
+    NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
+    
+    if ([temp count] > 4){
+        
+        NSMutableArray *restInfo = [[NSMutableArray alloc] init];
+        NSMutableArray *restMealNames = [[NSMutableArray alloc] init];
+        NSMutableArray *restMealDesc = [[NSMutableArray alloc] init];
+        NSMutableArray *SumArray = [[NSMutableArray alloc] init];
+        
+        [restInfo addObject:temp[0]];
+        [restInfo addObject:temp[1]];
+        [restInfo addObject:temp[2]];
+        [restInfo addObject:temp[3]];
+        
+        for ( int i = 4; i <= [temp count] -1 ; i++){
+            
+            [restMealNames addObject:temp[i]];
+            i++;
+        }
+        
+        for ( int i = 5; i <= [temp count] -1 ; i++){
+            
+            [restMealDesc addObject:temp[i]];
+            i++;
+        }
+        
+        [SumArray addObject:restInfo];
+        [SumArray addObject:restMealNames];
+        [SumArray addObject:restMealDesc];
+        
+        if (![FinalSuggestionsArray containsObject:SumArray]){
+            [FinalSuggestionsArray addObject:SumArray];
+        }
+        else{
+            NSLog(@"Found In Final Suggestions Array Already");
+        }
+        
+        
+        NSLog(@"%d", i);
+        sleep(12);
+    }
+    else{
+        NSLog(@"%d", i);
+        
+        sleep(12);
+    }
+    
+}
+    
+}
 
 
 - (void)viewDidLoad {
@@ -510,64 +567,14 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([CustomResultsTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([CustomResultsTableViewCell class])];
     
-
-    
     LoadedHTML = [self getCloseRestHTML];
     
     FinalSuggestionsArray = [[NSMutableArray alloc] init];
 
     [self getGoodAndBadIngredients];
-
-    for (int i = 0; i <= 10; i++){
     
-        NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
-        
-        if ([temp count] > 4){
-            
-            NSMutableArray *restInfo = [[NSMutableArray alloc] init];
-            NSMutableArray *restMealNames = [[NSMutableArray alloc] init];
-            NSMutableArray *restMealDesc = [[NSMutableArray alloc] init];
-            NSMutableArray *SumArray = [[NSMutableArray alloc] init];
-            
-            [restInfo addObject:temp[0]];
-            [restInfo addObject:temp[1]];
-            [restInfo addObject:temp[2]];
-            [restInfo addObject:temp[3]];
-            
-            for ( int i = 4; i <= [temp count] -1 ; i++){
-                
-                [restMealNames addObject:temp[i]];
-                i++;
-            }
-            
-            for ( int i = 5; i <= [temp count] -1 ; i++){
-                
-                [restMealDesc addObject:temp[i]];
-                i++;
-            }
-            
-            [SumArray addObject:restInfo];
-            [SumArray addObject:restMealNames];
-            [SumArray addObject:restMealDesc];
-            
-            if (![FinalSuggestionsArray containsObject:SumArray]){
-                [FinalSuggestionsArray addObject:SumArray];
-            }
-            else{
-                NSLog(@"Found In Final Suggestions Array Already");
-            }
-            
-            
-            NSLog(@"%d", i);
-            sleep(12);
-        }
-        else{
-            NSLog(@"%d", i);
 
-            sleep(12);
-        }
-
-    }
+    [self RecommendationFinder:10];
     
     
     //gets rest info of first rest first array is first rest second is rest info
@@ -580,6 +587,7 @@
             [DisplayRestDistance addObject:FinalSuggestionsArray[i][0][3]];
             [DisplayMealName addObject:FinalSuggestionsArray[i][1][j]];
             [DisplayMealDesc addObject:FinalSuggestionsArray[i][2][j]];
+        
         }
     }
     

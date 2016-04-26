@@ -1,8 +1,11 @@
 
+
 #import "RestaurantsTableViewController.h"
 #import "CustomTableViewCell.h"
 #import "MenuTableViewController.h"
 #import "MapContainerViewController.h"
+
+
 
 @interface RestaurantsTableViewController ()
 
@@ -15,16 +18,20 @@
 -(NSString *) loadRawHTML{
     
     
-    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"Lat"] lastObject] , [[[PFUser currentUser] objectForKey:@"Lon"] lastObject]];
-    //NSLog(@"%@", link);
-    //NSLog(@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/");
-    
-    
-    NSURL *loadURL = [[NSURL alloc] initWithString:link];
-
-    
-    
+    //load url of near me restaurants
     //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+    
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
+    
+    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/40.759212/long/-73.984634"];
+    
+    /*
+    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"LatStringArray"] lastObject] , [[[PFUser currentUser] objectForKey:@"LonStringArray"] lastObject]];
+    
+    NSLog(@"Navigating to: %@", link);
+    NSURL *loadURL = [[NSURL alloc] initWithString:link];
+    */
     
     NSStringEncoding encoding;
     NSError *error = nil;
@@ -43,17 +50,14 @@
     
     while ([allRestNearMeHTMLScanner isAtEnd] == NO) {
         
-        //[allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
-        //[allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
-        //[allRestNearMeHTMLScanner scanUpToString:@"<h1>We found <span id='rest_count'>" intoString:NULL] ;
-        
-        [allRestNearMeHTMLScanner scanUpToString:@"delivery_option_label>" intoString:NULL] ;
-        [allRestNearMeHTMLScanner scanUpToString:@"2016 GrubHub, Inc. All rights reserved." intoString:&text] ;
+        [allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
+        [allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
         
         
     }
     
-    NSLog(@"Loading html called");
+    NSLog(@"%@", loadPageHTML);
+    NSLog(@"Loaded HTML Page");
     
     return loadPageHTML;
     

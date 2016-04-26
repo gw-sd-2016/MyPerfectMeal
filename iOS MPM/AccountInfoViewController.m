@@ -60,14 +60,27 @@
     
     float Lat = locationManager.location.coordinate.latitude;
     float Lon = locationManager.location.coordinate.longitude;
-    NSLog(@"Lat : %f  Lon : %f",Lat,Lon);
     
+    NSString *LatString = [NSString stringWithFormat:@"%f", Lat];
+    NSString *LonString = [NSString stringWithFormat:@"%f", Lon];
+
+    NSLog(@"Lat : %@  Lon : %@",LatString,LonString);
+
+
     
+     [[PFUser currentUser] addObject:LatString forKey:@"LatStringArray"];
+     [[PFUser currentUser] saveInBackground];
+     [[PFUser currentUser] addObject:LonString forKey:@"LonStringArray"];
+     [[PFUser currentUser] saveInBackground];
+     
+    
+
+    /*
     [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lat] forKey:@"Lat"];
     [[PFUser currentUser] saveInBackground];
     [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lon] forKey:@"Lon"];
     [[PFUser currentUser] saveInBackground];
-    
+    */
     
     [geocoder reverseGeocodeLocation:currentLocation
                    completionHandler:^(NSArray *placemarks, NSError *error) {
