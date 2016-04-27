@@ -1,11 +1,8 @@
 
-
 #import "RestaurantsTableViewController.h"
 #import "CustomTableViewCell.h"
 #import "MenuTableViewController.h"
 #import "MapContainerViewController.h"
-
-
 
 @interface RestaurantsTableViewController ()
 
@@ -18,20 +15,16 @@
 -(NSString *) loadRawHTML{
     
     
-    //load url of near me restaurants
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
-    
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
-    
-    NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/40.759212/long/-73.984634"];
-    
-    /*
     NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"LatStringArray"] lastObject] , [[[PFUser currentUser] objectForKey:@"LonStringArray"] lastObject]];
+    NSLog(@"%@", link);
+    //NSLog(@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/");
     
-    NSLog(@"Navigating to: %@", link);
+    
     NSURL *loadURL = [[NSURL alloc] initWithString:link];
-    */
+    
+    
+    
+    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
     
     NSStringEncoding encoding;
     NSError *error = nil;
@@ -50,14 +43,17 @@
     
     while ([allRestNearMeHTMLScanner isAtEnd] == NO) {
         
+        //[allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
+        //[allRestNearMeHTMLScanner scanUpToString:@"<h1>We found <span id='rest_count'>" intoString:NULL] ;
+        
         [allRestNearMeHTMLScanner scanUpToString:@"<" intoString:NULL] ;
         [allRestNearMeHTMLScanner scanUpToString:@">" intoString:&text] ;
         
         
     }
     
-    NSLog(@"%@", loadPageHTML);
-    NSLog(@"Loaded HTML Page");
+    NSLog(@"Loading html called");
     
     return loadPageHTML;
     
@@ -105,7 +101,7 @@
         getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"restaurant_name\"><a href=\""] withString:@""];
         
         getRestURL = [getRestURL stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
-
+        
         /*
          //this gets all urls on the page
          //NSLog(@"%@", getRestURL);
@@ -148,7 +144,7 @@
         
         getRestNames = [getRestNames stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"/menu/\">"] withString:@""];
         getRestNames = [getRestNames stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
-
+        
         
         //get all rest names
         //NSLog(@"%@", getRestNames);
@@ -227,7 +223,7 @@
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"        "] withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:@"\n" withString:@""];
         getRestDesc = [getRestDesc stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"&amp;"] withString:@"And"];
-
+        
         [getRestDescArray addObject:getRestDesc];
         
         
@@ -284,7 +280,7 @@
     
     _clickedRestaurant = [[NSString alloc] init];
     _clickedURL = [[NSString alloc] init];
-
+    
     
     allRestNames = [self RestNames];
     allRestTypes = [self RestDesc];
@@ -294,8 +290,8 @@
     
     
     
-   // NSLog(@"%i", [[self RestNames] count]);
-   // NSLog(@"%i", [[self RestURL] count]);
+    // NSLog(@"%i", [[self RestNames] count]);
+    // NSLog(@"%i", [[self RestURL] count]);
     
     
     
@@ -310,7 +306,7 @@
     
     
     //get all rest names near me
-   // NSLog(@"%@", [self RestNames]);
+    // NSLog(@"%@", [self RestNames]);
     
     
     //NSLog(@"%d", [[self RestNames] count]);
@@ -343,7 +339,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
-
+    
     
     
     
@@ -386,11 +382,11 @@
     _clickedURL = [allRestURLs objectAtIndex:indexPath.row];
     _clickedAddress = [allRestAddresses objectAtIndex:indexPath.row];
     
-
-  
+    
+    
     [self performSegueWithIdentifier:@"showMenu" sender:self];
     
-  
+    
     
     
     //NSLog(@"%@", clickedRestaurant);
@@ -406,16 +402,16 @@
         
         
         MenuTableViewController *MenuDetailsViewController = [segue destinationViewController];
-
+        
         MenuDetailsViewController.clickedRestaurantName = _clickedRestaurant;
         MenuDetailsViewController.clickedRestaurantURL = _clickedURL;
         MenuDetailsViewController.clickedRestaurantAddress = _clickedAddress;
         
         /*
-        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantName);
-        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantURL);
-        NSLog(@"%@", MenuDetailsViewController.clickedRestaurantAddress);
-        */
+         NSLog(@"%@", MenuDetailsViewController.clickedRestaurantName);
+         NSLog(@"%@", MenuDetailsViewController.clickedRestaurantURL);
+         NSLog(@"%@", MenuDetailsViewController.clickedRestaurantAddress);
+         */
         
     }
     
@@ -423,48 +419,48 @@
 
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)refreshRestBTN:(id)sender {
     loadedHTMLPage = [self loadRawHTML];

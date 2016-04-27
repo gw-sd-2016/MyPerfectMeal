@@ -18,6 +18,9 @@
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/437291-char-bar/menu/"];
     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/373615-the-deli/menu/"];
     //NSLog(@"%@", _clickedRestaurantURL);
+    NSDate *methodStart = [NSDate date];
+
+
     NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com%@", _clickedRestaurantURL];
     
     NSLog(@"Navigating to %@", restaurantDirectoryURLString);
@@ -37,6 +40,11 @@
         
         
     }
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+    NSLog(@"executionTime = %f", executionTime);
+
+    
     
     NSLog(@"Loaded Raw Html For A Specific Restaurant");
     
@@ -124,7 +132,8 @@
     
     NSScanner *getMealNamesScanner;
     NSString *getMeals = nil;
-    getMealNamesScanner = [NSScanner scannerWithString:[self loadCatHTML:X]];
+    NSString *loadCatHTMLString = [self loadCatHTML:X];
+    getMealNamesScanner = [NSScanner scannerWithString:loadCatHTMLString];
     NSMutableArray  *getMealNamesArray = [[NSMutableArray alloc] init];
     
     while ([getMealNamesScanner isAtEnd] == NO) {
@@ -235,7 +244,6 @@
 
     self.navigationItem.title = _clickedRestaurantName;
     
-    NSLog(@"WEBSITE DOES NOT EXIST");
 
     loadedRawHTML = [self loadRawHTML];
 

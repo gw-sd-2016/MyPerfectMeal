@@ -10,21 +10,6 @@
 
 @interface PersonalInfoViewController : UIViewController
 
-{
-    
-    //save all goals in goal array
-    NSMutableArray *goalsArray;
-    
-    //find user selections as soon as they login
-    NSMutableArray *findUserSelections;
-    
-    //load meds
-    NSArray *MedsArray;
-    
-    NSMutableString *currentMed;
-    
-}
-
 //varions and uipicker for the personal info container
 - (IBAction)selectMedicationsBTN:(id)sender;
 - (IBAction)selectFoodAllergiesBTN:(id)sender;

@@ -52,15 +52,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [findSelections addObject:[[PFUser currentUser] objectForKey:@"selectedGoal"]];
-    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedMeds"]];
-    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedFoodAllergy"]];
-    [findSelections addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedDisorder"]];
+    NSString *selectedGoals = [[NSString alloc] initWithString:[[PFUser currentUser] objectForKey:@"selectedGoal"]];
 
+    NSArray *selectedMeds = [[NSArray alloc] initWithArray:[[PFUser currentUser] objectForKey:@"selectedMeds"]];
+    NSArray *selectedFoodAllergy = [[NSArray alloc] initWithArray:[[PFUser currentUser] objectForKey:@"selectedFoodAllergy"]];
+    NSArray *selectedDisorder = [[NSArray alloc] initWithArray:[[PFUser currentUser] objectForKey:@"selectedDisorder"]];
     
+
+    if (selectedGoals != nil){
+        [findSelections addObject:selectedGoals];
+    }
     
+    if (selectedMeds != nil){
+        [findSelections addObjectsFromArray:selectedMeds];
+    }
     
-    //NSLog(@"%@", findSelections);
+    if (selectedFoodAllergy != nil){
+        [findSelections addObjectsFromArray:selectedFoodAllergy];
+    }
+    
+    if (selectedDisorder != nil){
+        [findSelections addObjectsFromArray:selectedDisorder];
+    }
+    
+    NSLog(@"The user selections are %@", findSelections);
+    
+
 }
 
 

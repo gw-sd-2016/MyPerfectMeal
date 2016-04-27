@@ -216,8 +216,6 @@
 }
 
 
-
-- (IBAction)submitPreferencesBTN:(id)sender {
        /*
     everythingInLikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedLikes"]];
     everythingInDislikes = [[NSMutableArray alloc] initWithArray:[[PFUser currentUser] valueForKey:@"selectedDislikes"]];
@@ -327,7 +325,7 @@
     
     
     
-}
+
 
 
 @end

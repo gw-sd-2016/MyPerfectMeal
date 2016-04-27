@@ -498,10 +498,6 @@
     
     for (int i = 0; i <= (numOfRequests - 1); i++){
         
-        
-        
-   
-    
     NSArray *temp = [[NSArray alloc] initWithArray:[self SecondCheck:[self FirstCheck:i]]];
     
     if ([temp count] > 4){
