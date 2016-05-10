@@ -13,11 +13,6 @@
 
 -(NSString *) loadRawHTML{
     
-    //NSMutableString *restaurantDirectoryURLString= [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/18286-the-pita-pit/menu/"];
-     //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington-dc/360167-fobogro/menu/"];
-    //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/437291-char-bar/menu/"];
-    //NSMutableString *restaurantDirectoryURLString = [NSMutableString stringWithFormat:@"http://www.allmenus.com/dc/washington/373615-the-deli/menu/"];
-    //NSLog(@"%@", _clickedRestaurantURL);
     NSDate *methodStart = [NSDate date];
 
 
@@ -47,8 +42,6 @@
     
     
     NSLog(@"Loaded Raw Html For A Specific Restaurant");
-    
-    //NSLog(@"%@", loadHTMLPage);
     
     
     return loadHTMLPage;
@@ -88,10 +81,8 @@
         
     }
     
-    //[getCategoriesArray removeLastObject];
     [getCategoriesArray addObject:@"<!-- foreach menu -->"];
     
-   // NSLog(@"%@", getCategoriesArray);
     
     return getCategoriesArray;
 }
@@ -161,41 +152,6 @@
 
 
 
-/*
--(NSMutableArray *) getMealPricing{
-    
-    NSScanner *getMealPricesScanner;
-    NSString *getPrices = nil;
-    getMealPricesScanner = [NSScanner scannerWithString:loadedRawHTML];
-    NSMutableArray *getPricesArray = [[NSMutableArray alloc] init];
-    while ([getMealPricesScanner isAtEnd] == NO) {
-        
-        
-        [getMealPricesScanner scanUpToString:@"<p>$" intoString:NULL] ;
-        
-        [getMealPricesScanner scanUpToString:@"</p>" intoString:&getPrices] ;
-        
-        getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p>"] withString:@""];
-        getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"amp;"] withString:@""];
-        
-        // getPrices = [getPrices stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" "] withString:@""];
-        
-        
-        //NSLog(@"%@", getPrices);
-        [getPricesArray addObject:getPrices];
-        
-        
-    }
-    
-    [getPricesArray removeLastObject];
-    
-    return getPricesArray;
-    
-}
-
-*/
-
-
 
 -(NSString *) getIngredients: (NSString *) mealName{
     
@@ -213,12 +169,7 @@
         [getIngredientsScanner scanUpToString:scannerBeginingString intoString:NULL] ;
         [getIngredientsScanner scanUpToString:@"</p>" intoString:&getIngredients] ;
         
-        
-        //[getIngredientsScanner scanUpToString:@"<dd>" intoString:NULL] ;
-        
-        //[getIngredientsScanner scanUpToString:@"</dd>" intoString:&getIngredients] ;
-        
-        
+
         getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:scannerBeginingString] withString:@""];
         getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"<p class=\"description\">"] withString:@""];
         getIngredients = [getIngredients stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"  "] withString:@""];
@@ -249,8 +200,6 @@
 
     
     NSArray *saveGetCategoryNames = [[NSArray alloc] initWithArray:[self getCategoryNames]];
-    
-    //NSLog(@"%@", saveGetCategoryNames);
     
     if ([saveGetCategoryNames count] <= 1) {
         NSLog(@"WEBSITE DOES NOT EXIST");
@@ -295,7 +244,6 @@
         for (int i = 0; i <= [[Meals allKeys]count]-1; i++){
             
             for (int j = 0; j <= [[Meals allValues][i] count]-1; j++){
-               // NSLog(@"%@", [Meals allValues][i][j]);
                 [allMealsAsSeen addObject:[Meals allValues][i][j]];
             }
             
@@ -306,9 +254,6 @@
 
                 
         subtitleDict = [[NSMutableDictionary alloc]initWithCapacity:[allMealsAsSeen count]];
-        
-        //NSLog(@"%i", [[self getAllIngredientsFound] count]);
-       
         
         for (int i = 0; i <= [allMealsAsSeen count]-1; i++){
             
@@ -332,9 +277,7 @@
     
     NSMutableArray *allIngredeientsFoundArray = [[NSMutableArray alloc ] init];
     
-    //NSLog(@"start printing ingredients");
     for (int i = 0; i <= allMealsAsSeen.count-1; i++) {
-        //NSLog(@"%@", [self getIngredients:allMealsAsSeen[i]]);
         [allIngredeientsFoundArray addObject:[self getIngredients:allMealsAsSeen[i]]];
     }
     
@@ -350,7 +293,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
     return [MealSectionTitles count];
 }
 
@@ -376,7 +318,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     
-    // Configure the cell...
     NSString *sectionTitle = [MealSectionTitles objectAtIndex:indexPath.section];
     NSArray *sectionMeals = [Meals objectForKey:sectionTitle];
     NSString *Meal = [sectionMeals objectAtIndex:indexPath.row];
@@ -422,9 +363,6 @@
         
         MapDetailsViewController.clickedRestaurantNameInMap = _clickedRestaurantName;
         MapDetailsViewController.clickedRestaurantAddressInMap = _clickedRestaurantAddress;
-        
-        //NSLog(@"%@", MapDetailsViewController.clickedRestaurantNameInMap);
-        //NSLog(@"%@", MapDetailsViewController.clickedRestaurantAddressInMap);
         
         
     }

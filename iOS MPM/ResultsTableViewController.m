@@ -14,20 +14,17 @@
 
 -(NSString *) getCloseRestHTML{ //This is the page for the full list of rest names/address
     
-    //load url of near me restaurants
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8991833/long/-77.048883/"];
+
+    //NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"LatStringArray"] lastObject] , [[[PFUser currentUser] objectForKey:@"LonStringArray"] lastObject]];
     
-    
-    //NSURL *loadURL = [[NSURL alloc] initWithString:@"http://allmenus.com/custom-results/lat/38.8446765/long/-77.11456439999999/"];
-    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/%@/long/%@/", [[[PFUser currentUser] objectForKey:@"LatStringArray"] lastObject] , [[[PFUser currentUser] objectForKey:@"LonStringArray"] lastObject]];
+    NSString *link = [NSString stringWithFormat:@"http://allmenus.com/custom-results/lat/38.909942/long/-77.018128"];
     
     NSURL *loadURL = [[NSURL alloc] initWithString:link];
     
     
     NSStringEncoding encoding;
     NSError *error = nil;
-    //Load HTML link
-    //Store HTML Page for "X amount of restaurants Page"
+
     NSString *loadPageHTML = [[NSString alloc] initWithContentsOfURL:loadURL
                                                         usedEncoding:&encoding
                                                                error:&error];
@@ -570,7 +567,7 @@
     [self getGoodAndBadIngredients];
     
 
-    [self RecommendationFinder:10];
+    [self RecommendationFinder:25];
     
     
     //gets rest info of first rest first array is first rest second is rest info

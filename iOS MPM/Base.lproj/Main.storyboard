@@ -34,7 +34,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="65" id="0bt-hP-dZH">
-                                <rect key="frame" x="0.0" y="92" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bt-hP-dZH" id="104-zI-h9H">
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="64.5"/>
@@ -81,7 +81,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="qS1-05-Pz2" detailTextLabel="I7N-zc-z3Z" style="IBUITableViewCellStyleSubtitle" id="UvG-Cs-QCr">
-                                <rect key="frame" x="0.0" y="384" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvG-Cs-QCr" id="ZJd-k8-221">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -198,7 +198,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.89231313919999999" green="0.97903713250000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="175" id="oaf-qz-Fdw">
-                                <rect key="frame" x="0.0" y="92" width="375" height="175"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="175"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oaf-qz-Fdw" id="D50-YI-Hhp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1639.5" y="-591.5"/>
         </scene>
-        <!--Likes View Controller-->
+        <!--My Likes-->
         <scene sceneID="MbR-MP-ZtE">
             <objects>
-                <tableViewController id="Lhc-W0-ybY" customClass="LikesViewController" sceneMemberID="viewController">
+                <tableViewController title="My Likes" id="Lhc-W0-ybY" customClass="LikesViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hmY-9n-DiW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -693,10 +693,10 @@
             </objects>
             <point key="canvasLocation" x="2920.5" y="-2271"/>
         </scene>
-        <!--My Selections-->
+        <!--My Dislikes-->
         <scene sceneID="RTw-Va-hJZ">
             <objects>
-                <tableViewController title="My Selections" id="1uU-l8-L8w" customClass="SelectionsViewController" sceneMemberID="viewController">
+                <tableViewController title="My Dislikes" id="1uU-l8-L8w" customClass="SelectionsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a7g-lN-Ocl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

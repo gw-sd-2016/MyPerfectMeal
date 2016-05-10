@@ -1,11 +1,3 @@
-//
-//  PersonalInfoViewController.m
-//  iOS MPM
-//
-//  Created by Abed Kassem on 11/29/15.
-//  Copyright © 2015 Abed Kassem. All rights reserved.
-//
-
 #import "PersonalInfoViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>

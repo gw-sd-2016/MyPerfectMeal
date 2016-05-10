@@ -1,0 +1,96 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+{\info
+{\author kassem, abed el rahman youssef}}\margl1440\margr1440\vieww12540\viewh15040\viewkind1\viewscale156
+\deftab720
+\pard\pardeftab720\ri0\sl480\slmult1\qc
+
+\f0\b\fs24 \cf0 MyPerfectMeal Product Specification Document\
+\pard\pardeftab720\ri0\sl480\slmult1
+\cf0 Overview
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab720\ri0\sl480\slmult1
+\cf0 MyPerfectMeal (MPM) is an application based service that provides consumers with meal suggestions. The details discussed in this product specification document will not include a complete documentation of the application. The purpose of this product specification is to provide the reader with an overview of the application. By the end of this documentation, the reader will have an understanding of the functionality of the application from the user's perspective. This specification will not include any algorithm which the application utilizes to make a suggestion for the user. This documentation is divided into multiple sections for a clear view of the different functionalities of the application. \
+\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Scenarios\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 In an effort to illustrate the service provided by the application, the following three scenarios are provided.\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Scenario 1
+\b0 : Steve\
+Steve is a single father of two girls. He is a senior accountant and has been working for a large corporation for over seven years. As a senior account, many clients rely on him. He frequently leaves work late due to his work responsibilities. When finally home, Steve spends the rest of his waking hours around his children. This routine leaves Steve with no time to cook a healthy meal, so he orders delivery food. Steve is suffering from obesity and although his Doctor suggested eating healthier and exercising, Steve cannot find the time.\
+Steve discovers MyPerfectMeal and signs up. After filling up his user profile and adding items to his preferences, he is ready to make the healthy change he needs. The application makes Steve multiple meal suggestions based on his profile and displays the results in the results page. There are multiple results Steve can choose from. These results are in the form of meals from local restaurants. These meals are all healthy based on his selections under the user management tab. Steve calls the restaurant and orders delivery for the specific meal the application suggested. \
+
+\b Scenario 2: 
+\b0 Jess
+\b \
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 Jess is a young college student at The George Washington University. She just returned from her summer break and is still in the process of moving back in her dorm. Jess suffers from Celiac Disease so she only eats Gluten-Free meals. She often avoids eating outside her home, because many restaurants do not offer a Gluten-Free menu. Since she just moved in, she does not have any groceries and is getting hungry!\
+Jess decides to use MyPerfectMeal to find a meal custom suggested for her. Although she is Gluten intolerant, she will still be able to find a meal at a local restaurant suited for her. Since she specified her condition under her user profile, all the meals suggested for her will be Gluten-Free.\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Scenario 3: 
+\b0 Bob
+\b \
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 Bob is an elderly gentleman and lives alone in the District of Columbia. Due to his age, he is required to consume certain vitamins and medications. Some of the medication categories include: Cholesterol, Diabetes, and Blood Pressure. The medications Bob is required to consume makes it nearly impossible for him to eat at most restaurants due to their high levels of sodium, sugars, and fats. Bob recently reacquainted with an old friend and setup a date for a dinner. Bob remembered that most restaurants are not well suited for his conditions and is in trouble!\
+Bob decides to logon to MyPerfectMeal in search of a meal suited for his dinner date. He finds a meal through the results tab that does not conflict with his conditions or any of his medications. Bob is looking forward for his dinner meal and the restaurant is within walking distance from his home!\
+\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Non Goals\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 Although the intentions of the application were to make singular person suggestions, some conflicts may arise. Many of the consumers will not plan on eating a meal alone, so suggestions may need to consider more than one party. Other conflicts arise if a consumer wants to suggest a meal for a friend. These features will not be included for the time being, but may be added later in the development of the application. \
+\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Screen by Screen Specification\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 MyPerfectMeal application consists of multiple application screens. To better visualize these screens a detailed description of each window is provided below. Along with a description, the functionality of each screen is included to guide the reader through the application. \
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Sign in Screen:\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 The Sign in Screen is the welcome page of the application. This is where the user has the option of either logging in to their account or signing up. If the user does not have an account they can easily sign up using a new username and password. This process is similar to most applications in the apple store and should be familiar to many incoming users. \
+Once the user is signed up and is able to login, they are presented with three tabs: User Profile Management tab, Restaurant tab, and Results tab. \
+\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 User Management Tab\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 The User Management Tab is where the user adds their personal details. These details are divided into four separate panels. The first panel is dedicated for account management and includes modification of the user\'92s personal information. The second panel on the User Management Tab is for Personal Preference Management. This panel allows the user to add or remove personal preferences in terms of ingredients. This panel is divided into likes and dislikes. Users may modify any of their preferences at any time. The third panel is centered on the health of the user. This asks personal questions in terms of medications, health goals (loose/gain/maintain weight), disorders, and allergies. This panel may be left out blank if the user may not feel comfortable sharing their private details. The final panel is for current location and mood information. This panel asks for the current mood of the user: What would you like to eat right now? The location of the user is also specified in this panel. The information provided in the User Management Tab will be taken into consideration when the application makes its suggestions and displays the results in the Results tab. \
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Restaurant tab\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 The Restaurant is a user driven page and provides the user with the power to add or remove information freely. Once selected, the user is able to find or add a restaurant through the search bar or the add button. The user can fill in simple information on the restaurant. Other features of this tab includes multiple subcategories. After selecting a restaurant, the user can then add a meal found on that restaurant\'92s menu. Once a meal is added, the user can go on and add ingredients included in that meal. These pages can be modified by the user at any time. The data the users will include will help expand the database in which the application can choose to make suggestions. As the database grows the application will take more meals into consideration.\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b \cf0 Results Tab
+\b0 \
+The results tab is the final product of the application. This is where the user will find their specifically generated meals and may choose from. This page will display results in a list format where each entry is a meal suggestion. The application will display at most ten meals per page. The application also ranks the meals from most desirable to least desirable. These results are generated after analyzing the user\'92s inputs from the User Management Tab as well as the algorithm used to make the suggestions.  \
+ \
+
+\b Reflection\
+\pard\pardeftab720\ri0\sl480\slmult1
+
+\b0 \cf0 The application is designed to make useful suggestions to users. Accuracy in analyzing the input and making a useful suggestion must be high to ensure a high rate of returning consumers. If the application fails to make suggestions which the users will use, the application will not succeed in the Apple Store. Another problem is the low initial volume of consumers. If the Restaurant tab is user driven, but users fail to populate the database, then the application will not feature enough meals to make specific suggestion. This problem may be solved through manual entry of the meals by a system administrator. Finally, the Product Specification Document should be revised as the application is developed and features are modified.   \
+\
+\
+\
+\
+\
+\
+}

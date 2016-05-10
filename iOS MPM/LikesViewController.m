@@ -53,6 +53,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"My Likes";
+
     [findLikes addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedLikes"]];
     
 }

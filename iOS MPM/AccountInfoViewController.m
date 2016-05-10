@@ -72,15 +72,7 @@
      [[PFUser currentUser] saveInBackground];
      [[PFUser currentUser] addObject:LonString forKey:@"LonStringArray"];
      [[PFUser currentUser] saveInBackground];
-     
     
-
-    /*
-    [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lat] forKey:@"Lat"];
-    [[PFUser currentUser] saveInBackground];
-    [[PFUser currentUser] addObject:[NSNumber numberWithFloat:Lon] forKey:@"Lon"];
-    [[PFUser currentUser] saveInBackground];
-    */
     
     [geocoder reverseGeocodeLocation:currentLocation
                    completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -100,7 +92,6 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     currentLocation = [locations objectAtIndex:0];
     [locationManager stopUpdatingLocation];
-   // NSLog(@"Detected Location : %f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
     [geocoder reverseGeocodeLocation:currentLocation
                    completionHandler:^(NSArray *placemarks, NSError *error) {
                        if (error){
@@ -108,8 +99,6 @@
                            return;
                        }
                        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-                       //NSLog(@"placemark.ISOcountryCode %@", placemark.ISOcountryCode);
-                       //NSLog(@"placemark.ISOcountryCode %@", placemark.locality);
                        locationLBL.text = [NSString stringWithFormat:@"%@, %@", placemark.locality, placemark.administrativeArea];
                        
                    }];

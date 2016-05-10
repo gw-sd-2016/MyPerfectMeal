@@ -52,6 +52,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"My Dislikes";
+
     
     [findDislikes addObjectsFromArray:[[PFUser currentUser] objectForKey:@"selectedDislikes"]];
     
