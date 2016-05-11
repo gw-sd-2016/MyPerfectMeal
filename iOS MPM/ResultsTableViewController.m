@@ -567,7 +567,7 @@
     [self getGoodAndBadIngredients];
     
 
-    [self RecommendationFinder:25];
+    [self RecommendationFinder:10];
     
     
     //gets rest info of first rest first array is first rest second is rest info
